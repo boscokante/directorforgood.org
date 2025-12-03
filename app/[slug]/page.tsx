@@ -13,6 +13,12 @@ interface PageProps {
 
 export default async function Page({ params }: PageProps) {
   const { slug } = await params
+  
+  // Skip empty slugs (homepage should be handled by app/page.tsx)
+  if (!slug || slug.trim() === '') {
+    notFound()
+  }
+  
   const path = `/${slug}`
 
   // Check for redirect first
@@ -66,6 +72,10 @@ export default async function Page({ params }: PageProps) {
 
 export async function generateMetadata({ params }: PageProps) {
   const { slug } = await params
+  
+  if (!slug || slug.trim() === '') {
+    return { title: 'Page Not Found' }
+  }
   
   const page = await db
     .select()
