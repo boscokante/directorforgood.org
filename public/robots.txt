@@ -1,0 +1,11 @@
+# *
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /api
+
+# Host
+Host: https://hiiiwav.org
+
+# Sitemaps
+Sitemap: https://hiiiwav.org/sitemap.xml

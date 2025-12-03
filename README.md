@@ -1,36 +1,131 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# HIIIWAV Website - Next.js Migration
+
+Modern, AI-powered website migrated from WordPress to Next.js 15.
+
+## Tech Stack
+
+- **Next.js 15** (App Router, React Server Components)
+- **TypeScript**
+- **Tailwind CSS** + shadcn/ui
+- **Drizzle ORM** + **Postgres** (Neon/Vercel)
+- **NextAuth.js v5** for authentication
+- **Vercel AI SDK** (OpenAI/Anthropic)
+- **TipTap** rich text editor
 
 ## Getting Started
 
-First, run the development server:
+### 1. Install Dependencies
+
+```bash
+npm install
+```
+
+### 2. Set Up Database
+
+Create a Neon or Vercel Postgres database, then:
+
+```bash
+# Copy env example
+cp .env.local.example .env.local
+
+# Edit .env.local and add your DATABASE_URL
+# Then push the schema
+npm run db:push
+```
+
+### 3. Import WordPress Content
+
+```bash
+# Set WP_BASE if different from default
+WP_BASE=https://hiiiwav.org/wp-json/wp/v2 npm run wp:import
+```
+
+### 4. Create Admin User
+
+You'll need to manually insert a user or create a signup script. Quick SQL:
+
+```sql
+INSERT INTO users (email, name, role, password_hash)
+VALUES (
+  'admin@hiiiwav.org',
+  'Admin',
+  'admin',
+  -- Run: node -e "console.log(require('bcryptjs').hashSync('your-password', 10))"
+  '$2a$10$...'
+);
+```
+
+### 5. Run Development Server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+├── app/                    # Next.js App Router
+│   ├── (public)/          # Public pages
+│   ├── admin/             # Admin dashboard
+│   ├── api/               # API routes
+│   └── blog/              # Blog pages
+├── components/            # React components
+│   ├── ui/               # shadcn components
+│   ├── admin/            # Admin components
+│   └── ai/               # AI components
+├── db/                    # Database
+│   ├── schema.ts         # Drizzle schema
+│   └── index.ts          # DB client
+├── lib/                   # Utilities
+├── scripts/               # Migration scripts
+└── docs/                  # Documentation
+```
 
-## Learn More
+## Key Features
 
-To learn more about Next.js, take a look at the following resources:
+- ✅ Modern Next.js 15 with App Router
+- ✅ Type-safe database with Drizzle ORM
+- ✅ Rich text editor (TipTap)
+- ✅ AI chat widget (Vercel AI SDK)
+- ✅ SEO-optimized (next-seo, sitemap)
+- ✅ Admin dashboard for content management
+- ✅ One-time WordPress import script
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Scripts
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run db:push` - Push schema to database
+- `npm run db:studio` - Open Drizzle Studio
+- `npm run wp:import` - Import WordPress content
 
-## Deploy on Vercel
+## Environment Variables
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+See `.env.local.example` for required variables:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `DATABASE_URL` - Postgres connection string
+- `NEXTAUTH_SECRET` - Auth secret (generate with `openssl rand -base64 32`)
+- `OPENAI_API_KEY` - For AI features
+- `NEXTAUTH_URL` - Site URL (http://localhost:3000 in dev)
+
+## Deployment
+
+### Deploy to Vercel
+
+1. Push code to GitHub
+2. Import project in Vercel
+3. Add environment variables
+4. Deploy!
+
+Vercel will auto-detect Next.js and configure everything.
+
+## Documentation
+
+See `docs/wordpress_to_next.js_migration_plan.md` for the full migration plan.
+
+## License
+
+Private

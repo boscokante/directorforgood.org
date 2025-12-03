@@ -1,0 +1,2886 @@
+{
+    "plugin": {
+        "version": "5.5.2",
+        "date": "Mon, 01 Dec 2025 10:49:44 +0000"
+    },
+    "groups": [
+        {
+            "id": 1,
+            "name": "Redirections",
+            "redirects": 110,
+            "module_id": 1,
+            "moduleName": "WordPress",
+            "enabled": true
+        },
+        {
+            "id": 2,
+            "name": "Modified Posts",
+            "redirects": 0,
+            "module_id": 1,
+            "moduleName": "WordPress",
+            "enabled": true
+        }
+    ],
+    "redirects": [
+        {
+            "id": 1,
+            "url": "/workshop",
+            "match_url": "/workshop",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://www.eventbrite.com/e/afrofilterism-virtual-workshop-2-tickets-432195266677"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 64,
+            "regex": false,
+            "group_id": 1,
+            "position": 0,
+            "last_access": "October 27, 2022",
+            "enabled": true
+        },
+        {
+            "id": 2,
+            "url": "/demoday",
+            "match_url": "/demoday",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://hiiiwavafroaidemoday.eventbrite.com/"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 99,
+            "regex": false,
+            "group_id": 1,
+            "position": 1,
+            "last_access": "September 9, 2025",
+            "enabled": true
+        },
+        {
+            "id": 3,
+            "url": "/deck",
+            "match_url": "/deck",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://www.canva.com/design/DAFKKou4Xts/Dxf-bmh5yY6waw_qFSszIA/view?utm_content=DAFKKou4Xts&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 168,
+            "regex": false,
+            "group_id": 1,
+            "position": 2,
+            "last_access": "February 6, 2025",
+            "enabled": true
+        },
+        {
+            "id": 4,
+            "url": "/afrofilterism/",
+            "match_url": "/afrofilterism",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "/xr/"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 0,
+            "regex": false,
+            "group_id": 1,
+            "position": 3,
+            "last_access": "-",
+            "enabled": true
+        },
+        {
+            "id": 6,
+            "url": "/vote",
+            "match_url": "/vote",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://www.instagram.com/stories/hiiiwav/2956015965525866544/"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 4,
+            "regex": false,
+            "group_id": 1,
+            "position": 4,
+            "last_access": "October 24, 2022",
+            "enabled": true
+        },
+        {
+            "id": 7,
+            "url": "/demodayreport",
+            "match_url": "/demodayreport",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://docs.google.com/presentation/d/1hesuoMIJxi2Cp03bg_Gyj732W1A411GarJBhmwGY_C0/edit#slide=id.g1831ac215f1_1_33"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 6,
+            "regex": false,
+            "group_id": 1,
+            "position": 5,
+            "last_access": "May 23, 2023",
+            "enabled": true
+        },
+        {
+            "id": 8,
+            "url": "/bios",
+            "match_url": "/bios",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://docs.google.com/document/d/13yewiYt_dcajxZmhp6VN4vZaw2QYywywyuldKeSe6qE/edit?usp=sharing"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 112,
+            "regex": false,
+            "group_id": 1,
+            "position": 6,
+            "last_access": "November 26, 2025",
+            "enabled": true
+        },
+        {
+            "id": 9,
+            "url": "/xrdeck",
+            "match_url": "/xrdeck",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://drive.google.com/file/d/1o-0S6T8vE05_3Px-LZ7z28JmP87M0tkJ/view?usp=share_link"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 4,
+            "regex": false,
+            "group_id": 1,
+            "position": 7,
+            "last_access": "February 6, 2023",
+            "enabled": true
+        },
+        {
+            "id": 10,
+            "url": "/ddrecap",
+            "match_url": "/ddrecap",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://drive.google.com/file/d/1m_uVG3UAFKBq2rEgOENO_FfL8Za9-Pz1/view?usp=sharing"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 3,
+            "regex": false,
+            "group_id": 1,
+            "position": 8,
+            "last_access": "May 23, 2023",
+            "enabled": true
+        },
+        {
+            "id": 11,
+            "url": "/c",
+            "match_url": "/c",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://docs.google.com/document/d/11pZS7WzmvSvYPwX75koDOHf-ASBNdQh33Qjy2U_ZRus/edit"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 14,
+            "regex": false,
+            "group_id": 1,
+            "position": 9,
+            "last_access": "May 22, 2025",
+            "enabled": true
+        },
+        {
+            "id": 12,
+            "url": "/onesheet",
+            "match_url": "/onesheet",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://www.canva.com/design/DAFaHcf3xLU/20T6ZFqIMrbBZeSVjfujRg/view?utm_content=DAFaHcf3xLU&utm_campaign=designshare&utm_medium=link&utm_source=homepage_design_menu"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 26,
+            "regex": false,
+            "group_id": 1,
+            "position": 10,
+            "last_access": "March 6, 2023",
+            "enabled": true
+        },
+        {
+            "id": 13,
+            "url": "/2781",
+            "match_url": "/2781",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://www.loopnet.com/Listing/2781-Telegraph-Ave-Oakland-CA/27064052/"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 9,
+            "regex": false,
+            "group_id": 1,
+            "position": 11,
+            "last_access": "July 12, 2023",
+            "enabled": true
+        },
+        {
+            "id": 14,
+            "url": "/2781pdf",
+            "match_url": "/2781pdf",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://drive.google.com/file/d/12RdKzbQZjy_yD6U2kNa2tuzxsgZLZaX0/view?usp=share_link"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 2,
+            "regex": false,
+            "group_id": 1,
+            "position": 12,
+            "last_access": "February 10, 2023",
+            "enabled": true
+        },
+        {
+            "id": 15,
+            "url": "/studio",
+            "match_url": "/studio",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://hiiiwav.org/donate"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 13,
+            "regex": false,
+            "group_id": 1,
+            "position": 13,
+            "last_access": "February 20, 2023",
+            "enabled": true
+        },
+        {
+            "id": 16,
+            "url": "/dd",
+            "match_url": "/dd",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://drive.google.com/drive/folders/1MRd2ttsgkbwby1qe-VhQwvApZyYDkwvq?usp=sharing"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 4,
+            "regex": false,
+            "group_id": 1,
+            "position": 14,
+            "last_access": "March 9, 2023",
+            "enabled": true
+        },
+        {
+            "id": 17,
+            "url": "/hiiitop",
+            "match_url": "/hiiitop",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://www.eventbrite.com/e/546657466197"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 48,
+            "regex": false,
+            "group_id": 1,
+            "position": 15,
+            "last_access": "July 10, 2023",
+            "enabled": true
+        },
+        {
+            "id": 18,
+            "url": "/fundraising/",
+            "match_url": "/fundraising",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "/donate/"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 0,
+            "regex": false,
+            "group_id": 1,
+            "position": 16,
+            "last_access": "-",
+            "enabled": true
+        },
+        {
+            "id": 19,
+            "url": "/logo",
+            "match_url": "/logo",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://drive.google.com/drive/u/0/folders/17erbZ7ZGBrfj4lDfoC_4RvjOBgKhwmMY"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 31,
+            "regex": false,
+            "group_id": 1,
+            "position": 17,
+            "last_access": "September 10, 2025",
+            "enabled": true
+        },
+        {
+            "id": 20,
+            "url": "/3d",
+            "match_url": "/3d",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://my.matterport.com/show/?m=HGGG1SZjPNz"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 82,
+            "regex": false,
+            "group_id": 1,
+            "position": 18,
+            "last_access": "March 6, 2025",
+            "enabled": true
+        },
+        {
+            "id": 21,
+            "url": "/mood",
+            "match_url": "/mood",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://docs.google.com/presentation/d/1tiVw4ICRu_MxCOr93DoUZeUGjiQNte-z4RYAaNWwO8M/edit?usp=sharing"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 8,
+            "regex": false,
+            "group_id": 1,
+            "position": 19,
+            "last_access": "April 24, 2023",
+            "enabled": true
+        },
+        {
+            "id": 22,
+            "url": "/needs",
+            "match_url": "/needs",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://docs.google.com/spreadsheets/d/1kFlGrFAdcAe1GEse0-cJuEUTjRfGJTDRbMC6Gg4XQP8/edit?usp=sharing"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 4,
+            "regex": false,
+            "group_id": 1,
+            "position": 20,
+            "last_access": "July 28, 2023",
+            "enabled": true
+        },
+        {
+            "id": 23,
+            "url": "/fundingfair",
+            "match_url": "/fundingfair",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://www.eventbrite.com/e/hiiiwav-funding-fair-tickets-632979106547"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 51,
+            "regex": false,
+            "group_id": 1,
+            "position": 21,
+            "last_access": "September 25, 2023",
+            "enabled": true
+        },
+        {
+            "id": 24,
+            "url": "/advisoryboard",
+            "match_url": "/advisoryboard",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://hiiiwav.my.canva.site/advisoryboard"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 18,
+            "regex": false,
+            "group_id": 1,
+            "position": 22,
+            "last_access": "December 4, 2024",
+            "enabled": true
+        },
+        {
+            "id": 25,
+            "url": "/wedidit",
+            "match_url": "/wedidit",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://youtu.be/mf69OzJ4GxE"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 2,
+            "regex": false,
+            "group_id": 1,
+            "position": 23,
+            "last_access": "June 6, 2023",
+            "enabled": true
+        },
+        {
+            "id": 26,
+            "url": "/501c3",
+            "match_url": "/501c3",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://hiiiwav.org/wp-content/uploads/2022/11/BME-501c3-Designation-Letter-from-IRS.pdf"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 9,
+            "regex": false,
+            "group_id": 1,
+            "position": 24,
+            "last_access": "August 9, 2025",
+            "enabled": true
+        },
+        {
+            "id": 27,
+            "url": "/live-from-new-orleans-the-jazz-foundation-of-america-presents-donald/",
+            "match_url": "/live-from-new-orleans-the-jazz-foundation-of-america-presents-donald",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "/hiiiwav-founders-dinner/"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 0,
+            "regex": false,
+            "group_id": 1,
+            "position": 25,
+            "last_access": "-",
+            "enabled": true
+        },
+        {
+            "id": 28,
+            "url": "/founders-dinner-2/",
+            "match_url": "/founders-dinner-2",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "/hiiitop-fundraiser/"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 0,
+            "regex": false,
+            "group_id": 1,
+            "position": 26,
+            "last_access": "-",
+            "enabled": true
+        },
+        {
+            "id": 29,
+            "url": "/hiiitop/",
+            "match_url": "/hiiitop",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "/funding-fair/"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 0,
+            "regex": false,
+            "group_id": 1,
+            "position": 27,
+            "last_access": "-",
+            "enabled": true
+        },
+        {
+            "id": 30,
+            "url": "/2781love/",
+            "match_url": "/2781love",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://docs.google.com/spreadsheets/d/1kFlGrFAdcAe1GEse0-cJuEUTjRfGJTDRbMC6Gg4XQP8/edit#gid=0"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 27,
+            "regex": false,
+            "group_id": 1,
+            "position": 28,
+            "last_access": "January 21, 2024",
+            "enabled": true
+        },
+        {
+            "id": 31,
+            "url": "/rsvp/",
+            "match_url": "/rsvp",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://www.eventbrite.com/e/art-official-intelligent-design-boskos-birthday-tickets-676952772967?aff=oddtdtcreator"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 35,
+            "regex": false,
+            "group_id": 1,
+            "position": 29,
+            "last_access": "November 9, 2023",
+            "enabled": true
+        },
+        {
+            "id": 32,
+            "url": "/pay",
+            "match_url": "/pay",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://docs.google.com/presentation/d/15nj4BvbdggxPmgAys2Uv3lBagTIfw_vHj2rctv90Odo/edit#slide=id.g25af9d3963c_0_41"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 2,
+            "regex": false,
+            "group_id": 1,
+            "position": 30,
+            "last_access": "July 23, 2023",
+            "enabled": true
+        },
+        {
+            "id": 33,
+            "url": "/scifisunday/",
+            "match_url": "/scifisunday",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://www.eventbrite.com/e/sci-fi-sunday-tickets-691079586647?utm-campaign=social&utm-content=attendeeshare&utm-medium=discovery&utm-term=listing&utm-source=cp&aff=ebdsshwebdesktop"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 237,
+            "regex": false,
+            "group_id": 1,
+            "position": 31,
+            "last_access": "November 26, 2025",
+            "enabled": true
+        },
+        {
+            "id": 38,
+            "url": "/afroai",
+            "match_url": "/afroai",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://www.eventbrite.com/e/afro-ai-kickoff-party-tickets-705555915737?aff=oddtdtcreator"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 411,
+            "regex": false,
+            "group_id": 1,
+            "position": 32,
+            "last_access": "November 28, 2025",
+            "enabled": true
+        },
+        {
+            "id": 39,
+            "url": "/afroai-workshop",
+            "match_url": "/afroai-workshop",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://www.eventbrite.com/e/afro-ai-registration-tickets-710580584657?aff=oddtdtcreator"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 532,
+            "regex": false,
+            "group_id": 1,
+            "position": 33,
+            "last_access": "November 26, 2025",
+            "enabled": true
+        },
+        {
+            "id": 40,
+            "url": "/info-afroai",
+            "match_url": "/info-afroai",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://hiiiwav.my.canva.site/afroai"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 6,
+            "regex": false,
+            "group_id": 1,
+            "position": 34,
+            "last_access": "September 14, 2023",
+            "enabled": true
+        },
+        {
+            "id": 42,
+            "url": "/pressrelease",
+            "match_url": "/pressrelease",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://docs.google.com/document/d/14Yw6rYLtB6oWGDHGj_ai2llkkP-3reh0a8CPcNLlOwQ/edit"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 2,
+            "regex": false,
+            "group_id": 1,
+            "position": 36,
+            "last_access": "September 16, 2023",
+            "enabled": true
+        },
+        {
+            "id": 43,
+            "url": "/musiclibrary",
+            "match_url": "/musiclibrary",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://drive.google.com/drive/folders/10em8-DeDQUhUuP8T_lquVO8ueuitbrGX?usp=drive_link"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 9,
+            "regex": false,
+            "group_id": 1,
+            "position": 37,
+            "last_access": "November 21, 2023",
+            "enabled": true
+        },
+        {
+            "id": 44,
+            "url": "/rendering",
+            "match_url": "/rendering",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://drive.google.com/file/d/1hJ07hdtCKkJOSfyhwBMMvu5BE4HjWyyi/view?usp=sharing"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 1,
+            "regex": false,
+            "group_id": 1,
+            "position": 38,
+            "last_access": "September 20, 2023",
+            "enabled": true
+        },
+        {
+            "id": 45,
+            "url": "/kickoffproject",
+            "match_url": "/kickoffproject",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://www.canva.com/design/DAFrjttm-gg/HsM01GCqzvJ4rhmQYTvw6w/view?utm_content=DAFrjttm-gg&utm_campaign=designshare&utm_medium=link&utm_source=viewer"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 2,
+            "regex": false,
+            "group_id": 1,
+            "position": 39,
+            "last_access": "September 22, 2023",
+            "enabled": true
+        },
+        {
+            "id": 46,
+            "url": "/screensaver",
+            "match_url": "/screensaver",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://www.canva.com/design/DAFuRmdLdcE/FLFCGaLIj0oNXK8_O_bfug/view?utm_content=DAFuRmdLdcE&utm_campaign=designshare&utm_medium=link&utm_source=viewer"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 1,
+            "regex": false,
+            "group_id": 1,
+            "position": 40,
+            "last_access": "September 27, 2023",
+            "enabled": true
+        },
+        {
+            "id": 47,
+            "url": "/space",
+            "match_url": "/space",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://www.canva.com/design/DAFtIlIRNH8/k_mLmOQVkWGeQCdNJKabDw/edit?utm_content=DAFtIlIRNH8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 10,
+            "regex": false,
+            "group_id": 1,
+            "position": 41,
+            "last_access": "June 25, 2025",
+            "enabled": true
+        },
+        {
+            "id": 48,
+            "url": "/vimeo",
+            "match_url": "/vimeo",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://vimeo.com/njimedia/review/815642286/4e89ef434c"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 8,
+            "regex": false,
+            "group_id": 1,
+            "position": 42,
+            "last_access": "November 30, 2023",
+            "enabled": true
+        },
+        {
+            "id": 49,
+            "url": "/draft",
+            "match_url": "/draft",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://hiiiwav.my.canva.site/afroai"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 31,
+            "regex": false,
+            "group_id": 1,
+            "position": 43,
+            "last_access": "February 4, 2024",
+            "enabled": true
+        },
+        {
+            "id": 50,
+            "url": "/links",
+            "match_url": "/links",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://docs.google.com/spreadsheets/d/1OB58j9zSrR8WBTLoU_0UeY560B4tKnxGJqUnjjoH0E0/edit#gid=0"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 106,
+            "regex": false,
+            "group_id": 1,
+            "position": 44,
+            "last_access": "October 15, 2025",
+            "enabled": true
+        },
+        {
+            "id": 51,
+            "url": "/workshop3",
+            "match_url": "/workshop3",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://www.eventbrite.com/e/afro-ai-workshop-sign-up-tickets-710581176427?aff=oddtdtcreator"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 16,
+            "regex": false,
+            "group_id": 1,
+            "position": 45,
+            "last_access": "August 12, 2025",
+            "enabled": true
+        },
+        {
+            "id": 52,
+            "url": "/demoday2023",
+            "match_url": "/demoday2023",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://www.eventbrite.com/e/afro-ai-demo-day-happy-hour-tickets-737593019577?aff=oddtdtcreator"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 15,
+            "regex": false,
+            "group_id": 1,
+            "position": 46,
+            "last_access": "April 4, 2024",
+            "enabled": true
+        },
+        {
+            "id": 53,
+            "url": "/recording3",
+            "match_url": "/recording3",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://us06web.zoom.us/rec/share/QbEfNknkYcIDz9qXr6Uv_xoxNrm__6NCQNKNt_BCpY2XoUpqx8i44isXilTRkqmH.Tv5EXgN7U11nq8QL"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 1,
+            "regex": false,
+            "group_id": 1,
+            "position": 47,
+            "last_access": "October 20, 2023",
+            "enabled": true
+        },
+        {
+            "id": 54,
+            "url": "/course4",
+            "match_url": "/course4",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://www.eventbrite.com/e/afro-ai-workshop-sign-up-tickets-711449413347?aff=oddtdtcreator"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 8,
+            "regex": false,
+            "group_id": 1,
+            "position": 48,
+            "last_access": "June 4, 2025",
+            "enabled": true
+        },
+        {
+            "id": 55,
+            "url": "/benin",
+            "match_url": "/benin",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://us06web.zoom.us/rec/share/ogm1iwG4wuoL_Q5ECOFuYzLZQukz8UF-_zzT18EE8hsVmCL7SRowxyuW201A897p.AYv58Yoi8DZ6mKWj"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 4,
+            "regex": false,
+            "group_id": 1,
+            "position": 49,
+            "last_access": "October 26, 2023",
+            "enabled": true
+        },
+        {
+            "id": 56,
+            "url": "/lance",
+            "match_url": "/lance",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://us06web.zoom.us/rec/share/6ABGybE776vwcYGjNeZIhUvNhttqFlCy3j6-IYMDiK_z6PJ442yhe11tR1NpPB1p.fk5dbhjCJZQ5DX-P"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 3,
+            "regex": false,
+            "group_id": 1,
+            "position": 50,
+            "last_access": "October 26, 2023",
+            "enabled": true
+        },
+        {
+            "id": 57,
+            "url": "/resources",
+            "match_url": "/resources",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://docs.google.com/document/d/1Rp4tikt6Pk3OVAOZfGNJvD3j3ec_rF-dMoLGqHbDwyY/edit"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 1008,
+            "regex": false,
+            "group_id": 1,
+            "position": 51,
+            "last_access": "December 1, 2025",
+            "enabled": true
+        },
+        {
+            "id": 58,
+            "url": "/mentor",
+            "match_url": "/mentor",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://docs.google.com/forms/d/e/1FAIpQLSd7XTLJJxsLfowUp--MrOvbNoYYfp95IEkMuda25aDIUTkhzg/viewform"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 9,
+            "regex": false,
+            "group_id": 1,
+            "position": 52,
+            "last_access": "June 27, 2025",
+            "enabled": true
+        },
+        {
+            "id": 59,
+            "url": "/mag",
+            "match_url": "/mag",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://www.canva.com/design/DAFzbbkmHXg/qYZPGwOsX7bPGqj2VexFhw/edit?utm_content=DAFzbbkmHXg&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 37,
+            "regex": false,
+            "group_id": 1,
+            "position": 53,
+            "last_access": "April 26, 2024",
+            "enabled": true
+        },
+        {
+            "id": 62,
+            "url": "/lupe",
+            "match_url": "/lupe",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://youtube.com/shorts/xwckV87fNps"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 7,
+            "regex": false,
+            "group_id": 1,
+            "position": 56,
+            "last_access": "June 9, 2024",
+            "enabled": true
+        },
+        {
+            "id": 63,
+            "url": "/awardees",
+            "match_url": "/awardees",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://www.canva.com/design/DAF97fy-Lp0/-Ol-7cPUiukVSWSkgpnihg/view"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 40,
+            "regex": false,
+            "group_id": 1,
+            "position": 57,
+            "last_access": "July 8, 2024",
+            "enabled": true
+        },
+        {
+            "id": 65,
+            "url": "/magazine",
+            "match_url": "/magazine",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://drive.google.com/file/d/1FZdLHaiMEHjso-vsIu07ZZXSL6scahUY/view?usp=sharing"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 28,
+            "regex": false,
+            "group_id": 1,
+            "position": 57,
+            "last_access": "October 31, 2025",
+            "enabled": true
+        },
+        {
+            "id": 66,
+            "url": "/soundbites",
+            "match_url": "/soundbites",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://www.youtube.com/watch?v=fpM0U3Bk1QM"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 18,
+            "regex": false,
+            "group_id": 1,
+            "position": 58,
+            "last_access": "July 17, 2025",
+            "enabled": true
+        },
+        {
+            "id": 67,
+            "url": "/kaiser",
+            "match_url": "/kaiser",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://www.lisc.org/our-stories/story/kaiser-permanente-lisc-addressing-economic-factors-impact-community-health/"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 12,
+            "regex": false,
+            "group_id": 1,
+            "position": 59,
+            "last_access": "March 2, 2024",
+            "enabled": true
+        },
+        {
+            "id": 68,
+            "url": "/revibes",
+            "match_url": "/revibes",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://www.eventbrite.com/e/revibes-black-futures-month-fundraiser-party-tickets-811937706537?aff=oddtdtcreator"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 1417,
+            "regex": false,
+            "group_id": 1,
+            "position": 60,
+            "last_access": "December 1, 2025",
+            "enabled": true
+        },
+        {
+            "id": 69,
+            "url": "/throughline",
+            "match_url": "/throughline",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://youtu.be/YdFXrM95iGM?si=1uZbw1aFHpvrnLfp"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 0,
+            "regex": false,
+            "group_id": 1,
+            "position": 61,
+            "last_access": "-",
+            "enabled": true
+        },
+        {
+            "id": 70,
+            "url": "/funders",
+            "match_url": "/funders",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://drive.google.com/file/d/1iWIIhYRGYhgF6HqK8amOLVhS6HkNBVWU/view?usp=sharing"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 89,
+            "regex": false,
+            "group_id": 1,
+            "position": 62,
+            "last_access": "November 12, 2025",
+            "enabled": true
+        },
+        {
+            "id": 71,
+            "url": "/revibes?",
+            "match_url": "/revibes",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://www.eventbrite.com/e/revibes-black-futures-month-fundraiser-party-tickets-811937706537?aff=oddtdtcreator"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 0,
+            "regex": false,
+            "group_id": 1,
+            "position": 63,
+            "last_access": "-",
+            "enabled": true
+        },
+        {
+            "id": 72,
+            "url": "/funderslist",
+            "match_url": "/funderslist",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://docs.google.com/spreadsheets/d/1xCc2qGPDp3ynfE4m6__AcFFt3F-4K9I74H96ox9xt0s/edit?usp=sharing"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 3,
+            "regex": false,
+            "group_id": 1,
+            "position": 64,
+            "last_access": "February 5, 2024",
+            "enabled": true
+        },
+        {
+            "id": 73,
+            "url": "/fundingplaylist",
+            "match_url": "/fundingplaylist",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://drive.google.com/file/d/1iWIIhYRGYhgF6HqK8amOLVhS6HkNBVWU/view"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 2,
+            "regex": false,
+            "group_id": 1,
+            "position": 65,
+            "last_access": "February 5, 2024",
+            "enabled": true
+        },
+        {
+            "id": 78,
+            "url": "/afro-ai/",
+            "match_url": "/afro-ai",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "/afro-ai-2/"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 0,
+            "regex": false,
+            "group_id": 1,
+            "position": 66,
+            "last_access": "-",
+            "enabled": true
+        },
+        {
+            "id": 79,
+            "url": "/studiosecured",
+            "match_url": "/studiosecured",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://youtu.be/mf69OzJ4GxE"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 0,
+            "regex": false,
+            "group_id": 1,
+            "position": 67,
+            "last_access": "-",
+            "enabled": true
+        },
+        {
+            "id": 80,
+            "url": "/mvp",
+            "match_url": "/mvp",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://www.canva.com/design/DAF9ZMw7eJU/2Yq1_bqlnHjBUMcC-SFn-w/edit"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 20,
+            "regex": false,
+            "group_id": 1,
+            "position": 68,
+            "last_access": "October 28, 2024",
+            "enabled": true
+        },
+        {
+            "id": 81,
+            "url": "/gooroo",
+            "match_url": "/gooroo",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://youtu.be/4YGZKIV2L78"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 2,
+            "regex": false,
+            "group_id": 1,
+            "position": 69,
+            "last_access": "March 30, 2024",
+            "enabled": true
+        },
+        {
+            "id": 82,
+            "url": "/choicescores",
+            "match_url": "/choicescores",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://youtu.be/YydNPIL2jXM"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 2,
+            "regex": false,
+            "group_id": 1,
+            "position": 70,
+            "last_access": "September 19, 2024",
+            "enabled": true
+        },
+        {
+            "id": 83,
+            "url": "/leads",
+            "match_url": "/leads",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://docs.google.com/spreadsheets/d/1HYqm6IMX3glIEllAFF4X5FUkBpkf1EcUKZaqYFmFo0A/edit#gid=0"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 1,
+            "regex": false,
+            "group_id": 1,
+            "position": 71,
+            "last_access": "February 24, 2024",
+            "enabled": true
+        },
+        {
+            "id": 85,
+            "url": "/awards",
+            "match_url": "/awards",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://www.canva.com/design/DAF97fy-Lp0/-Ol-7cPUiukVSWSkgpnihg/edit"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 11,
+            "regex": false,
+            "group_id": 1,
+            "position": 72,
+            "last_access": "May 22, 2025",
+            "enabled": true
+        },
+        {
+            "id": 86,
+            "url": "/mvpoverview",
+            "match_url": "/mvpoverview",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://www.canva.com/design/DAF-MgThcGA/n9ioQNvN_jKajxom_5F-sg/edit?utm_content=DAF-MgThcGA&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 23,
+            "regex": false,
+            "group_id": 1,
+            "position": 73,
+            "last_access": "June 15, 2024",
+            "enabled": true
+        },
+        {
+            "id": 88,
+            "url": "/mvplinks",
+            "match_url": "/mvplinks",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://docs.google.com/spreadsheets/d/1aLyOx13ZuK6MO6fC0OjnJVo-RH1oTvPn8iKQO7HHTec/edit?usp=sharing"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 16,
+            "regex": false,
+            "group_id": 1,
+            "position": 74,
+            "last_access": "September 17, 2024",
+            "enabled": true
+        },
+        {
+            "id": 89,
+            "url": "/revibesvideo",
+            "match_url": "/revibesvideo",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://youtu.be/u7ywi5UN14Y"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 1,
+            "regex": false,
+            "group_id": 1,
+            "position": 75,
+            "last_access": "March 28, 2024",
+            "enabled": true
+        },
+        {
+            "id": 90,
+            "url": "/hiiiwavfest",
+            "match_url": "/hiiiwavfest",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://www.eventbrite.com/cc/hiiiwav-fest-3347819"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 366,
+            "regex": false,
+            "group_id": 1,
+            "position": 76,
+            "last_access": "November 4, 2025",
+            "enabled": true
+        },
+        {
+            "id": 91,
+            "url": "/faq",
+            "match_url": "/faq",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://docs.google.com/document/d/1sQCi68UCVe7OuVrbDS1eEq2oA1uHohWeBqrPYEY7ook/edit?usp=sharing"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 5,
+            "regex": false,
+            "group_id": 1,
+            "position": 77,
+            "last_access": "May 22, 2025",
+            "enabled": true
+        },
+        {
+            "id": 92,
+            "url": "/festdeck",
+            "match_url": "/festdeck",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://drive.google.com/file/d/1Mv00US43If3K8AzNETxlNehnKR37bfhs/view?usp=sharing"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 7,
+            "regex": false,
+            "group_id": 1,
+            "position": 78,
+            "last_access": "November 12, 2025",
+            "enabled": true
+        },
+        {
+            "id": 93,
+            "url": "/festsponsordeck",
+            "match_url": "/festsponsordeck",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://drive.google.com/file/d/1vFwXaz_M_0N-M2u7S7EwthiUsto43Tui/view?usp=sharing"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 31,
+            "regex": false,
+            "group_id": 1,
+            "position": 79,
+            "last_access": "July 14, 2024",
+            "enabled": true
+        },
+        {
+            "id": 94,
+            "url": "/afroaivideo",
+            "match_url": "/afroaivideo",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://youtu.be/fpM0U3Bk1QM"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 6,
+            "regex": false,
+            "group_id": 1,
+            "position": 80,
+            "last_access": "August 7, 2024",
+            "enabled": true
+        },
+        {
+            "id": 95,
+            "url": "/electrospitvideo",
+            "match_url": "/electrospitvideo",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://youtu.be/vYEbbxxxVFM"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 4,
+            "regex": false,
+            "group_id": 1,
+            "position": 81,
+            "last_access": "September 4, 2024",
+            "enabled": true
+        },
+        {
+            "id": 96,
+            "url": "/preview",
+            "match_url": "/preview",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://www.eventbrite.com/e/hiiiwav-fest-prototype-preview-cocktail-hour-tickets-898729372747"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 29,
+            "regex": false,
+            "group_id": 1,
+            "position": 82,
+            "last_access": "August 22, 2024",
+            "enabled": true
+        },
+        {
+            "id": 98,
+            "url": "/ros",
+            "match_url": "/ros",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://docs.google.com/document/d/1iUwE7Hnb20n3T2VMNxrioerkII2lbYxeVXMfCrI6EyQ/edit?usp=sharing"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 15,
+            "regex": false,
+            "group_id": 1,
+            "position": 82,
+            "last_access": "June 13, 2024",
+            "enabled": true
+        },
+        {
+            "id": 99,
+            "url": "/virgo",
+            "match_url": "/virgo",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://www.eventbrite.com/e/boskos-sci-fi-sunday-bday-im-a-virgo-screening-discussion-tickets-923964481637?aff=oddtdtcreator"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 22,
+            "regex": false,
+            "group_id": 1,
+            "position": 83,
+            "last_access": "July 15, 2024",
+            "enabled": true
+        },
+        {
+            "id": 100,
+            "url": "/festphotos",
+            "match_url": "/festphotos",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://photos.app.goo.gl/6jUhU5VJpaDiQq9i9"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 13,
+            "regex": false,
+            "group_id": 1,
+            "position": 84,
+            "last_access": "June 26, 2024",
+            "enabled": true
+        },
+        {
+            "id": 101,
+            "url": "/festpics",
+            "match_url": "/festpics",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://photos.google.com/share/AF1QipMLlV1DTS1xhl_0tL9OiN4U3D2EIVcYj6yjloOcY8goUxi_Sjn6ZOxdfW_YCDZSzw?key=Y0xxTV81TmlRUUhSOEpmY2ZtSkRSd1lfMWNqX0lB"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 39,
+            "regex": false,
+            "group_id": 1,
+            "position": 85,
+            "last_access": "November 12, 2025",
+            "enabled": true
+        },
+        {
+            "id": 102,
+            "url": "/festrecap",
+            "match_url": "/festrecap",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://youtu.be/uvfugP-ucAo"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 32,
+            "regex": false,
+            "group_id": 1,
+            "position": 86,
+            "last_access": "October 21, 2025",
+            "enabled": true
+        },
+        {
+            "id": 103,
+            "url": "/hwfimpact",
+            "match_url": "/hwfimpact",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://www.canva.com/design/DAGNzyRgeMw/Ky7Iz27-yW2QltPAHvGzVw/view?utm_content=DAGNzyRgeMw&utm_campaign=designshare&utm_medium=link&utm_source=editor"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 98,
+            "regex": false,
+            "group_id": 1,
+            "position": 87,
+            "last_access": "September 2, 2025",
+            "enabled": true
+        },
+        {
+            "id": 104,
+            "url": "/ai",
+            "match_url": "/ai",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://hiiiwavfestimpact.my.canva.site/landscape-deck-hiiiwav-impact-ai"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 10,
+            "regex": false,
+            "group_id": 1,
+            "position": 88,
+            "last_access": "October 22, 2024",
+            "enabled": true
+        },
+        {
+            "id": 106,
+            "url": "/aitools",
+            "match_url": "/aitools",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://docs.google.com/spreadsheets/d/1Vj3otrvKcdTUx-zyDBcCH6pxaBv01dLJtA4PP_s3pIA/edit?gid=0#gid=0"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 9,
+            "regex": false,
+            "group_id": 1,
+            "position": 89,
+            "last_access": "January 7, 2025",
+            "enabled": true
+        },
+        {
+            "id": 107,
+            "url": "/bosko-kante/",
+            "match_url": "/bosko-kante",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "/hiiiwav-2024/"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 52,
+            "regex": false,
+            "group_id": 1,
+            "position": 90,
+            "last_access": "November 28, 2025",
+            "enabled": true
+        },
+        {
+            "id": 108,
+            "url": "/theoryofchange",
+            "match_url": "/theoryofchange",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://docs.google.com/document/d/16Y3fp6ck9M_lxD0QoSBzfjfnOVUUdNDZem4SfW5XdRk/edit?usp=sharing"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 0,
+            "regex": false,
+            "group_id": 1,
+            "position": 91,
+            "last_access": "-",
+            "enabled": true
+        },
+        {
+            "id": 109,
+            "url": "/hiiiwav-fest-success-boskos-sci-fi-bday/",
+            "match_url": "/hiiiwav-fest-success-boskos-sci-fi-bday",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "/hiiiwav-fest-24-recap/"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 0,
+            "regex": false,
+            "group_id": 1,
+            "position": 92,
+            "last_access": "-",
+            "enabled": true
+        },
+        {
+            "id": 110,
+            "url": "/elephant",
+            "match_url": "/elephant",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://f4n2ec-nt.myshopify.com/"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 23,
+            "regex": false,
+            "group_id": 1,
+            "position": 93,
+            "last_access": "December 16, 2024",
+            "enabled": true
+        },
+        {
+            "id": 111,
+            "url": "/keyspics",
+            "match_url": "/keyspics",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://www.dropbox.com/scl/fo/tcl6pb1ppl9bvh367wi56/ABzPbey1WBfGZnyuVguFWk8?rlkey=ju6svxfi9c0pn0m0xfcqsyyg1&st=qqm7mggs&dl=0"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 11,
+            "regex": false,
+            "group_id": 1,
+            "position": 94,
+            "last_access": "March 2, 2025",
+            "enabled": true
+        },
+        {
+            "id": 113,
+            "url": "/2pagerpdf",
+            "match_url": "/2pagerpdf",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://drive.google.com/file/d/12M4SMxj2EM5oHH07buOFnLF3vX9oPTgp/view?usp=sharing"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 1,
+            "regex": false,
+            "group_id": 1,
+            "position": 96,
+            "last_access": "December 14, 2024",
+            "enabled": true
+        },
+        {
+            "id": 114,
+            "url": "/2pager",
+            "match_url": "/2pager",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://drive.google.com/file/d/12M4SMxj2EM5oHH07buOFnLF3vX9oPTgp/view?usp=sharing"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 25,
+            "regex": false,
+            "group_id": 1,
+            "position": 96,
+            "last_access": "October 17, 2025",
+            "enabled": true
+        },
+        {
+            "id": 115,
+            "url": "/book",
+            "match_url": "/book",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://calendar.app.google/eS1YC2s6RaCQGzCj8"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 117,
+            "regex": false,
+            "group_id": 1,
+            "position": 97,
+            "last_access": "October 10, 2025",
+            "enabled": true
+        },
+        {
+            "id": 116,
+            "url": "/keysrecap",
+            "match_url": "/keysrecap",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://youtu.be/wojeVL5za1Q"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 21,
+            "regex": false,
+            "group_id": 1,
+            "position": 98,
+            "last_access": "October 17, 2025",
+            "enabled": true
+        },
+        {
+            "id": 117,
+            "url": "/case",
+            "match_url": "/case",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://docs.google.com/document/d/1RrvMQjnn8n2Yeq-tKhlTGm0d1hl2hOQtOomiT6TruBA/edit?tab=t.0"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 23,
+            "regex": false,
+            "group_id": 1,
+            "position": 99,
+            "last_access": "October 7, 2025",
+            "enabled": true
+        },
+        {
+            "id": 118,
+            "url": "/calendar",
+            "match_url": "/calendar",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://docs.google.com/spreadsheets/d/1rOvSueaegShSdNwFEBtijOpPJAXaBSfZRvcUGAgBJrk/edit?usp=sharing"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 2,
+            "regex": false,
+            "group_id": 1,
+            "position": 100,
+            "last_access": "May 22, 2025",
+            "enabled": true
+        },
+        {
+            "id": 119,
+            "url": "/signup",
+            "match_url": "/signup",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://hiiiwavfestimpact.my.canva.site/updated-sign-up"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 11,
+            "regex": false,
+            "group_id": 1,
+            "position": 101,
+            "last_access": "June 17, 2025",
+            "enabled": true
+        },
+        {
+            "id": 120,
+            "url": "/impactreport",
+            "match_url": "/impactreport",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://docs.google.com/document/d/18S4CnB95ichGe9iEvbUn4wP481PzuM8aXoGBdnmE1Wc/edit?tab=t.0#heading=h.oz1m997jimj0"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 22,
+            "regex": false,
+            "group_id": 1,
+            "position": 102,
+            "last_access": "June 16, 2025",
+            "enabled": true
+        },
+        {
+            "id": 121,
+            "url": "/report",
+            "match_url": "/report",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://docs.google.com/document/d/18S4CnB95ichGe9iEvbUn4wP481PzuM8aXoGBdnmE1Wc/edit?tab=t.0#heading=h.oz1m997jimj0"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 11,
+            "regex": false,
+            "group_id": 1,
+            "position": 103,
+            "last_access": "November 10, 2025",
+            "enabled": true
+        },
+        {
+            "id": 124,
+            "url": "/report2024",
+            "match_url": "/report2024",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://hiiiwavfestimpact.my.canva.site/report"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 135,
+            "regex": false,
+            "group_id": 1,
+            "position": 104,
+            "last_access": "November 30, 2025",
+            "enabled": true
+        },
+        {
+            "id": 125,
+            "url": "/sponsor",
+            "match_url": "/sponsor",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://www.canva.com/design/DAGeQlK4YMU/2C-t8O4Y3sv5T0P-PWS1ZQ/view?utm_content=DAGeQlK4YMU&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hc2e0e0b451"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 6,
+            "regex": false,
+            "group_id": 1,
+            "position": 105,
+            "last_access": "May 22, 2025",
+            "enabled": true
+        },
+        {
+            "id": 127,
+            "url": "/supermic\u00a0",
+            "match_url": "/supermic%c2%a0",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://954ipi99o5xfi3j1-50469011646.shopifypreview.com/pages?preview_key=3f587914fbfded8cfdbbef4ac917790e"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 0,
+            "regex": false,
+            "group_id": 1,
+            "position": 106,
+            "last_access": "-",
+            "enabled": true
+        },
+        {
+            "id": 128,
+            "url": "/hiiiwav-fest-24-recap-2/",
+            "match_url": "/hiiiwav-fest-24-recap-2",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "/fest/"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 0,
+            "regex": false,
+            "group_id": 1,
+            "position": 107,
+            "last_access": "-",
+            "enabled": true
+        },
+        {
+            "id": 129,
+            "url": "/citylinks",
+            "match_url": "/citylinks",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://docs.google.com/spreadsheets/d/1ZQP_Esv0dpoW4ZnoxrWip53yeHyj5esw4uQZ0dj1sEw/edit?gid=0#gid=0"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 19,
+            "regex": false,
+            "group_id": 1,
+            "position": 107,
+            "last_access": "November 3, 2025",
+            "enabled": true
+        },
+        {
+            "id": 130,
+            "url": "/50fund",
+            "match_url": "/50fund",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://docs.google.com/presentation/d/1dBuEIMgg7eVOMGV9ifwphhZVvA2dzPAHDJltnvXX5PE/edit?usp=sharing"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 6,
+            "regex": false,
+            "group_id": 1,
+            "position": 108,
+            "last_access": "November 10, 2025",
+            "enabled": true
+        },
+        {
+            "id": 131,
+            "url": "/otw",
+            "match_url": "/otw",
+            "match_data": {
+                "source": {
+                    "flag_query": "exact",
+                    "flag_case": true,
+                    "flag_trailing": true,
+                    "flag_regex": false
+                }
+            },
+            "action_code": 301,
+            "action_type": "url",
+            "action_data": {
+                "url": "https://docs.google.com/document/d/1Z2_eBG7CJB0_lwfCkAiGseHBs4jaX0i6UT6q8Aa2KT0/edit?usp=sharing"
+            },
+            "match_type": "url",
+            "title": "",
+            "hits": 7,
+            "regex": false,
+            "group_id": 1,
+            "position": 109,
+            "last_access": "October 22, 2025",
+            "enabled": true
+        }
+    ]
+}
