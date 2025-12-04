@@ -1,11 +1,3 @@
-import { config } from 'dotenv'
-import { resolve } from 'path'
-
-// Load .env.local file if not already loaded
-if (!process.env.DATABASE_URL) {
-  config({ path: resolve(process.cwd(), '.env.local') })
-}
-
 import { drizzle } from 'drizzle-orm/postgres-js'
 import postgres from 'postgres'
 import * as schema from './schema'
