@@ -33,7 +33,7 @@ export default async function HomePage() {
           playsInline
           className="absolute inset-0 w-full h-full object-cover opacity-40"
         >
-          <source src="/media/videos/hero-loop.mp4" type="video/mp4" />
+          <source src="/media/videos/hiiiwav-highlights.mp4" type="video/mp4" />
         </video>
 
         {/* Gradient Overlay */}
