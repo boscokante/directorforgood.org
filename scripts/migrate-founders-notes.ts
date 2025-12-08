@@ -68,7 +68,7 @@ async function fetchPage(url: string): Promise<string> {
 function extractFoundersNoteHTML(html: string): string | null {
   // Try multiple patterns to find the founder's note section
   
-  // Pattern 1: Newsletters with "Founder's Note:" heading
+  // Pattern 1: Newsletters with "Founder's Note:" heading (h2)
   const foundersNotePattern = /<h2[^>]*>Founder.s Note/i
   const foundersNoteMatch = html.match(foundersNotePattern)
   
@@ -80,21 +80,67 @@ function extractFoundersNoteHTML(html: string): string | null {
     }
   }
   
-  // Pattern 2: Newsletters that start with "Dear HiiiWAV" (Family or Community)
-  // Find the section containing the greeting and extract until "Bosko Kante"
-  const dearHiiiwavPattern = /Dear HiiiWAV (Family|Community),?\s*(<\/p>|<\/div>)/i
-  const dearMatch = html.match(dearHiiiwavPattern)
+  // Pattern 2: Newsletters with "Note from our founder:" heading (h1) - older format
+  const noteFromFounderPattern = /<h1[^>]*>Note from our founder:?<\/h1>/i
+  const noteFromFounderMatch = html.match(noteFromFounderPattern)
   
-  if (dearMatch && dearMatch.index !== undefined) {
+  if (noteFromFounderMatch && noteFromFounderMatch.index !== undefined) {
+    const startIndex = noteFromFounderMatch.index
+    // Find the end - look for signature patterns or next major section
+    const fromStart = html.slice(startIndex)
+    
+    const endPatterns = [
+      /SHARE THIS NEWSLETTER/i,
+      /<h1[^>]*>(?!Note from|Hey |Dear ).*?<\/h1>/i,  // Next h1 that's not the greeting
+      /<h2[^>]*>.*?<\/h2>/i,  // Any h2 heading
+    ]
+    
+    let endIndex = fromStart.length
+    
+    // Look for signature patterns to include them
+    const signaturePatterns = [
+      /<p>Warm regards,<\/p>\s*<p>Bosko Kante<\/p>/i,
+      /<p>One Love,<\/p>\s*<p>Bosko Kante/i,
+      /<p><strong>With heartfelt thanks/i,
+    ]
+    
+    for (const sigPattern of signaturePatterns) {
+      const sigMatch = fromStart.match(sigPattern)
+      if (sigMatch && sigMatch.index !== undefined) {
+        // Find the end of the signature block (next </p> after a few hundred chars)
+        const afterSig = fromStart.slice(sigMatch.index)
+        const sigEndMatch = afterSig.match(/<\/p>\s*<\/div>\s*<\/div>/i)
+        if (sigEndMatch && sigEndMatch.index !== undefined) {
+          endIndex = Math.min(endIndex, sigMatch.index + sigEndMatch.index + sigEndMatch[0].length)
+        }
+      }
+    }
+    
+    // Also check for end patterns
+    for (const pattern of endPatterns) {
+      const match = fromStart.match(pattern)
+      if (match && match.index !== undefined && match.index > 500 && match.index < endIndex) {
+        endIndex = match.index
+      }
+    }
+    
+    return fromStart.slice(0, endIndex)
+  }
+  
+  // Pattern 3: Newsletters that start with "Dear HiiiWAV" or "Hey HiiiWAV" (Family or Community)
+  const greetingPattern = /(Dear|Hey) HiiiWAV (Family|Community),?/i
+  const greetingMatch = html.match(greetingPattern)
+  
+  if (greetingMatch && greetingMatch.index !== undefined) {
     // Find a reasonable start point (go back to find the section start)
-    const searchStart = Math.max(0, dearMatch.index - 2000)
-    const sectionStart = html.lastIndexOf('<section', dearMatch.index)
-    const actualStart = sectionStart > searchStart ? sectionStart : dearMatch.index - 500
+    const searchStart = Math.max(0, greetingMatch.index - 2000)
+    const sectionStart = html.lastIndexOf('<section', greetingMatch.index)
+    const actualStart = sectionStart > searchStart ? sectionStart : greetingMatch.index - 500
     
     // Find where the founder's letter ends (before main content sections or at signature)
     const fromStart = html.slice(actualStart)
     
-    // Look for end patterns: either "SHARE THIS NEWSLETTER" or before a major section heading
+    // Look for end patterns
     const endPatterns = [
       /SHARE THIS NEWSLETTER/i,
       /<h2[^>]*>.*?(Recap|Thank You|Gallery|Video|FEST|Supporter)/i
@@ -108,11 +154,20 @@ function extractFoundersNoteHTML(html: string): string | null {
       }
     }
     
-    // Also look for "Bosko Kante" signature as potential end
-    const signatureMatch = fromStart.match(/<p><strong>Bosko Kante<\/strong><\/p>/i)
-    if (signatureMatch && signatureMatch.index !== undefined) {
-      // Include the signature in the extraction
-      endIndex = Math.min(endIndex, signatureMatch.index + signatureMatch[0].length + 200)
+    // Also look for signature patterns
+    const signaturePatterns = [
+      /<p><strong>Bosko Kante<\/strong><\/p>/i,
+      /<p>Bosko Kante<\/p>/i,
+      /<p>One Love,<\/p>\s*<p>Bosko Kante/i,
+      /<p>Warm regards,<\/p>\s*<p>Bosko Kante/i,
+    ]
+    
+    for (const sigPattern of signaturePatterns) {
+      const sigMatch = fromStart.match(sigPattern)
+      if (sigMatch && sigMatch.index !== undefined) {
+        // Include the signature + a bit more for title
+        endIndex = Math.min(endIndex, sigMatch.index + 300)
+      }
     }
     
     return fromStart.slice(0, endIndex)
@@ -176,39 +231,65 @@ function extractTextContent(html: string): string[] {
   const paragraphs: string[] = []
   const seenContent = new Set<string>()
   
-  // Find all content blocks in order - both <p> tags and elementor-widget-container divs
-  // This regex matches either a <p> tag OR an elementor div with plain text content
-  const contentBlockRegex = /(?:<p[^>]*>([\s\S]*?)<\/p>)|(?:<div class="elementor-widget-container">\s*([^<]+)\s*<\/div>)/gi
+  // Find all content blocks in order
+  // Match: <p> tags, elementor-widget-container divs (with text content), or <h1> greetings
+  const patterns = [
+    /<p[^>]*>([\s\S]*?)<\/p>/gi,
+    /<div class="elementor-widget-container">\s*([\s\S]*?)\s*<\/div>\s*<\/div>/gi,
+    /<h1[^>]*>((?:Dear|Hey) HiiiWAV[\s\S]*?)<\/h1>/gi,
+  ]
   
-  let match
-  while ((match = contentBlockRegex.exec(html)) !== null) {
-    // match[1] is content from <p> tags, match[2] is content from divs
-    let content = (match[1] || match[2] || '').trim()
-    
-    // Skip empty content
-    if (!content || content.replace(/&nbsp;/g, '').replace(/\s/g, '') === '') {
-      continue
-    }
-    
-    // Replace links with markdown format
-    content = content.replace(
-      /<a[^>]*href="([^"]*)"[^>]*>([^<]*)<\/a>/gi,
-      (_, href, text) => `[${text}](${href.replace(/&amp;/g, '&')})`
-    )
-    
-    // Remove remaining HTML tags
-    content = content.replace(/<[^>]+>/g, '')
-    
-    // Decode HTML entities
-    content = decodeHtmlEntities(content)
-    
-    // Skip very short fragments or duplicates
-    if (content && content.length > 10) {
-      const contentKey = content.slice(0, 50).toLowerCase()
-      if (!seenContent.has(contentKey)) {
-        seenContent.add(contentKey)
-        paragraphs.push(content)
+  // Collect all matches with their positions
+  const allMatches: { index: number; content: string }[] = []
+  
+  for (const pattern of patterns) {
+    let match
+    while ((match = pattern.exec(html)) !== null) {
+      let content = match[1].trim()
+      
+      // Skip if it contains complex nested elements
+      if (content.includes('<section') || content.includes('<img')) {
+        continue
       }
+      
+      // Skip empty content
+      if (!content || content.replace(/&nbsp;/g, '').replace(/\s/g, '') === '') {
+        continue
+      }
+      
+      // Skip "Note from our founder:" header
+      if (content.toLowerCase().includes('note from our founder')) {
+        continue
+      }
+      
+      // Replace links with markdown format
+      content = content.replace(
+        /<a[^>]*href="([^"]*)"[^>]*>([^<]*)<\/a>/gi,
+        (_, href, text) => `[${text}](${href.replace(/&amp;/g, '&')})`
+      )
+      
+      // Remove remaining HTML tags
+      content = content.replace(/<[^>]+>/g, '')
+      
+      // Decode HTML entities
+      content = decodeHtmlEntities(content)
+      
+      // Skip very short fragments
+      if (content && content.length > 10) {
+        allMatches.push({ index: match.index, content })
+      }
+    }
+  }
+  
+  // Sort by position in document
+  allMatches.sort((a, b) => a.index - b.index)
+  
+  // Add to paragraphs, avoiding duplicates
+  for (const m of allMatches) {
+    const contentKey = m.content.slice(0, 50).toLowerCase()
+    if (!seenContent.has(contentKey)) {
+      seenContent.add(contentKey)
+      paragraphs.push(m.content)
     }
   }
   
@@ -244,17 +325,45 @@ function decodeHtmlEntities(text: string): string {
 function extractSignature(html: string): string[] {
   const signature: string[] = []
   
-  // Look for the signature section - usually bold text near the end
-  const signatureMatch = html.match(/<p><strong>Bosko Kante<\/strong><\/p>\s*<p><strong>([^<]+)<\/strong><\/p>/i)
+  // Try different signature patterns
   
-  if (signatureMatch) {
+  // Pattern 1: Bold format
+  const boldMatch = html.match(/<p><strong>Bosko Kante<\/strong><\/p>\s*<p><strong>([^<]+)<\/strong><\/p>/i)
+  if (boldMatch) {
     signature.push('**Bosko Kante**')
-    signature.push(`**${signatureMatch[1]}**`)
-  } else {
-    // Fallback
-    signature.push('**Bosko Kante**')
-    signature.push('**Founder and President, HiiiWAV**')
+    signature.push(`**${boldMatch[1]}**`)
+    return signature
   }
+  
+  // Pattern 2: "Warm regards," format
+  const warmMatch = html.match(/<p>Warm regards,<\/p>\s*<p>Bosko Kante<\/p>\s*<p>([^<]+)<\/p>/i)
+  if (warmMatch) {
+    signature.push('Warm regards,')
+    signature.push('**Bosko Kante**')
+    signature.push(`**${warmMatch[1]}**`)
+    return signature
+  }
+  
+  // Pattern 3: "One Love," format
+  const oneLoveMatch = html.match(/<p>One Love,<\/p>\s*<p>Bosko Kante,?<\/p>\s*<p[^>]*>([^<]+)<\/p>/i)
+  if (oneLoveMatch) {
+    signature.push('One Love,')
+    signature.push('**Bosko Kante**')
+    signature.push(`**${oneLoveMatch[1].replace(/<[^>]+>/g, '')}**`)
+    return signature
+  }
+  
+  // Pattern 4: Simple "Bosko Kante" followed by title
+  const simpleMatch = html.match(/<p>Bosko Kante<\/p>\s*<p>([^<]+)<\/p>/i)
+  if (simpleMatch) {
+    signature.push('**Bosko Kante**')
+    signature.push(`**${simpleMatch[1]}**`)
+    return signature
+  }
+  
+  // Fallback
+  signature.push('**Bosko Kante**')
+  signature.push('**Founder and President, HiiiWAV**')
   
   return signature
 }
@@ -269,9 +378,9 @@ function parseFoundersNote(html: string): FoundersNote {
   const paragraphs = extractTextContent(html)
   const signature = extractSignature(html)
   
-  // The first paragraph should be the greeting (Dear HiiiWAV Family/Community)
+  // The first paragraph should be the greeting (Dear/Hey HiiiWAV Family/Community)
   let greeting = 'Dear HiiiWAV Family,'
-  if (paragraphs[0]?.toLowerCase().includes('dear hiiiwav')) {
+  if (paragraphs[0]?.toLowerCase().includes('dear hiiiwav') || paragraphs[0]?.toLowerCase().includes('hey hiiiwav')) {
     greeting = paragraphs.shift()!
   }
   
