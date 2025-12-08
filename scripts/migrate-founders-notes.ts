@@ -22,17 +22,19 @@ const client = postgres(process.env.DATABASE_URL!)
 const db = drizzle(client, { schema })
 const { newsletters } = schema
 
-// Newsletter sources - WordPress URLs mapped to issue numbers
+// Newsletter sources - WordPress URLs mapped to issue numbers (CORRECTED ORDER)
+// Issue numbers now match chronological order: #1 = oldest, #11 = newest
 const NEWSLETTER_SOURCES: Record<number, string> = {
-  10: 'https://hiiiwav.org/hiiiwav-2024/',
-  9: 'https://hiiiwav.org/hiiiwav-fest-24-recap/',
-  8: 'https://hiiiwav.org/march-magic-afro-ai-mvp-hiiiwav-fest/',
-  7: 'https://hiiiwav.org/a-heartfelt-thanks-to-everyone/',
-  6: 'https://hiiiwav.org/hiiiwavs-2024-blast-off/',
-  5: 'https://hiiiwav.org/afro-ai-champs-epic-recap/',
-  4: 'https://hiiiwav.org/get-ready-for-afro-ai-demo-day-23/',
-  3: 'https://hiiiwav.org/hiiiwav-2023-hiiilights/',
-  2: 'https://hiiiwav.org/hiiiwav-studio-secured/',
+  11: 'https://hiiiwav.org/hiiiwav-2024/',           // Oct 2024 - "The Winners of AFRO AI MVP"
+  10: 'https://hiiiwav.org/hiiiwav-2024/',           // Sep 2024 - "AI For Liberation" (same URL, different content)
+  9: 'https://hiiiwav.org/hiiiwav-fest-24-recap/',   // Jun 2024 - "HiiiWAV FEST '24 Recap"
+  8: 'https://hiiiwav.org/march-magic-afro-ai-mvp-hiiiwav-fest/', // Mar 2024
+  7: 'https://hiiiwav.org/a-heartfelt-thanks-to-everyone/',       // Feb 2024
+  6: 'https://hiiiwav.org/hiiiwavs-2024-blast-off/',              // Jan 2024
+  5: 'https://hiiiwav.org/afro-ai-champs-epic-recap/',            // Dec 2023
+  4: 'https://hiiiwav.org/get-ready-for-afro-ai-demo-day-23/',    // Nov 2023
+  3: 'https://hiiiwav.org/hiiiwav-2023-hiiilights/',              // Sep 2023
+  2: 'https://hiiiwav.org/hiiiwav-studio-secured/',               // Aug 2023
 }
 
 interface ExtractedLink {
