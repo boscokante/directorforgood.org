@@ -44,6 +44,11 @@ export default function AdminLayout({
                 Redirects
               </Button>
             </Link>
+            <Link href="/admin/media">
+              <Button variant="ghost" className="w-full justify-start">
+                Media Gallery
+              </Button>
+            </Link>
             <div className="my-4 border-t" />
             <Link href="/">
               <Button variant="ghost" className="w-full justify-start">

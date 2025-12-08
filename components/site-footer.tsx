@@ -35,7 +35,8 @@ export function SiteFooter() {
             <h4 className="text-white font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2 text-sm">
               <li><Link href="/code-vibes" className="text-gray-400 hover:text-[#99FF69]">Code Vibes</Link></li>
-              <li><Link href="/our-events" className="text-gray-400 hover:text-[#99FF69]">Events</Link></li>
+              <li><Link href="/events" className="text-gray-400 hover:text-[#99FF69]">Events</Link></li>
+              <li><Link href="/hiiilights" className="text-gray-400 hover:text-[#99FF69]">HiiiLIGHTS Newsletter</Link></li>
               <li><Link href="/blog" className="text-gray-400 hover:text-[#99FF69]">Blog</Link></li>
               <li><Link href="/donate" className="text-gray-400 hover:text-[#99FF69]">Donate</Link></li>
             </ul>

@@ -137,6 +137,82 @@ export const redirects = pgTable('redirects', {
 export type Redirect = typeof redirects.$inferSelect
 export type NewRedirect = typeof redirects.$inferInsert
 
+// Oakland Tech Week Venue Host Applications
+export const venueHosts = pgTable('venue_hosts', {
+  id: serial('id').primaryKey(),
+  // Contact info
+  contactName: text('contact_name').notNull(),
+  email: text('email').notNull(),
+  phone: text('phone'),
+  // Venue info
+  venueName: text('venue_name').notNull(),
+  address: text('address').notNull(),
+  city: text('city').default('Oakland'),
+  neighborhood: text('neighborhood'), // e.g., "Downtown", "Temescal", "West Oakland"
+  capacity: integer('capacity'), // Max number of people
+  spaceType: text('space_type'), // 'gallery', 'office', 'warehouse', 'restaurant', 'outdoor', 'studio', 'other'
+  // Availability & amenities
+  availability: text('availability'), // Free-form text about when space is available
+  amenities: jsonb('amenities').$type<string[]>().default([]), // ['wifi', 'av_equipment', 'parking', 'accessible', 'kitchen', 'outdoor_space']
+  // Additional info
+  website: text('website'),
+  instagramHandle: text('instagram_handle'),
+  notes: text('notes'), // Any additional info from the host
+  // Admin fields
+  status: text('status').default('pending'), // 'pending', 'approved', 'rejected', 'contacted'
+  adminNotes: text('admin_notes'),
+  createdAt: timestamp('created_at').defaultNow().notNull(),
+  updatedAt: timestamp('updated_at').defaultNow().notNull(),
+})
+
+export type VenueHost = typeof venueHosts.$inferSelect
+export type NewVenueHost = typeof venueHosts.$inferInsert
+
+// Events (HiiiWAV Fest, Demo Days, community gatherings, etc.)
+export const events = pgTable('events', {
+  id: serial('id').primaryKey(),
+  slug: text('slug').notNull().unique(),
+  title: text('title').notNull(),
+  description: text('description'),
+  content: text('content'), // Full markdown content for event page
+  coverImage: text('cover_image'),
+  eventDate: timestamp('event_date').notNull(), // When the event takes place
+  endDate: timestamp('end_date'), // Optional end date for multi-day events
+  location: text('location'), // Venue name
+  address: text('address'), // Full address
+  eventType: text('event_type'), // 'fest', 'demo_day', 'workshop', 'community', 'panel', 'networking'
+  registrationUrl: text('registration_url'), // External registration link
+  featured: boolean('featured').default(false), // Highlight on homepage
+  published: boolean('published').default(false),
+  createdAt: timestamp('created_at').defaultNow().notNull(),
+  updatedAt: timestamp('updated_at').defaultNow().notNull(),
+})
+
+export type Event = typeof events.$inferSelect
+export type NewEvent = typeof events.$inferInsert
+
+// HiiiLIGHTS Newsletter Archive
+export const newsletters = pgTable('newsletters', {
+  id: serial('id').primaryKey(),
+  slug: text('slug').notNull().unique(),
+  title: text('title').notNull(),
+  subtitle: text('subtitle'), // Optional subtitle/tagline
+  excerpt: text('excerpt'), // Short preview text
+  foundersNote: text('founders_note'), // Letter from the founder at the top of each issue
+  content: text('content').notNull(), // Full HTML/markdown content
+  coverImage: text('cover_image'),
+  issueNumber: integer('issue_number'), // e.g., Issue #1, #2
+  publishedAt: timestamp('published_at').notNull(), // When the newsletter was originally sent
+  published: boolean('published').default(true),
+  seoTitle: text('seo_title'),
+  seoDescription: text('seo_description'),
+  createdAt: timestamp('created_at').defaultNow().notNull(),
+  updatedAt: timestamp('updated_at').defaultNow().notNull(),
+})
+
+export type Newsletter = typeof newsletters.$inferSelect
+export type NewNewsletter = typeof newsletters.$inferInsert
+
 
 
 

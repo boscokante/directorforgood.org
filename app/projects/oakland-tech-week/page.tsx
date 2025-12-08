@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Calendar, MapPin, Users, Sparkles, ArrowRight } from "lucide-react";
+import { ExternalLink, Calendar, MapPin, Users, Sparkles, ArrowRight, Building2 } from "lucide-react";
 
 export const metadata = {
   title: "Oakland Tech Week - HiiiWAV",
@@ -155,6 +155,11 @@ export default function OaklandTechWeekPage() {
               <a href="https://oaklandtechweek.com" target="_blank" rel="noopener noreferrer">
                 Visit OaklandTechWeek.com <ExternalLink className="w-4 h-4 ml-2" />
               </a>
+            </Button>
+            <Button asChild size="lg" className="bg-orange-500 text-white hover:bg-orange-600 font-bold">
+              <Link href="/oakland-tech-week/host">
+                Become a Venue Host <ArrowRight className="w-4 h-4 ml-2" />
+              </Link>
             </Button>
             <Button asChild size="lg" className="bg-black border-2 border-white text-white hover:bg-white hover:text-black font-semibold">
               <Link href="/support">

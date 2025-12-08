@@ -79,3 +79,40 @@ body {
   background-color: hsl(var(--background));
   color: hsl(var(--foreground));
 }
+
+/* Newsletter content styles */
+.newsletter-content a {
+  color: #99FF69;
+  text-decoration: underline;
+}
+
+.newsletter-content a:hover {
+  color: #A34DFF;
+}
+
+.newsletter-content img {
+  border-radius: 12px;
+  max-width: 100%;
+  height: auto;
+}
+
+.newsletter-content blockquote {
+  border-left: 4px solid #A34DFF;
+  padding-left: 1rem;
+  font-style: italic;
+  color: #ccc;
+}
+
+.newsletter-content h2,
+.newsletter-content h3 {
+  color: #A34DFF;
+}
+
+.newsletter-content ul,
+.newsletter-content ol {
+  color: #ccc;
+}
+
+.newsletter-content li {
+  margin-bottom: 0.5rem;
+}

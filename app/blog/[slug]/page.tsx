@@ -4,6 +4,8 @@ import { eq } from 'drizzle-orm'
 import { notFound } from 'next/navigation'
 import { formatDate } from '@/lib/utils'
 import { MarkdownContent } from '@/components/markdown-content'
+import { SiteHeader } from '@/components/site-header'
+import { SiteFooter } from '@/components/site-footer'
 import Image from 'next/image'
 import type { Metadata } from 'next'
 
@@ -42,42 +44,35 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   }
   
   return (
-    <div className="container py-12">
-      <article className="max-w-3xl mx-auto">
-        {/* Cover Image */}
-        {post.coverImage && (
-          <div className="mb-8 rounded-lg overflow-hidden">
-            <img
-              src={post.coverImage}
-              alt={post.title}
-              className="w-full h-auto object-cover"
-            />
-          </div>
-        )}
-        
-        <header className="mb-8">
-          <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
-          <div className="text-sm text-muted-foreground mb-4">
-            {formatDate(post.createdAt)}
-          </div>
-          {post.tags && post.tags.length > 0 && (
-            <div className="flex flex-wrap gap-2 mb-6">
-              {post.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="text-xs bg-secondary px-2 py-1 rounded"
-                >
-                  {tag}
-                </span>
-              ))}
+    <div className="min-h-screen bg-black text-white">
+      <SiteHeader />
+      <div className="container py-12">
+        <article className="max-w-3xl mx-auto">
+          <header className="mb-8">
+            <h1 className="text-4xl font-bold mb-4 text-white">{post.title}</h1>
+            <div className="text-sm text-gray-400 mb-4">
+              {formatDate(post.createdAt)}
             </div>
-          )}
-        </header>
-        
-        <div className="prose prose-lg dark:prose-invert max-w-none">
-          <MarkdownContent content={post.content} />
-        </div>
-      </article>
+            {post.tags && post.tags.length > 0 && (
+              <div className="flex flex-wrap gap-2 mb-6">
+                {post.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="text-xs bg-gray-800 text-gray-300 px-2 py-1 rounded"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            )}
+          </header>
+          
+          <div className="prose prose-lg max-w-none prose-invert">
+            <MarkdownContent content={post.content} />
+          </div>
+        </article>
+      </div>
+      <SiteFooter />
     </div>
   )
 }

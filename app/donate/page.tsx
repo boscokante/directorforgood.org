@@ -196,7 +196,7 @@ export default function DonatePage() {
               </a>
             </Button>
             <Button asChild className="bg-black border-2 border-white text-white hover:bg-white hover:text-black font-semibold">
-              <Link href="/our-events">Attend an Event</Link>
+              <Link href="/events">Attend an Event</Link>
             </Button>
           </div>
         </div>

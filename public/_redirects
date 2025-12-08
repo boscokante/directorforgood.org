@@ -1,0 +1,69 @@
+# WordPress to Next.js Redirects - Generated 2025-12-02
+# 301 = permanent redirect, 410 = gone (removed pages)
+
+# Blog posts -> /blog
+/2023/12/13                           /blog       301
+/a-heartfelt-thanks-to-everyone       /blog       301
+/afro-ai-champs-epic-recap            /blog       301
+/afro-ai-demo-day-2023                /blog       301
+/afro-ai-is-transforming-local-artists-to-tech-founders  /blog  301
+/afro-ai-kickoff                      /blog       301
+/afrofilterism-demo-day               /blog       301
+/afrofilterism2022                    /blog       301
+/art-official                         /blog       301
+/bosko-bday-versus-battle             /blog       301
+/demo-day                             /blog       301
+/founders-dinner                      /blog       301
+/funding-fair                         /blog       301
+/get-ready-for-afro-ai-demo-day-23    /blog       301
+/hiiifriends                          /blog       301
+/hiiitop-fundraiser                   /blog       301
+/hiiiwav-2023-hiiilights              /blog       301
+/hiiiwav-2024                         /blog       301
+/hiiiwav-fest-24-recap                /blog       301
+/hiiiwav-studio-secured               /blog       301
+/hiiiwavs-2024-blast-off              /blog       301
+/live-from-new-orleans-the-jazz-foundation-of-america-presents-donald-harrison  /blog  301
+/march-magic-afro-ai-mvp-hiiiwav-fest /blog       301
+/our-events                           /blog       301
+/past-events                          /blog       301
+/scifi-sunday                         /blog       301
+/the-crowning                         /blog       301
+/upcoming-events                      /blog       301
+/vc-on-7th-street                     /blog       301
+/xr                                   /blog       301
+
+# Authors & Categories -> /blog
+/author/*                             /blog       301
+/category/*                           /blog       301
+
+# Projects redirects
+/afro-ai-2                            /projects/afro-ai       301
+/afro-ai-residency                    /projects/afro-ai       301
+/fest                                 /projects/hiiiwav-fest  301
+/hiiiwav-fest                         /projects/hiiiwav-fest  301
+/hiiifrequency                        /projects/hiiifrequency 301
+/revibes                              /projects/revibes       301
+/apply                                /projects               301
+
+# Donate
+/donate-recurring                     /donate     301
+/donateee                             /donate     301
+
+# General
+/newsletter                           /           301
+/resources                            /           301
+
+# Gone (WooCommerce/WordPress-specific)
+/cart                                 /           410
+/checkout                             /           410
+/my-account                           /           410
+/my-account/*                         /           410
+/shop                                 /           410
+/sample-page                          /           410
+/test-page                            /           410
+/welcome-to-cloudways                 /           410
+/wp-admin                             /           410
+/wp-admin/*                           /           410
+/wp-login.php                         /           410
+/wp-json/*                            /           410

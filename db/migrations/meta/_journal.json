@@ -8,6 +8,27 @@
       "when": 1764529735640,
       "tag": "0000_absurd_zaladane",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1764805223422,
+      "tag": "0001_blushing_leech",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1765145795006,
+      "tag": "0002_groovy_prowler",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1765177106467,
+      "tag": "0003_open_stephen_strange",
+      "breakpoints": true
     }
   ]
 }
