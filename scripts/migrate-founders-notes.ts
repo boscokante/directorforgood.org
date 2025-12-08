@@ -168,60 +168,23 @@ function extractTitle(html: string): string {
 }
 
 /**
- * Extract text content from HTML, preserving paragraph structure
+ * Extract text content from HTML, preserving paragraph structure and ORDER
  */
 function extractTextContent(html: string): string[] {
   const paragraphs: string[] = []
+  const seenContent = new Set<string>()
   
-  // First, extract content from elementor-widget-container divs (for non-p content)
-  // These are used in some newsletters instead of <p> tags
-  const divContainerRegex = /<div class="elementor-widget-container">\s*([\s\S]*?)\s*<\/div>/gi
-  
-  let divMatch
-  while ((divMatch = divContainerRegex.exec(html)) !== null) {
-    let content = divMatch[1].trim()
-    
-    // Skip if it contains nested divs or other complex elements (already handled)
-    if (content.includes('<div') || content.includes('<section') || content.includes('<img')) {
-      continue
-    }
-    
-    // Skip if it's wrapped in <p> tags (we'll catch those separately)
-    if (content.startsWith('<p')) {
-      continue
-    }
-    
-    // Skip empty content
-    if (content.replace(/&nbsp;/g, '').replace(/\s/g, '') === '') {
-      continue
-    }
-    
-    // Replace links with markdown format
-    content = content.replace(
-      /<a[^>]*href="([^"]*)"[^>]*>([^<]*)<\/a>/gi,
-      (_, href, text) => `[${text}](${href.replace(/&amp;/g, '&')})`
-    )
-    
-    // Remove remaining HTML tags
-    content = content.replace(/<[^>]+>/g, '')
-    
-    // Decode HTML entities
-    content = decodeHtmlEntities(content)
-    
-    if (content && content.length > 10) {  // Skip very short fragments
-      paragraphs.push(content)
-    }
-  }
-  
-  // Then find all paragraph tags and their content
-  const paragraphRegex = /<p[^>]*>([\s\S]*?)<\/p>/gi
+  // Find all content blocks in order - both <p> tags and elementor-widget-container divs
+  // This regex matches either a <p> tag OR an elementor div with plain text content
+  const contentBlockRegex = /(?:<p[^>]*>([\s\S]*?)<\/p>)|(?:<div class="elementor-widget-container">\s*([^<]+)\s*<\/div>)/gi
   
   let match
-  while ((match = paragraphRegex.exec(html)) !== null) {
-    let content = match[1]
+  while ((match = contentBlockRegex.exec(html)) !== null) {
+    // match[1] is content from <p> tags, match[2] is content from divs
+    let content = (match[1] || match[2] || '').trim()
     
-    // Skip empty paragraphs (just &nbsp; or whitespace)
-    if (content.replace(/&nbsp;/g, '').trim() === '' || content.trim() === ' ') {
+    // Skip empty content
+    if (!content || content.replace(/&nbsp;/g, '').replace(/\s/g, '') === '') {
       continue
     }
     
@@ -237,12 +200,11 @@ function extractTextContent(html: string): string[] {
     // Decode HTML entities
     content = decodeHtmlEntities(content)
     
-    if (content) {
-      // Avoid duplicates (in case content was already captured from divs)
-      const isDuplicate = paragraphs.some(p => 
-        p.includes(content.slice(0, 50)) || content.includes(p.slice(0, 50))
-      )
-      if (!isDuplicate) {
+    // Skip very short fragments or duplicates
+    if (content && content.length > 10) {
+      const contentKey = content.slice(0, 50).toLowerCase()
+      if (!seenContent.has(contentKey)) {
+        seenContent.add(contentKey)
         paragraphs.push(content)
       }
     }
