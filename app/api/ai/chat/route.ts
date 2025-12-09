@@ -1,6 +1,6 @@
 import { openai } from '@ai-sdk/openai'
 import { streamText } from 'ai'
-import { CHATBOT_SYSTEM_PROMPT } from '@/lib/hiiiwav-knowledge'
+import { CHATBOT_SYSTEM_PROMPT } from '@/lib/director-knowledge'
 
 export const runtime = 'edge'
 

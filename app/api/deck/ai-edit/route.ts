@@ -1,4 +1,4 @@
-import { anthropic } from '@ai-sdk/anthropic';
+import { openai } from '@ai-sdk/openai';
 import { generateText } from 'ai';
 import { NextResponse } from 'next/server';
 import { getDeckContent, DeckContent } from '@/lib/deck-content';
@@ -51,7 +51,7 @@ export async function POST(request: Request) {
     const deckContent = currentContent || getDeckContent();
 
     const { text } = await generateText({
-      model: anthropic('claude-sonnet-4-20250514'),
+      model: openai('gpt-4o'),
       system: SYSTEM_PROMPT,
       prompt: `Current deck content:
 \`\`\`json

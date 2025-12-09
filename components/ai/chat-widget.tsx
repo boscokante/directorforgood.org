@@ -60,7 +60,7 @@ export function ChatWidget() {
       {open ? (
         <div className="bg-background border rounded-lg shadow-2xl w-96 h-[600px] flex flex-col">
           <div className="p-4 border-b flex justify-between items-center">
-            <h3 className="font-semibold">Chat with HIIIWAV</h3>
+            <h3 className="font-semibold">Chat with Director</h3>
             <Button variant="ghost" size="icon" onClick={() => setOpen(false)}>
               <X className="h-4 w-4" />
             </Button>
@@ -69,7 +69,7 @@ export function ChatWidget() {
           <div className="flex-1 overflow-y-auto p-4 space-y-4">
             {messages.length === 0 && (
               <div className="text-center text-muted-foreground text-sm">
-                Ask me anything about HIIIWAV!
+                Ask me anything about Director!
               </div>
             )}
             {messages.map((m, i) => (

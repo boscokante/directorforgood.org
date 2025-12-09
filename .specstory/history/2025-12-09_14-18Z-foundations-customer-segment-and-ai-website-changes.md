@@ -630,7 +630,7 @@ _**Agent (model claude-4.5-opus-high-thinking, mode Agent)**_
 <think><details><summary>Thought Process</summary>
 The user wants me to implement the plan. Let me start with the first todo: "Commit and push current version to preserve state".
 
-Let me check git status and then make the commit.Now I'll stage all the changes and commit them. This is a large change that converts the site from HiiiWAV to Director for Good. Let me add everything and commit.Good, now let me commit all the changes with a meaningful commit message.Now push to origin.</details></think>
+Let me check git status and then make the commit.Now I'll stage all the changes and commit them. This is a large change that converts the site from HiiiWAV to Director for Good. Let me add everything and commit.Good, now let me commit all the changes with a meaningful commit message.Now push to origin.Good, commit and push is done. Now let me update the todo and move to the next one - adding the Foundation Customers slide.</details></think>
 
 ---
 
@@ -1031,6 +1031,1561 @@ Result:
 {
   "output": "remote: warning: See https://gh.io/lfs for more information.        \nremote: warning: File aec17525644a34de26efcdc4d2ae97ecdef4a62e is 60.21 MB; this is larger than GitHub's recommended maximum file size of 50.00 MB        \nremote: warning: GH001: Large files detected. You may want to try Git Large File Storage - https://git-lfs.github.com.        \nTo https://github.com/boscokante/hiiiwav-website.git\n   f79cc9d..dfb40aa  main -&gt; main\n",
   "rejected": false
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="task" data-tool-name="todo_write">
+<details><summary>Tool use: **todo_write** • Todo List</summary>
+
+- [x] Commit and push current version to preserve state
+- [-] Add Foundation Customers slide to deck-content.json
+- [ ] Add deckVersions table to schema and run migration
+- [ ] Create version list and restore API routes
+- [ ] Modify deck-content API to auto-save versions on each PUT
+- [ ] Create AI edit endpoint with OpenAI/Anthropic integration
+- [ ] Build chat panel component for AI interactions
+- [ ] Build Cmd+K quick command bar
+- [ ] Build version history panel with preview and restore
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="read_file_v2">
+<details>
+<summary>Tool use: **read_file_v2**</summary>
+
+
+Parameters:
+
+```json
+{
+  "targetFile": "/Users/boskombp16/GitHub/directorforgood.org/data/deck-content.json",
+  "charsLimit": 1000000,
+  "effectiveUri": "/Users/boskombp16/GitHub/directorforgood.org/data/deck-content.json"
+}
+```
+Result:
+
+```json
+{
+  "contents": "{\n  \"cover\": {\n    \"title\": \"Director\",\n    \"tagline\": \"The AI support team that helps nonprofits stay focused on impact\",\n    \"subtagline\": \"Turning under-resourced founders into fundable, operationally tight organizations\",\n    \"url\": \"directorforgood.org\"\n  },\n  \"slides\": [\n    {\n      \"id\": \"problem-founders\",\n      \"title\": \"Problem – Founders Are the Whole Leadership Team\",\n      \"subtitle\": \"Nonprofit founders are carrying 5 jobs on 1 salary.\",\n      \"sections\": [\n        {\n          \"heading\": \"They're expected to:\",\n          \"items\": [\n            \"Lead programs and vision\",\n            \"Raise money (major gifts, grants, events)\",\n            \"Run operations and finance\",\n            \"Own communications and storytelling\",\n            \"Manage staff, boards, and compliance\"\n          ]\n        }\n      ],\n      \"highlight\": \"Promising orgs plateau at $300–600k or quietly shut down — not for lack of impact, but for lack of backbone.\",\n      \"footnote\": \"When funding tightens and staff are cut, all of this collapses back onto one person.\",\n      \"image\": {\n        \"type\": \"infographic\",\n        \"placeholder\": \"Infographic showing one person juggling 5 different roles/hats\"\n      }\n    },\n    {\n      \"id\": \"problem-downshifted\",\n      \"title\": \"Ideal Customer – Downshifted Orgs (Beachhead)\",\n      \"subtitle\": \"Our initial focus: orgs that already proved they can raise $400k–$1M.\",\n      \"sections\": [\n        {\n          \"heading\": \"These orgs:\",\n          \"items\": [\n            \"Have real donor and community relationships\",\n            \"Have a history of 7-figure budgets or close\"\n          ]\n        },\n        {\n          \"heading\": \"But in the current funding environment:\",\n          \"items\": [\n            \"They've laid off staff\",\n            \"The founder is back to doing everything\",\n            \"Many are considering shutting down despite strong demand\"\n          ]\n        }\n      ],\n      \"highlight\": \"These leaders don't need another tool. They need a backbone.\",\n      \"footnote\": \"This hits founders of color especially hard, as equity-era funding retrenches.\",\n      \"image\": {\n        \"type\": \"chart\",\n        \"placeholder\": \"Chart showing org budget trajectory: growth to $1M, then decline/plateau\"\n      }\n    },\n    {\n      \"id\": \"broken-options\",\n      \"title\": \"Broken Options\",\n      \"subtitle\": \"Existing solutions don't fit this stage.\",\n      \"sections\": [\n        {\n          \"heading\": \"DIY SaaS stack\",\n          \"text\": \"CRMs, grant tools, accounting, email… Founders don't have time to integrate and maintain them.\"\n        },\n        {\n          \"heading\": \"Consultants &amp; agencies\",\n          \"text\": \"Project-based, expensive, seen as \\\"overhead.\\\" Advice without ongoing responsibility.\"\n        },\n        {\n          \"heading\": \"Rebuilding staff\",\n          \"items\": [\n            \"ED: $100–150k\",\n            \"Ops/Finance: ~$100k\",\n            \"Development: ~$100k\",\n            \"Comms/Program ops: $60–100k\"\n          ]\n        }\n      ],\n      \"highlight\": \"There is no integrated, AI-native backbone designed for $400k–$1M orgs that have real relationships but no team.\",\n      \"footnote\": \"$360–450k/year for the backbone on a fragile budget.\",\n      \"image\": {\n        \"type\": \"diagram\",\n        \"placeholder\": \"Comparison diagram: scattered SaaS logos vs consultant icons vs expensive staff org chart\"\n      }\n    },\n    {\n      \"id\": \"what-we-are\",\n      \"title\": \"Director – What We Are\",\n      \"subtitle\": \"Director is an AI-native backbone and forward-deployed team for nonprofits.\",\n      \"sections\": [\n        {\n          \"heading\": \"Director OS – a vertical operating system for:\",\n          \"items\": [\n            \"Revenue &amp; relationships\",\n            \"Runway &amp; finance\",\n            \"Ops &amp; compliance\",\n            \"Board &amp; funder narratives\"\n          ]\n        },\n        {\n          \"heading\": \"Director Pod – shared leadership capacity:\",\n          \"items\": [\n            \"Forward-Deployed Director (FDD)\",\n            \"Finance/ops leadership\",\n            \"Dedicated dev &amp; ops roles as we scale\"\n          ]\n        }\n      ],\n      \"highlight\": \"We plug into an existing org and donor base and give them the leadership bench they can't afford to rebuild alone.\",\n      \"image\": {\n        \"type\": \"diagram\",\n        \"placeholder\": \"Two-part diagram: Director OS (software icon) + Director Pod (team icon) = Complete Backbone\"\n      }\n    },\n    {\n      \"id\": \"fundraising-philosophy\",\n      \"title\": \"Fundraising Philosophy – Relationships First\",\n      \"subtitle\": \"Director is built around major gifts and real relationships, not grant roulette.\",\n      \"sections\": [\n        {\n          \"heading\": \"Durable funding comes from:\",\n          \"items\": [\n            \"Major donors\",\n            \"Anchor institutions\",\n            \"Long-term partners\"\n          ]\n        },\n        {\n          \"heading\": \"Grants are part of the picture, but:\",\n          \"items\": [\n            \"They are downstream of relationships\",\n            \"\\\"Open call\\\" grant-chasing is mostly a distraction for this segment\"\n          ]\n        },\n        {\n          \"heading\": \"Director's focus:\",\n          \"items\": [\n            \"Map and grow the major gifts pipeline\",\n            \"Prepare founders for high-stakes meetings\",\n            \"Use grants strategically once relationships exist\"\n          ]\n        }\n      ],\n      \"highlight\": \"Director is a relationship and revenue engine, not a shot-in-the-dark grant factory.\",\n      \"image\": {\n        \"type\": \"diagram\",\n        \"placeholder\": \"Funnel diagram: Relationships → Major Gifts → Grants (showing priority order)\"\n      }\n    },\n    {\n      \"id\": \"director-pod\",\n      \"title\": \"The Director Pod – Capacity Ramp\",\n      \"subtitle\": \"Pods scale from 4 → 8 → 16 orgs as the OS and agents mature.\",\n      \"sections\": [\n        {\n          \"heading\": \"Year 1 – Proto-Pod Team:\",\n          \"items\": [\n            \"Founder/CEO\",\n            \"1 Forward-Deployed Director\",\n            \"1 Finance Director\",\n            \"1 Founding Engineer\"\n          ]\n        },\n        {\n          \"heading\": \"Phase 2 – 8 orgs\",\n          \"text\": \"Mature core agents handle repetitive tasks. Same structure supports more orgs.\"\n        },\n        {\n          \"heading\": \"Phase 3 – 16 orgs\",\n          \"text\": \"2+ FDDs. Standardized playbooks. Agents do recurring work.\"\n        }\n      ],\n      \"image\": {\n        \"type\": \"infographic\",\n        \"placeholder\": \"Scaling diagram: 4 orgs → 8 orgs → 16 orgs with team growth visualization\"\n      }\n    },\n    {\n      \"id\": \"director-os\",\n      \"title\": \"Director OS – Product Overview\",\n      \"subtitle\": \"One pane of glass for an org's backbone.\",\n      \"sections\": [\n        {\n          \"heading\": \"Revenue &amp; Relationships\",\n          \"text\": \"Major gifts map, warm pipeline, next-best actions\"\n        },\n        {\n          \"heading\": \"Runway &amp; Finance\",\n          \"text\": \"Live cash forecasts, budget vs actuals visibility\"\n        },\n        {\n          \"heading\": \"Ops &amp; Compliance\",\n          \"text\": \"Recurring task engine, checklists, playbooks\"\n        },\n        {\n          \"heading\": \"Narratives &amp; Reporting\",\n          \"text\": \"Board decks, funder reports, impact one-pagers\"\n        }\n      ],\n      \"footnote\": \"Data flows in from email, calendar, finance systems, docs, and existing CRMs.\",\n      \"image\": {\n        \"type\": \"mockup\",\n        \"placeholder\": \"Dashboard mockup showing 4 quadrants: Revenue, Runway, Ops, Narratives\"\n      }\n    },\n    {\n      \"id\": \"ai-agents\",\n      \"title\": \"AI Agents – How We 2–4x Human Capacity\",\n      \"subtitle\": \"Specialized agents do the repetitive work; humans do the judgment.\",\n      \"sections\": [\n        {\n          \"heading\": \"Major Gifts Agent\",\n          \"items\": [\n            \"Scans email, calendar, CRM\",\n            \"Maintains relationship maps\",\n            \"Drafts donor emails &amp; briefs\"\n          ]\n        },\n        {\n          \"heading\": \"Finance &amp; Runway Agent\",\n          \"items\": [\n            \"Pulls accounting data\",\n            \"Proposes categorizations\",\n            \"Raises runway alerts\"\n          ]\n        },\n        {\n          \"heading\": \"Ops &amp; Compliance Agent\",\n          \"items\": [\n            \"Runs recurring checklists\",\n            \"Generates reminders\",\n            \"Manages task lists\"\n          ]\n        },\n        {\n          \"heading\": \"Board &amp; Reporting Agent\",\n          \"items\": [\n            \"Assembles board decks\",\n            \"Creates funder reports\",\n            \"Keeps board-ready view\"\n          ]\n        }\n      ],\n      \"highlight\": \"Agents explore, compile, and draft. FDDs and Directors review, edit, and decide.\",\n      \"image\": {\n        \"type\": \"diagram\",\n        \"placeholder\": \"4 AI agent icons with workflow arrows showing data flow between them\"\n      }\n    },\n    {\n      \"id\": \"economics\",\n      \"title\": \"Economics – Why This Makes Sense\",\n      \"subtitle\": \"Director makes a serious backbone affordable and scalable.\",\n      \"sections\": [\n        {\n          \"heading\": \"Traditional backbone costs ($500-700k org):\",\n          \"items\": [\n            \"ED: $100–150k\",\n            \"Ops/Finance: ~$100k\",\n            \"Dev: ~$100k\",\n            \"Comms/Program ops: $60–100k\",\n            \"Total: $360–450k/year\"\n          ]\n        },\n        {\n          \"heading\": \"With Director:\",\n          \"items\": [\n            \"ED/founder: $100–150k\",\n            \"Director Pod: ~$80–120k/year\",\n            \"Total backbone: $180–270k/year\"\n          ]\n        }\n      ],\n      \"highlight\": \"Save $100-180k/year in backbone costs\",\n      \"footnote\": \"As Pods scale, pod-level gross margins expand while keeping human leadership involvement high.\",\n      \"image\": {\n        \"type\": \"chart\",\n        \"placeholder\": \"Side-by-side bar chart: Traditional ($360-450k) vs Director ($180-270k)\"\n      }\n    },\n    {\n      \"id\": \"why-now\",\n      \"title\": \"Why Now – AI Agents + Nonprofit Pressure\",\n      \"subtitle\": \"Two timing curves are intersecting.\",\n      \"sections\": [\n        {\n          \"heading\": \"Agentic AI is production-ready:\",\n          \"items\": [\n            \"\\\"AI coworkers\\\" already shipping in engineering, finance, and customer ops\",\n            \"Small human teams can manage far more complexity with agents\"\n          ]\n        },\n        {\n          \"heading\": \"Nonprofits are under structural pressure:\",\n          \"items\": [\n            \"Orgs with $1M+ budgets are losing staff\",\n            \"Funders want grantees with credible backbones and visibility\"\n          ]\n        }\n      ],\n      \"highlight\": \"Director sits at this intersection: an AI-native backbone delivered by a lean, forward-deployed team to orgs that cannot justify rebuilding full in-house leadership.\",\n      \"image\": {\n        \"type\": \"chart\",\n        \"placeholder\": \"Two intersecting trend lines: AI capability (rising) meets nonprofit need (rising)\"\n      }\n    },\n    {\n      \"id\": \"go-to-market\",\n      \"title\": \"Go-to-Market\",\n      \"subtitle\": \"We start where we already have pull.\",\n      \"sections\": [\n        {\n          \"heading\": \"Existing relationships\",\n          \"text\": \"First 2–4 orgs from founders you're already effectively \\\"directing.\\\"\"\n        },\n        {\n          \"heading\": \"Downshifted $1M orgs\",\n          \"text\": \"Target leaders who proved they can raise $400k–$1M but had to cut staff.\"\n        },\n        {\n          \"heading\": \"Funder collaborations\",\n          \"text\": \"Position Director as capacity-building that makes grantees more investable.\"\n        },\n        {\n          \"heading\": \"Sales motion:\",\n          \"items\": [\n            \"Short diagnostic: map \\\"today vs with Director\\\"\",\n            \"Demo Director OS + agents\",\n            \"Show what gets taken off the founder's plate\",\n            \"Close annual retainers\",\n            \"Expand scope over time\"\n          ]\n        }\n      ],\n      \"image\": {\n        \"type\": \"diagram\",\n        \"placeholder\": \"Concentric circles: Inner (existing relationships) → Middle (downshifted orgs) → Outer (funder partnerships)\"\n      }\n    },\n    {\n      \"id\": \"business-model\",\n      \"title\": \"Business Model &amp; QSBS-Friendly Structure\",\n      \"subtitle\": \"AI-native vertical SaaS with embedded forward-deployed team.\",\n      \"sections\": [\n        {\n          \"heading\": \"Revenue model\",\n          \"items\": [\n            \"Annual retainers per org\",\n            \"Tied to budget band and complexity\",\n            \"Goal: multiple Pods, each supporting up to 16 orgs\"\n          ]\n        },\n        {\n          \"heading\": \"Cost structure\",\n          \"items\": [\n            \"Lean Pods (FDD + Finance Director)\",\n            \"Supported by agents and product\",\n            \"Engineering compounds across all clients\"\n          ]\n        },\n        {\n          \"heading\": \"QSBS-aware design\",\n          \"items\": [\n            \"U.S. C-corp\",\n            \"Product-centric operating business\",\n            \"Software &amp; data model assets\"\n          ]\n        }\n      ],\n      \"image\": {\n        \"type\": \"diagram\",\n        \"placeholder\": \"Business model flywheel: Retainers → Pod capacity → AI leverage → More orgs\"\n      }\n    },\n    {\n      \"id\": \"team\",\n      \"title\": \"Team – Lean Year-1 Plan\",\n      \"subtitle\": \"Small, high-leverage founding team with 12 months of runway.\",\n      \"sections\": [\n        {\n          \"heading\": \"Founder &amp; CEO\",\n          \"text\": \"Vision, sales, fundraising, relationships\"\n        },\n        {\n          \"heading\": \"Forward-Deployed Director (hire #1)\",\n          \"text\": \"Nonprofit ops + fundraising, embedded across first ~4 orgs\"\n        },\n        {\n          \"heading\": \"Finance Director (hire #2)\",\n          \"text\": \"Finance + ops across pod, designs playbooks\"\n        },\n        {\n          \"heading\": \"Founding Engineer (hire #3)\",\n          \"text\": \"Director OS + first wave of agents\"\n        }\n      ],\n      \"footnote\": \"Target raise: ~$1M for 12 months runway. Early org retainers reduce net burn.\",\n      \"image\": {\n        \"type\": \"photo\",\n        \"placeholder\": \"Team headshots or org chart showing 4 founding roles\"\n      }\n    },\n    {\n      \"id\": \"roadmap\",\n      \"title\": \"Roadmap &amp; Ask\",\n      \"subtitle\": \"\",\n      \"sections\": [\n        {\n          \"heading\": \"0–12 months (this raise):\",\n          \"items\": [\n            \"Hire FDD, Finance Director, Founding Engineer\",\n            \"Onboard 2–4 orgs\",\n            \"Ship v1 Director OS and core agents\",\n            \"Prove: 4-org pod delivers revenue and stability lift\"\n          ]\n        },\n        {\n          \"heading\": \"12–24 months:\",\n          \"items\": [\n            \"Scale pod to 8 orgs\",\n            \"Harden agents and playbooks\",\n            \"Add additional FDD/finance/ops capacity\"\n          ]\n        },\n        {\n          \"heading\": \"24+ months:\",\n          \"items\": [\n            \"16-org pods on mature OS\",\n            \"Multiple pods focused on key verticals\"\n          ]\n        }\n      ],\n      \"image\": {\n        \"type\": \"infographic\",\n        \"placeholder\": \"Timeline roadmap: Year 1 (4 orgs) → Year 2 (8 orgs) → Year 3+ (16 orgs per pod)\"\n      }\n    }\n  ],\n  \"ask\": {\n    \"amount\": \"$1.0M\",\n    \"items\": [\n      \"Fund 12+ months of lean team and product development\",\n      \"Prove the 4 → 8 → 16 org capacity story with real customers\",\n      \"Build Director into the AI-native backbone for the orgs that can least afford to lose theirs\"\n    ]\n  }\n}",
+  "totalLinesInFile": 451
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<think><details><summary>Thought Process</summary>
+Now I need to add the Foundation Customers slide after the "Downshifted Orgs" slide (which is at index 1, position 2 in the deck). I'll insert the new slide at position 2 (after "problem-downshifted").
+
+Let me update the JSON file to insert the new slide.</details></think>
+
+---
+
+Now I'll add the Foundation Customers slide after the "Downshifted Orgs" slide:
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="edit_file_v2">
+<details>
+<summary>Tool use: **edit_file_v2**</summary>
+
+
+Parameters:
+
+```json
+{
+  "relativeWorkspacePath": "/Users/boskombp16/GitHub/directorforgood.org/data/deck-content.json"
+}
+```
+Additional data:
+
+```json
+{
+  "codeblockId": "e1c26520-0003-4cc4-8439-add4a82f57f8"
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<think><details><summary>Thought Process</summary>
+Good, the Foundation Customers slide has been added. Now I need to also update the defaultDeckContent in `lib/deck-content.ts` to keep them in sync. Let me do that.Good. Now let me update the todos and move to the next task - adding the deckVersions table to the schema and running the migration.</details></think>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="edit_file_v2">
+<details>
+<summary>Tool use: **edit_file_v2**</summary>
+
+
+Parameters:
+
+```json
+{
+  "relativeWorkspacePath": "/Users/boskombp16/GitHub/directorforgood.org/lib/deck-content.ts"
+}
+```
+Additional data:
+
+```json
+{
+  "codeblockId": "b91c957e-854e-4f34-bc4e-9765c74787db"
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="task" data-tool-name="todo_write">
+<details><summary>Tool use: **todo_write** • Todo List</summary>
+
+- [x] Commit and push current version to preserve state
+- [x] Add Foundation Customers slide to deck-content.json
+- [-] Add deckVersions table to schema and run migration
+- [ ] Create version list and restore API routes
+- [ ] Modify deck-content API to auto-save versions on each PUT
+- [ ] Create AI edit endpoint with OpenAI/Anthropic integration
+- [ ] Build chat panel component for AI interactions
+- [ ] Build Cmd+K quick command bar
+- [ ] Build version history panel with preview and restore
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="read_file_v2">
+<details>
+<summary>Tool use: **read_file_v2**</summary>
+
+
+Parameters:
+
+```json
+{
+  "targetFile": "/Users/boskombp16/GitHub/directorforgood.org/db/schema.ts",
+  "charsLimit": 1000000,
+  "effectiveUri": "/Users/boskombp16/GitHub/directorforgood.org/db/schema.ts"
+}
+```
+Result:
+
+```json
+{
+  "contents": "import { pgTable, text, timestamp, boolean, serial, jsonb, integer, date } from 'drizzle-orm/pg-core'\n\nexport const posts = pgTable('posts', {\n  id: serial('id').primaryKey(),\n  slug: text('slug').notNull().unique(),\n  title: text('title').notNull(),\n  excerpt: text('excerpt'),\n  content: text('content').notNull(),\n  coverImage: text('cover_image'),\n  tags: jsonb('tags').$type&lt;string[]&gt;().default([]),\n  published: boolean('published').default(false),\n  seoTitle: text('seo_title'),\n  seoDescription: text('seo_description'),\n  canonical: text('canonical'),\n  createdAt: timestamp('created_at').defaultNow().notNull(),\n  updatedAt: timestamp('updated_at').defaultNow().notNull(),\n})\n\nexport const pages = pgTable('pages', {\n  id: serial('id').primaryKey(),\n  slug: text('slug').notNull().unique(),\n  title: text('title').notNull(),\n  content: text('content').notNull(),\n  seoTitle: text('seo_title'),\n  seoDescription: text('seo_description'),\n  canonical: text('canonical'),\n  createdAt: timestamp('created_at').defaultNow().notNull(),\n  updatedAt: timestamp('updated_at').defaultNow().notNull(),\n})\n\nexport const users = pgTable('users', {\n  id: serial('id').primaryKey(),\n  email: text('email').notNull().unique(),\n  name: text('name'),\n  role: text('role').default('user'),\n  image: text('image'),\n  passwordHash: text('password_hash'),\n  createdAt: timestamp('created_at').defaultNow().notNull(),\n})\n\nexport const media = pgTable('media', {\n  id: serial('id').primaryKey(),\n  filename: text('filename').notNull(),\n  url: text('url').notNull(),\n  mimeType: text('mime_type'),\n  size: integer('size'),\n  altText: text('alt_text'),\n  uploadedBy: integer('uploaded_by').references(() =&gt; users.id),\n  createdAt: timestamp('created_at').defaultNow().notNull(),\n})\n\n// Entities: HiiiWAV org, participant artists, and staff members\nexport const entities = pgTable('entities', {\n  id: serial('id').primaryKey(),\n  slug: text('slug').notNull().unique(),\n  name: text('name').notNull(),\n  type: text('type').notNull(), // 'organization', 'participant', 'staff'\n  bio: text('bio'),\n  shortBio: text('short_bio'),\n  image: text('image'),\n  website: text('website'),\n  socialLinks: jsonb('social_links').$type&lt;{\n    instagram?: string\n    twitter?: string\n    spotify?: string\n    youtube?: string\n    facebook?: string\n    tiktok?: string\n    soundcloud?: string\n    bandcamp?: string\n    linkedin?: string\n  }&gt;(),\n  genre: text('genre'), // For artists\n  role: text('role'), // For staff (e.g., \"Executive Director\")\n  active: boolean('active').default(true),\n  createdAt: timestamp('created_at').defaultNow().notNull(),\n  updatedAt: timestamp('updated_at').defaultNow().notNull(),\n})\n\n// Awards, grants, and recognitions\nexport const awards = pgTable('awards', {\n  id: serial('id').primaryKey(),\n  slug: text('slug').notNull().unique(),\n  name: text('name').notNull(),\n  awardingEntity: text('awarding_entity').notNull(), // Organization that gave the award\n  awardDate: date('award_date'),\n  year: integer('year'), // Fallback when exact date unknown\n  category: text('category'), // 'grant', 'award', 'fellowship', 'recognition', 'nomination'\n  status: text('status').default('won'), // 'won', 'nominated', 'finalist', 'honorable_mention'\n  prizeAmount: integer('prize_amount'), // In cents for precision\n  prizeDescription: text('prize_description'), // Non-monetary prize details\n  description: text('description'),\n  notableFacts: text('notable_facts'),\n  awardingOrgUrl: text('awarding_org_url'),\n  awardPageUrl: text('award_page_url'),\n  pressUrl: text('press_url'),\n  image: text('image'),\n  createdAt: timestamp('created_at').defaultNow().notNull(),\n  updatedAt: timestamp('updated_at').defaultNow().notNull(),\n})\n\n// Junction table: links awards to entities (many-to-many)\nexport const awardRecipients = pgTable('award_recipients', {\n  id: serial('id').primaryKey(),\n  awardId: integer('award_id').notNull().references(() =&gt; awards.id, { onDelete: 'cascade' }),\n  entityId: integer('entity_id').notNull().references(() =&gt; entities.id, { onDelete: 'cascade' }),\n  recipientRole: text('recipient_role'), // 'primary', 'collaborator', 'featured'\n})\n\nexport type Post = typeof posts.$inferSelect\nexport type NewPost = typeof posts.$inferInsert\nexport type Page = typeof pages.$inferSelect\nexport type NewPage = typeof pages.$inferInsert\nexport type User = typeof users.$inferSelect\nexport type Media = typeof media.$inferSelect\nexport type Entity = typeof entities.$inferSelect\nexport type NewEntity = typeof entities.$inferInsert\nexport type Award = typeof awards.$inferSelect\nexport type NewAward = typeof awards.$inferInsert\nexport type AwardRecipient = typeof awardRecipients.$inferSelect\nexport type NewAwardRecipient = typeof awardRecipients.$inferInsert\n\n// Redirects for SEO preservation\nexport const redirects = pgTable('redirects', {\n  id: serial('id').primaryKey(),\n  sourceUrl: text('source_url').notNull().unique(), // The old URL path (e.g., /old-page)\n  destinationUrl: text('destination_url').notNull(), // Where to redirect to (e.g., /new-page)\n  statusCode: integer('status_code').default(301), // 301 permanent, 302 temporary, 307, 308\n  enabled: boolean('enabled').default(true),\n  hitCount: integer('hit_count').default(0), // Track how often this redirect is used\n  lastHitAt: timestamp('last_hit_at'),\n  notes: text('notes'), // Admin notes about this redirect\n  createdAt: timestamp('created_at').defaultNow().notNull(),\n  updatedAt: timestamp('updated_at').defaultNow().notNull(),\n})\n\nexport type Redirect = typeof redirects.$inferSelect\nexport type NewRedirect = typeof redirects.$inferInsert\n\n// Oakland Tech Week Venue Host Applications\nexport const venueHosts = pgTable('venue_hosts', {\n  id: serial('id').primaryKey(),\n  // Contact info\n  contactName: text('contact_name').notNull(),\n  email: text('email').notNull(),\n  phone: text('phone'),\n  // Venue info\n  venueName: text('venue_name').notNull(),\n  address: text('address').notNull(),\n  city: text('city').default('Oakland'),\n  neighborhood: text('neighborhood'), // e.g., \"Downtown\", \"Temescal\", \"West Oakland\"\n  capacity: integer('capacity'), // Max number of people\n  spaceType: text('space_type'), // 'gallery', 'office', 'warehouse', 'restaurant', 'outdoor', 'studio', 'other'\n  // Availability &amp; amenities\n  availability: text('availability'), // Free-form text about when space is available\n  amenities: jsonb('amenities').$type&lt;string[]&gt;().default([]), // ['wifi', 'av_equipment', 'parking', 'accessible', 'kitchen', 'outdoor_space']\n  // Additional info\n  website: text('website'),\n  instagramHandle: text('instagram_handle'),\n  notes: text('notes'), // Any additional info from the host\n  // Admin fields\n  status: text('status').default('pending'), // 'pending', 'approved', 'rejected', 'contacted'\n  adminNotes: text('admin_notes'),\n  createdAt: timestamp('created_at').defaultNow().notNull(),\n  updatedAt: timestamp('updated_at').defaultNow().notNull(),\n})\n\nexport type VenueHost = typeof venueHosts.$inferSelect\nexport type NewVenueHost = typeof venueHosts.$inferInsert\n\n// Events (HiiiWAV Fest, Demo Days, community gatherings, etc.)\nexport const events = pgTable('events', {\n  id: serial('id').primaryKey(),\n  slug: text('slug').notNull().unique(),\n  title: text('title').notNull(),\n  description: text('description'),\n  content: text('content'), // Full markdown content for event page\n  coverImage: text('cover_image'),\n  eventDate: timestamp('event_date').notNull(), // When the event takes place\n  endDate: timestamp('end_date'), // Optional end date for multi-day events\n  location: text('location'), // Venue name\n  address: text('address'), // Full address\n  eventType: text('event_type'), // 'fest', 'demo_day', 'workshop', 'community', 'panel', 'networking'\n  registrationUrl: text('registration_url'), // External registration link\n  featured: boolean('featured').default(false), // Highlight on homepage\n  published: boolean('published').default(false),\n  createdAt: timestamp('created_at').defaultNow().notNull(),\n  updatedAt: timestamp('updated_at').defaultNow().notNull(),\n})\n\nexport type Event = typeof events.$inferSelect\nexport type NewEvent = typeof events.$inferInsert\n\n// HiiiLIGHTS Newsletter Archive\nexport const newsletters = pgTable('newsletters', {\n  id: serial('id').primaryKey(),\n  slug: text('slug').notNull().unique(),\n  title: text('title').notNull(),\n  subtitle: text('subtitle'), // Optional subtitle/tagline\n  excerpt: text('excerpt'), // Short preview text\n  foundersNote: text('founders_note'), // Letter from the founder at the top of each issue\n  content: text('content').notNull(), // Full HTML/markdown content\n  coverImage: text('cover_image'),\n  issueNumber: integer('issue_number'), // e.g., Issue #1, #2\n  publishedAt: timestamp('published_at').notNull(), // When the newsletter was originally sent\n  published: boolean('published').default(true),\n  seoTitle: text('seo_title'),\n  seoDescription: text('seo_description'),\n  createdAt: timestamp('created_at').defaultNow().notNull(),\n  updatedAt: timestamp('updated_at').defaultNow().notNull(),\n})\n\nexport type Newsletter = typeof newsletters.$inferSelect\nexport type NewNewsletter = typeof newsletters.$inferInsert\n\n\n\n\n",
+  "totalLinesInFile": 219
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<think><details><summary>Thought Process</summary>
+Now I'll add the deckVersions table to the schema. I'll add it after the newsletters table definition.Now I need to run the drizzle migration to create the new table. Let me check what drizzle config exists and run the migration.</details></think>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="edit_file_v2">
+<details>
+<summary>Tool use: **edit_file_v2**</summary>
+
+
+Parameters:
+
+```json
+{
+  "relativeWorkspacePath": "/Users/boskombp16/GitHub/directorforgood.org/db/schema.ts"
+}
+```
+Additional data:
+
+```json
+{
+  "codeblockId": "081c5e46-b60c-4ab0-a72e-567db6b2380c"
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="read_file_v2">
+<details>
+<summary>Tool use: **read_file_v2**</summary>
+
+
+Parameters:
+
+```json
+{
+  "targetFile": "/Users/boskombp16/GitHub/directorforgood.org/drizzle.config.ts",
+  "charsLimit": 1000000,
+  "effectiveUri": "/Users/boskombp16/GitHub/directorforgood.org/drizzle.config.ts"
+}
+```
+Result:
+
+```json
+{
+  "contents": "import type { Config } from 'drizzle-kit'\nimport { config } from 'dotenv'\nimport { resolve } from 'path'\n\n// Load .env.local file\nconfig({ path: resolve(process.cwd(), '.env.local') })\n\nexport default {\n  schema: './db/schema.ts',\n  out: './db/migrations',\n  dialect: 'postgresql',\n  dbCredentials: {\n    url: process.env.DATABASE_URL!,\n  },\n} satisfies Config\n\n\n\n\n",
+  "totalLinesInFile": 20
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="run_terminal_command_v2">
+<details>
+<summary>Tool use: **run_terminal_command_v2**</summary>
+
+
+Parameters:
+
+```json
+{
+  "command": "cd /Users/boskombp16/GitHub/directorforgood.org &amp;&amp; npx drizzle-kit generate",
+  "cwd": "",
+  "options": {
+    "timeout": 60000
+  },
+  "parsingResult": {
+    "executableCommands": [
+      {
+        "name": "cd",
+        "args": [
+          {
+            "type": "word",
+            "value": "/Users/boskombp16/GitHub/directorforgood.org"
+          }
+        ],
+        "fullText": "cd /Users/boskombp16/GitHub/directorforgood.org"
+      },
+      {
+        "name": "npx",
+        "args": [
+          {
+            "type": "word",
+            "value": "drizzle-kit"
+          },
+          {
+            "type": "word",
+            "value": "generate"
+          }
+        ],
+        "fullText": "npx drizzle-kit generate"
+      }
+    ]
+  }
+}
+```
+Additional data:
+
+```json
+{
+  "status": "success"
+}
+```
+Result:
+
+```json
+{
+  "output": "No config path provided, using default 'drizzle.config.ts'\nReading config file '/Users/boskombp16/GitHub/directorforgood.org/drizzle.config.ts'\n[dotenv@17.2.3] injecting env (7) from .env.local -- tip: ⚙️  suppress all logs with { quiet: true }\n12 tables\naward_recipients 4 columns 0 indexes 2 fks\nawards 18 columns 0 indexes 0 fks\ndeck_versions 5 columns 0 indexes 1 fks\nentities 14 columns 0 indexes 0 fks\nevents 16 columns 0 indexes 0 fks\nmedia 8 columns 0 indexes 1 fks\nnewsletters 15 columns 0 indexes 0 fks\npages 9 columns 0 indexes 0 fks\nposts 13 columns 0 indexes 0 fks\nredirects 10 columns 0 indexes 0 fks\nusers 7 columns 0 indexes 0 fks\nvenue_hosts 19 columns 0 indexes 0 fks\n\n[✓] Your SQL migration file ➜ db/migrations/0004_abandoned_rawhide_kid.sql 🚀\n",
+  "rejected": false
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<think><details><summary>Thought Process</summary>
+Migration generated. Now let me push the migration to the database.Database migration complete. Now let me update the todos and move to the next task - creating version list and restore API routes.Now I need to create the version list and restore API routes. Let me create:
+1. `/app/api/deck-content/versions/route.ts` - for listing versions
+2. `/app/api/deck-content/versions/[id]/restore/route.ts` - for restoring a specific version
+
+First, let me check how the db is imported/used in the codebase.</details></think>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="run_terminal_command_v2">
+<details>
+<summary>Tool use: **run_terminal_command_v2**</summary>
+
+
+Parameters:
+
+```json
+{
+  "command": "cd /Users/boskombp16/GitHub/directorforgood.org &amp;&amp; npx drizzle-kit push",
+  "cwd": "",
+  "options": {
+    "timeout": 60000
+  },
+  "parsingResult": {
+    "executableCommands": [
+      {
+        "name": "cd",
+        "args": [
+          {
+            "type": "word",
+            "value": "/Users/boskombp16/GitHub/directorforgood.org"
+          }
+        ],
+        "fullText": "cd /Users/boskombp16/GitHub/directorforgood.org"
+      },
+      {
+        "name": "npx",
+        "args": [
+          {
+            "type": "word",
+            "value": "drizzle-kit"
+          },
+          {
+            "type": "word",
+            "value": "push"
+          }
+        ],
+        "fullText": "npx drizzle-kit push"
+      }
+    ]
+  }
+}
+```
+Additional data:
+
+```json
+{
+  "status": "success"
+}
+```
+Result:
+
+```json
+{
+  "output": "No config path provided, using default 'drizzle.config.ts'\nReading config file '/Users/boskombp16/GitHub/directorforgood.org/drizzle.config.ts'\n[dotenv@17.2.3] injecting env (7) from .env.local -- tip: ⚙️  write to custom object with { processEnv: myObject }\nUsing 'postgres' driver for database querying\n[⣷] Pulling schema from database...\n\u001b[2K\u001b[1G[⣯] Pulling schema from database...\n\u001b[2K\u001b[1G[⣟] Pulling schema from database...\n\u001b[2K\u001b[1G[⡿] Pulling schema from database...\n\u001b[2K\u001b[1G[⢿] Pulling schema from database...\n\u001b[2K\u001b[1G[⣻] Pulling schema from database...\n\u001b[2K\u001b[1G[⣽] Pulling schema from database...\n\u001b[2K\u001b[1G[⣷] Pulling schema from database...\n\u001b[2K\u001b[1G[⣯] Pulling schema from database...\n\u001b[2K\u001b[1G[⣟] Pulling schema from database...\n\u001b[2K\u001b[1G[⡿] Pulling schema from database...\n\u001b[2K\u001b[1G[✓] Pulling schema from database...\n[✓] Changes applied\n",
+  "rejected": false
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="task" data-tool-name="todo_write">
+<details><summary>Tool use: **todo_write** • Todo List</summary>
+
+- [x] Commit and push current version to preserve state
+- [x] Add Foundation Customers slide to deck-content.json
+- [x] Add deckVersions table to schema and run migration
+- [-] Create version list and restore API routes
+- [ ] Modify deck-content API to auto-save versions on each PUT
+- [ ] Create AI edit endpoint with OpenAI/Anthropic integration
+- [ ] Build chat panel component for AI interactions
+- [ ] Build Cmd+K quick command bar
+- [ ] Build version history panel with preview and restore
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="run_terminal_command_v2">
+<details>
+<summary>Tool use: **run_terminal_command_v2**</summary>
+
+
+Parameters:
+
+```json
+{
+  "command": "mkdir -p /Users/boskombp16/GitHub/directorforgood.org/app/api/deck-content/versions",
+  "cwd": "",
+  "parsingResult": {
+    "executableCommands": [
+      {
+        "name": "mkdir",
+        "args": [
+          {
+            "type": "word",
+            "value": "-p"
+          },
+          {
+            "type": "word",
+            "value": "/Users/boskombp16/GitHub/directorforgood.org/app/api/deck-content/versions"
+          }
+        ],
+        "fullText": "mkdir -p /Users/boskombp16/GitHub/directorforgood.org/app/api/deck-content/versions"
+      }
+    ]
+  }
+}
+```
+Additional data:
+
+```json
+{
+  "status": "success"
+}
+```
+Result:
+
+```json
+{
+  "rejected": false
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="read_file_v2">
+<details>
+<summary>Tool use: **read_file_v2**</summary>
+
+
+Parameters:
+
+```json
+{
+  "targetFile": "/Users/boskombp16/GitHub/directorforgood.org/db/index.ts",
+  "charsLimit": 1000000,
+  "effectiveUri": "/Users/boskombp16/GitHub/directorforgood.org/db/index.ts"
+}
+```
+Result:
+
+```json
+{
+  "contents": "import { drizzle } from 'drizzle-orm/postgres-js'\nimport postgres from 'postgres'\nimport * as schema from './schema'\n\nfunction getDb() {\n  if (!process.env.DATABASE_URL) {\n    throw new Error('DATABASE_URL is not set. Please add it to .env.local')\n  }\n  const client = postgres(process.env.DATABASE_URL, {\n    connect_timeout: 60,\n    idle_timeout: 20,\n    max_lifetime: 60 * 30,\n  })\n  return drizzle(client, { schema })\n}\n\nexport const db = getDb()\n\n",
+  "totalLinesInFile": 19
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<think><details><summary>Thought Process</summary>
+Good. Now I can create the versions API routes.Now let me create the restore route.Now let me also add an endpoint to get a specific version's full content (for preview).Now I need to modify the deck-content API to auto-save versions on each PUT. Let me update the route.ts file.</details></think>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="edit_file_v2">
+<details>
+<summary>Tool use: **edit_file_v2**</summary>
+
+
+Parameters:
+
+```json
+{
+  "relativeWorkspacePath": "/Users/boskombp16/GitHub/directorforgood.org/app/api/deck-content/versions/route.ts"
+}
+```
+Additional data:
+
+```json
+{
+  "codeblockId": "474ad34a-bb2a-492f-8d12-5a742045d952"
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="run_terminal_command_v2">
+<details>
+<summary>Tool use: **run_terminal_command_v2**</summary>
+
+
+Parameters:
+
+```json
+{
+  "command": "mkdir -p \"/Users/boskombp16/GitHub/directorforgood.org/app/api/deck-content/versions/[id]/restore\"",
+  "cwd": "",
+  "parsingResult": {
+    "executableCommands": [
+      {
+        "name": "mkdir",
+        "args": [
+          {
+            "type": "word",
+            "value": "-p"
+          },
+          {
+            "type": "string",
+            "value": "\"/Users/boskombp16/GitHub/directorforgood.org/app/api/deck-content/versions/[id]/restore\""
+          }
+        ],
+        "fullText": "mkdir -p \"/Users/boskombp16/GitHub/directorforgood.org/app/api/deck-content/versions/[id]/restore\""
+      }
+    ]
+  }
+}
+```
+Additional data:
+
+```json
+{
+  "status": "success"
+}
+```
+Result:
+
+```json
+{
+  "rejected": false
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="edit_file_v2">
+<details>
+<summary>Tool use: **edit_file_v2**</summary>
+
+
+Parameters:
+
+```json
+{
+  "relativeWorkspacePath": "/Users/boskombp16/GitHub/directorforgood.org/app/api/deck-content/versions/[id]/restore/route.ts"
+}
+```
+Additional data:
+
+```json
+{
+  "codeblockId": "9c9aa27f-4691-47d8-baaa-85aff8902d15"
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="edit_file_v2">
+<details>
+<summary>Tool use: **edit_file_v2**</summary>
+
+
+Parameters:
+
+```json
+{
+  "relativeWorkspacePath": "/Users/boskombp16/GitHub/directorforgood.org/app/api/deck-content/versions/[id]/route.ts"
+}
+```
+Additional data:
+
+```json
+{
+  "codeblockId": "3739a820-2d75-4f18-999a-065a7923231f"
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="task" data-tool-name="todo_write">
+<details><summary>Tool use: **todo_write** • Todo List</summary>
+
+- [x] Commit and push current version to preserve state
+- [x] Add Foundation Customers slide to deck-content.json
+- [x] Add deckVersions table to schema and run migration
+- [x] Create version list and restore API routes
+- [-] Modify deck-content API to auto-save versions on each PUT
+- [ ] Create AI edit endpoint with OpenAI/Anthropic integration
+- [ ] Build chat panel component for AI interactions
+- [ ] Build Cmd+K quick command bar
+- [ ] Build version history panel with preview and restore
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="read_file_v2">
+<details>
+<summary>Tool use: **read_file_v2**</summary>
+
+
+Parameters:
+
+```json
+{
+  "targetFile": "/Users/boskombp16/GitHub/directorforgood.org/app/api/deck-content/route.ts",
+  "charsLimit": 1000000,
+  "effectiveUri": "/Users/boskombp16/GitHub/directorforgood.org/app/api/deck-content/route.ts"
+}
+```
+Result:
+
+```json
+{
+  "contents": "import { NextResponse } from 'next/server';\nimport { getDeckContent, updateDeckContent, resetDeckContent, DeckContent } from '@/lib/deck-content';\n\nexport async function GET() {\n  try {\n    const content = getDeckContent();\n    return NextResponse.json(content);\n  } catch (error) {\n    console.error('Error fetching deck content:', error);\n    return NextResponse.json({ error: 'Failed to fetch content' }, { status: 500 });\n  }\n}\n\nexport async function PUT(request: Request) {\n  try {\n    const body = await request.json() as Partial&lt;DeckContent&gt;;\n    const updatedContent = updateDeckContent(body);\n    return NextResponse.json(updatedContent);\n  } catch (error) {\n    console.error('Error updating deck content:', error);\n    return NextResponse.json({ error: 'Failed to update content' }, { status: 500 });\n  }\n}\n\nexport async function DELETE() {\n  try {\n    const content = resetDeckContent();\n    return NextResponse.json(content);\n  } catch (error) {\n    console.error('Error resetting deck content:', error);\n    return NextResponse.json({ error: 'Failed to reset content' }, { status: 500 });\n  }\n}\n\n",
+  "totalLinesInFile": 35
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<think><details><summary>Thought Process</summary>
+I'll update this to auto-save versions on each PUT request. The description can be passed optionally from the client.Good, now let me move to the AI edit endpoint. Let me check what API keys are available.</details></think>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="edit_file_v2">
+<details>
+<summary>Tool use: **edit_file_v2**</summary>
+
+
+Parameters:
+
+```json
+{
+  "relativeWorkspacePath": "/Users/boskombp16/GitHub/directorforgood.org/app/api/deck-content/route.ts"
+}
+```
+Additional data:
+
+```json
+{
+  "codeblockId": "02105d6b-830a-4e4c-aea4-7d1b67a4f012"
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="task" data-tool-name="todo_write">
+<details><summary>Tool use: **todo_write** • Todo List</summary>
+
+- [x] Commit and push current version to preserve state
+- [x] Add Foundation Customers slide to deck-content.json
+- [x] Add deckVersions table to schema and run migration
+- [x] Create version list and restore API routes
+- [x] Modify deck-content API to auto-save versions on each PUT
+- [-] Create AI edit endpoint with OpenAI/Anthropic integration
+- [ ] Build chat panel component for AI interactions
+- [ ] Build Cmd+K quick command bar
+- [ ] Build version history panel with preview and restore
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+Path '/Users/boskombp16/GitHub/directorforgood.org/.env.example' exists but is filtered out by globalignore
+
+---
+
+<think><details><summary>Thought Process</summary>
+Let me check the package.json to see if there's any AI/LLM package already installed, or I'll need to add one.The AI SDK packages are already installed. Let me create the AI edit endpoint. I'll use the Vercel AI SDK with Anthropic as the primary provider.Now let me create the AI edit endpoint. This will accept natural language instructions and return proposed changes.Now let me move on to building the chat UI component. I'll update the deck editor page to include a chat panel.</details></think>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="run_terminal_command_v2">
+<details>
+<summary>Tool use: **run_terminal_command_v2**</summary>
+
+
+Parameters:
+
+```json
+{
+  "command": "cd /Users/boskombp16/GitHub/directorforgood.org &amp;&amp; grep -i \"openai\\|anthropic\\|ai\" package.json || echo \"No AI packages found\"",
+  "cwd": "",
+  "parsingResult": {
+    "executableCommands": [
+      {
+        "name": "cd",
+        "args": [
+          {
+            "type": "word",
+            "value": "/Users/boskombp16/GitHub/directorforgood.org"
+          }
+        ],
+        "fullText": "cd /Users/boskombp16/GitHub/directorforgood.org"
+      },
+      {
+        "name": "grep",
+        "args": [
+          {
+            "type": "word",
+            "value": "-i"
+          },
+          {
+            "type": "string",
+            "value": "\"openai\\|anthropic\\|ai\""
+          },
+          {
+            "type": "word",
+            "value": "package.json"
+          }
+        ],
+        "fullText": "grep -i \"openai\\|anthropic\\|ai\" package.json"
+      },
+      {
+        "name": "echo",
+        "args": [
+          {
+            "type": "string",
+            "value": "\"No AI packages found\""
+          }
+        ],
+        "fullText": "echo \"No AI packages found\""
+      }
+    ]
+  }
+}
+```
+Additional data:
+
+```json
+{
+  "status": "success"
+}
+```
+Result:
+
+```json
+{
+  "output": "    \"@ai-sdk/anthropic\": \"^2.0.44\",\n    \"@ai-sdk/openai\": \"^2.0.67\",\n    \"@ai-sdk/react\": \"^2.0.93\",\n    \"ai\": \"^5.0.93\",\n    \"tailwind-merge\": \"^3.4.0\",\n    \"@tailwindcss/postcss\": \"^4\",\n    \"tailwindcss\": \"^4\",\n",
+  "rejected": false
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="run_terminal_command_v2">
+<details>
+<summary>Tool use: **run_terminal_command_v2**</summary>
+
+
+Parameters:
+
+```json
+{
+  "command": "mkdir -p /Users/boskombp16/GitHub/directorforgood.org/app/api/deck/ai-edit",
+  "cwd": "",
+  "parsingResult": {
+    "executableCommands": [
+      {
+        "name": "mkdir",
+        "args": [
+          {
+            "type": "word",
+            "value": "-p"
+          },
+          {
+            "type": "word",
+            "value": "/Users/boskombp16/GitHub/directorforgood.org/app/api/deck/ai-edit"
+          }
+        ],
+        "fullText": "mkdir -p /Users/boskombp16/GitHub/directorforgood.org/app/api/deck/ai-edit"
+      }
+    ]
+  }
+}
+```
+Additional data:
+
+```json
+{
+  "status": "success"
+}
+```
+Result:
+
+```json
+{
+  "rejected": false
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="edit_file_v2">
+<details>
+<summary>Tool use: **edit_file_v2**</summary>
+
+
+Parameters:
+
+```json
+{
+  "relativeWorkspacePath": "/Users/boskombp16/GitHub/directorforgood.org/app/api/deck/ai-edit/route.ts"
+}
+```
+Additional data:
+
+```json
+{
+  "codeblockId": "1bcdf336-b31c-4e93-897f-1583c05e4296"
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="task" data-tool-name="todo_write">
+<details><summary>Tool use: **todo_write** • Todo List</summary>
+
+- [x] Commit and push current version to preserve state
+- [x] Add Foundation Customers slide to deck-content.json
+- [x] Add deckVersions table to schema and run migration
+- [x] Create version list and restore API routes
+- [x] Modify deck-content API to auto-save versions on each PUT
+- [x] Create AI edit endpoint with OpenAI/Anthropic integration
+- [-] Build chat panel component for AI interactions
+- [ ] Build Cmd+K quick command bar
+- [ ] Build version history panel with preview and restore
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="read_file_v2">
+<details>
+<summary>Tool use: **read_file_v2**</summary>
+
+
+Parameters:
+
+```json
+{
+  "targetFile": "/Users/boskombp16/GitHub/directorforgood.org/app/admin/deck/page.tsx",
+  "charsLimit": 1000000,
+  "effectiveUri": "/Users/boskombp16/GitHub/directorforgood.org/app/admin/deck/page.tsx"
+}
+```
+Result:
+
+```json
+{
+  "contents": "'use client';\n\nimport { useState, useEffect, useCallback, useRef } from 'react';\nimport Link from 'next/link';\nimport { Button } from '@/components/ui/button';\nimport { ArrowLeft, Save, RotateCcw, Eye, Loader2, Plus, Trash2, ChevronDown, ChevronRight, ImageIcon, Upload, Undo2, Redo2 } from 'lucide-react';\nimport { DeckContent, SlideContent, SlideImage } from '@/lib/deck-content';\nimport Image from 'next/image';\n\nconst MAX_HISTORY = 50;\n\nexport default function DeckEditorPage() {\n  const [content, setContent] = useState&lt;DeckContent | null&gt;(null);\n  const [isLoading, setIsLoading] = useState(true);\n  const [isSaving, setIsSaving] = useState(false);\n  const [expandedSlides, setExpandedSlides] = useState&lt;Set&lt;string&gt;&gt;(new Set());\n  const [hasChanges, setHasChanges] = useState(false);\n  \n  // Undo/Redo state\n  const [history, setHistory] = useState&lt;DeckContent[]&gt;([]);\n  const [historyIndex, setHistoryIndex] = useState(-1);\n  const isUndoRedo = useRef(false);\n\n  // Keyboard shortcuts for undo/redo\n  useEffect(() =&gt; {\n    const handleKeyDown = (e: KeyboardEvent) =&gt; {\n      if ((e.metaKey || e.ctrlKey) &amp;&amp; e.key === 'z') {\n        e.preventDefault();\n        if (e.shiftKey) {\n          redo();\n        } else {\n          undo();\n        }\n      }\n    };\n    \n    window.addEventListener('keydown', handleKeyDown);\n    return () =&gt; window.removeEventListener('keydown', handleKeyDown);\n  }, [historyIndex, history]);\n\n  useEffect(() =&gt; {\n    fetchContent();\n  }, []);\n\n  const fetchContent = async () =&gt; {\n    setIsLoading(true);\n    try {\n      const response = await fetch('/api/deck-content');\n      const data = await response.json();\n      setContent(data);\n      // Initialize history with loaded content\n      setHistory([data]);\n      setHistoryIndex(0);\n    } catch (error) {\n      console.error('Failed to fetch content:', error);\n    } finally {\n      setIsLoading(false);\n    }\n  };\n\n  // Push new state to history\n  const pushToHistory = useCallback((newContent: DeckContent) =&gt; {\n    if (isUndoRedo.current) {\n      isUndoRedo.current = false;\n      return;\n    }\n    \n    setHistory(prev =&gt; {\n      // Remove any future states if we're not at the end\n      const newHistory = prev.slice(0, historyIndex + 1);\n      // Add new state\n      newHistory.push(newContent);\n      // Limit history size\n      if (newHistory.length &gt; MAX_HISTORY) {\n        newHistory.shift();\n        return newHistory;\n      }\n      return newHistory;\n    });\n    setHistoryIndex(prev =&gt; Math.min(prev + 1, MAX_HISTORY - 1));\n  }, [historyIndex]);\n\n  // Undo function\n  const undo = useCallback(() =&gt; {\n    if (historyIndex &gt; 0) {\n      isUndoRedo.current = true;\n      const newIndex = historyIndex - 1;\n      setHistoryIndex(newIndex);\n      setContent(history[newIndex]);\n      setHasChanges(true);\n    }\n  }, [historyIndex, history]);\n\n  // Redo function\n  const redo = useCallback(() =&gt; {\n    if (historyIndex &lt; history.length - 1) {\n      isUndoRedo.current = true;\n      const newIndex = historyIndex + 1;\n      setHistoryIndex(newIndex);\n      setContent(history[newIndex]);\n      setHasChanges(true);\n    }\n  }, [historyIndex, history]);\n\n  const canUndo = historyIndex &gt; 0;\n  const canRedo = historyIndex &lt; history.length - 1;\n\n  const saveContent = async () =&gt; {\n    if (!content) return;\n    setIsSaving(true);\n    try {\n      const response = await fetch('/api/deck-content', {\n        method: 'PUT',\n        headers: { 'Content-Type': 'application/json' },\n        body: JSON.stringify(content),\n      });\n      if (response.ok) {\n        setHasChanges(false);\n        alert('Content saved successfully!');\n      }\n    } catch (error) {\n      console.error('Failed to save content:', error);\n      alert('Failed to save content');\n    } finally {\n      setIsSaving(false);\n    }\n  };\n\n  const resetContent = async () =&gt; {\n    if (!confirm('Reset all content to defaults? This cannot be undone.')) return;\n    try {\n      const response = await fetch('/api/deck-content', { method: 'DELETE' });\n      const data = await response.json();\n      setContent(data);\n      setHistory([data]);\n      setHistoryIndex(0);\n      setHasChanges(false);\n    } catch (error) {\n      console.error('Failed to reset content:', error);\n    }\n  };\n\n  const updateCover = (field: keyof DeckContent['cover'], value: string) =&gt; {\n    if (!content) return;\n    const newContent = { ...content, cover: { ...content.cover, [field]: value } };\n    setContent(newContent);\n    pushToHistory(newContent);\n    setHasChanges(true);\n  };\n\n  const updateSlide = (index: number, updates: Partial&lt;SlideContent&gt;) =&gt; {\n    if (!content) return;\n    const newSlides = [...content.slides];\n    newSlides[index] = { ...newSlides[index], ...updates };\n    const newContent = { ...content, slides: newSlides };\n    setContent(newContent);\n    pushToHistory(newContent);\n    setHasChanges(true);\n  };\n\n  const updateSlideSection = (slideIndex: number, sectionIndex: number, updates: Partial&lt;SlideContent['sections'][0]&gt;) =&gt; {\n    if (!content) return;\n    const newSlides = [...content.slides];\n    const newSections = [...(newSlides[slideIndex].sections || [])];\n    newSections[sectionIndex] = { ...newSections[sectionIndex], ...updates };\n    newSlides[slideIndex] = { ...newSlides[slideIndex], sections: newSections };\n    const newContent = { ...content, slides: newSlides };\n    setContent(newContent);\n    pushToHistory(newContent);\n    setHasChanges(true);\n  };\n\n  const updateSectionItems = (slideIndex: number, sectionIndex: number, items: string[]) =&gt; {\n    updateSlideSection(slideIndex, sectionIndex, { items });\n  };\n\n  const addSectionItem = (slideIndex: number, sectionIndex: number) =&gt; {\n    if (!content) return;\n    const currentItems = content.slides[slideIndex].sections?.[sectionIndex]?.items || [];\n    updateSectionItems(slideIndex, sectionIndex, [...currentItems, '']);\n  };\n\n  const removeSectionItem = (slideIndex: number, sectionIndex: number, itemIndex: number) =&gt; {\n    if (!content) return;\n    const currentItems = content.slides[slideIndex].sections?.[sectionIndex]?.items || [];\n    updateSectionItems(slideIndex, sectionIndex, currentItems.filter((_, i) =&gt; i !== itemIndex));\n  };\n\n  const updateAsk = (field: 'amount' | 'items', value: string | string[]) =&gt; {\n    if (!content) return;\n    const newContent = { ...content, ask: { ...content.ask, [field]: value } };\n    setContent(newContent);\n    pushToHistory(newContent);\n    setHasChanges(true);\n  };\n\n  const toggleSlide = (slideId: string) =&gt; {\n    const newExpanded = new Set(expandedSlides);\n    if (newExpanded.has(slideId)) {\n      newExpanded.delete(slideId);\n    } else {\n      newExpanded.add(slideId);\n    }\n    setExpandedSlides(newExpanded);\n  };\n\n  const updateSlideImage = (slideIndex: number, image: SlideImage | undefined) =&gt; {\n    if (!content) return;\n    const newSlides = [...content.slides];\n    newSlides[slideIndex] = { ...newSlides[slideIndex], image };\n    const newContent = { ...content, slides: newSlides };\n    setContent(newContent);\n    pushToHistory(newContent);\n    setHasChanges(true);\n  };\n\n  const handleImageDrop = async (slideIndex: number, e: React.DragEvent&lt;HTMLDivElement&gt;) =&gt; {\n    e.preventDefault();\n    const file = e.dataTransfer.files[0];\n    if (!file || !file.type.startsWith('image/')) return;\n    \n    // Convert to base64 for now (in production, upload to storage)\n    const reader = new FileReader();\n    reader.onload = () =&gt; {\n      const currentImage = content?.slides[slideIndex]?.image;\n      updateSlideImage(slideIndex, {\n        ...currentImage,\n        type: currentImage?.type || 'infographic',\n        url: reader.result as string,\n        placeholder: currentImage?.placeholder,\n      });\n    };\n    reader.readAsDataURL(file);\n  };\n\n  const handleImageUpload = async (slideIndex: number, e: React.ChangeEvent&lt;HTMLInputElement&gt;) =&gt; {\n    const file = e.target.files?.[0];\n    if (!file || !file.type.startsWith('image/')) return;\n    \n    const reader = new FileReader();\n    reader.onload = () =&gt; {\n      const currentImage = content?.slides[slideIndex]?.image;\n      updateSlideImage(slideIndex, {\n        ...currentImage,\n        type: currentImage?.type || 'infographic',\n        url: reader.result as string,\n        placeholder: currentImage?.placeholder,\n      });\n    };\n    reader.readAsDataURL(file);\n  };\n\n  const removeSlideImage = (slideIndex: number) =&gt; {\n    if (!content) return;\n    const currentImage = content.slides[slideIndex]?.image;\n    if (currentImage) {\n      updateSlideImage(slideIndex, { ...currentImage, url: undefined });\n    }\n  };\n\n  if (isLoading) {\n    return (\n      &lt;div className=\"min-h-screen bg-gray-950 text-white flex items-center justify-center\"&gt;\n        &lt;Loader2 className=\"w-8 h-8 animate-spin\" /&gt;\n      &lt;/div&gt;\n    );\n  }\n\n  if (!content) {\n    return (\n      &lt;div className=\"min-h-screen bg-gray-950 text-white flex items-center justify-center\"&gt;\n        &lt;p&gt;Failed to load content&lt;/p&gt;\n      &lt;/div&gt;\n    );\n  }\n\n  return (\n    &lt;div className=\"min-h-screen bg-gray-950 text-white\"&gt;\n      {/* Header */}\n      &lt;div className=\"sticky top-0 z-10 bg-gray-900 border-b border-gray-800\"&gt;\n        &lt;div className=\"container px-4 py-4 flex items-center justify-between\"&gt;\n          &lt;div className=\"flex items-center gap-4\"&gt;\n            &lt;Link href=\"/admin\" className=\"text-gray-400 hover:text-white\"&gt;\n              &lt;ArrowLeft className=\"w-5 h-5\" /&gt;\n            &lt;/Link&gt;\n            &lt;h1 className=\"text-xl font-bold\"&gt;Edit Pitch Deck&lt;/h1&gt;\n            {hasChanges &amp;&amp; (\n              &lt;span className=\"text-xs bg-yellow-600 px-2 py-1 rounded\"&gt;Unsaved changes&lt;/span&gt;\n            )}\n          &lt;/div&gt;\n          \n          &lt;div className=\"flex items-center gap-2\"&gt;\n            &lt;Button\n              onClick={undo}\n              disabled={!canUndo}\n              variant=\"outline\"\n              size=\"sm\"\n              className=\"border-gray-700 text-gray-300 disabled:opacity-30\"\n              title=\"Undo (Cmd+Z)\"\n            &gt;\n              &lt;Undo2 className=\"w-4 h-4\" /&gt;\n            &lt;/Button&gt;\n            &lt;Button\n              onClick={redo}\n              disabled={!canRedo}\n              variant=\"outline\"\n              size=\"sm\"\n              className=\"border-gray-700 text-gray-300 disabled:opacity-30\"\n              title=\"Redo (Cmd+Shift+Z)\"\n            &gt;\n              &lt;Redo2 className=\"w-4 h-4\" /&gt;\n            &lt;/Button&gt;\n            &lt;div className=\"w-px h-6 bg-gray-700 mx-1\" /&gt;\n            &lt;Button\n              onClick={resetContent}\n              variant=\"outline\"\n              size=\"sm\"\n              className=\"border-gray-700 text-gray-300\"\n            &gt;\n              &lt;RotateCcw className=\"w-4 h-4 mr-2\" /&gt;\n              Reset\n            &lt;/Button&gt;\n            &lt;Link href=\"/deck\" target=\"_blank\"&gt;\n              &lt;Button variant=\"outline\" size=\"sm\" className=\"border-gray-700 text-gray-300\"&gt;\n                &lt;Eye className=\"w-4 h-4 mr-2\" /&gt;\n                Preview\n              &lt;/Button&gt;\n            &lt;/Link&gt;\n            &lt;Button\n              onClick={saveContent}\n              disabled={isSaving || !hasChanges}\n              size=\"sm\"\n              className=\"bg-white text-black hover:bg-gray-200\"\n            &gt;\n              {isSaving ? &lt;Loader2 className=\"w-4 h-4 mr-2 animate-spin\" /&gt; : &lt;Save className=\"w-4 h-4 mr-2\" /&gt;}\n              Save\n            &lt;/Button&gt;\n          &lt;/div&gt;\n        &lt;/div&gt;\n      &lt;/div&gt;\n\n      &lt;div className=\"container px-4 py-8 max-w-4xl\"&gt;\n        {/* Cover Section */}\n        &lt;section className=\"mb-8\"&gt;\n          &lt;h2 className=\"text-lg font-semibold mb-4 text-gray-300\"&gt;Slides&lt;/h2&gt;\n          &lt;div className=\"bg-gray-900 rounded-lg overflow-hidden mb-2\"&gt;\n            &lt;button\n              onClick={() =&gt; toggleSlide('cover')}\n              className=\"w-full px-4 py-3 flex items-center justify-between hover:bg-gray-800 transition-colors\"\n            &gt;\n              &lt;span className=\"font-medium\"&gt;1. Cover Slide&lt;/span&gt;\n              {expandedSlides.has('cover') ? (\n                &lt;ChevronDown className=\"w-5 h-5 text-gray-400\" /&gt;\n              ) : (\n                &lt;ChevronRight className=\"w-5 h-5 text-gray-400\" /&gt;\n              )}\n            &lt;/button&gt;\n            \n            {expandedSlides.has('cover') &amp;&amp; (\n              &lt;div className=\"px-4 pb-4 space-y-4 border-t border-gray-800\"&gt;\n                &lt;div className=\"pt-4\"&gt;\n                  &lt;label className=\"block text-sm text-gray-400 mb-1\"&gt;Title&lt;/label&gt;\n                  &lt;input\n                    type=\"text\"\n                    value={content.cover.title}\n                    onChange={(e) =&gt; updateCover('title', e.target.value)}\n                    className=\"w-full bg-gray-800 border border-gray-700 rounded px-3 py-2 text-white\"\n                  /&gt;\n                &lt;/div&gt;\n                &lt;div&gt;\n                  &lt;label className=\"block text-sm text-gray-400 mb-1\"&gt;Tagline&lt;/label&gt;\n                  &lt;textarea\n                    value={content.cover.tagline}\n                    onChange={(e) =&gt; updateCover('tagline', e.target.value)}\n                    rows={2}\n                    className=\"w-full bg-gray-800 border border-gray-700 rounded px-3 py-2 text-white\"\n                  /&gt;\n                &lt;/div&gt;\n                &lt;div&gt;\n                  &lt;label className=\"block text-sm text-gray-400 mb-1\"&gt;Subtagline&lt;/label&gt;\n                  &lt;input\n                    type=\"text\"\n                    value={content.cover.subtagline}\n                    onChange={(e) =&gt; updateCover('subtagline', e.target.value)}\n                    className=\"w-full bg-gray-800 border border-gray-700 rounded px-3 py-2 text-white\"\n                  /&gt;\n                &lt;/div&gt;\n                &lt;div&gt;\n                  &lt;label className=\"block text-sm text-gray-400 mb-1\"&gt;URL&lt;/label&gt;\n                  &lt;input\n                    type=\"text\"\n                    value={content.cover.url}\n                    onChange={(e) =&gt; updateCover('url', e.target.value)}\n                    className=\"w-full bg-gray-800 border border-gray-700 rounded px-3 py-2 text-white\"\n                  /&gt;\n                &lt;/div&gt;\n              &lt;/div&gt;\n            )}\n          &lt;/div&gt;\n\n          {content.slides.map((slide, slideIndex) =&gt; (\n              &lt;div key={slide.id} className=\"bg-gray-900 rounded-lg overflow-hidden\"&gt;\n                &lt;button\n                  onClick={() =&gt; toggleSlide(slide.id)}\n                  className=\"w-full px-4 py-3 flex items-center justify-between hover:bg-gray-800 transition-colors\"\n                &gt;\n                  &lt;span className=\"font-medium\"&gt;\n                    {slideIndex + 2}. {slide.title}\n                  &lt;/span&gt;\n                  {expandedSlides.has(slide.id) ? (\n                    &lt;ChevronDown className=\"w-5 h-5 text-gray-400\" /&gt;\n                  ) : (\n                    &lt;ChevronRight className=\"w-5 h-5 text-gray-400\" /&gt;\n                  )}\n                &lt;/button&gt;\n                \n                {expandedSlides.has(slide.id) &amp;&amp; (\n                  &lt;div className=\"px-4 pb-4 space-y-4 border-t border-gray-800\"&gt;\n                    &lt;div className=\"pt-4\"&gt;\n                      &lt;label className=\"block text-sm text-gray-400 mb-1\"&gt;Title&lt;/label&gt;\n                      &lt;input\n                        type=\"text\"\n                        value={slide.title}\n                        onChange={(e) =&gt; updateSlide(slideIndex, { title: e.target.value })}\n                        className=\"w-full bg-gray-800 border border-gray-700 rounded px-3 py-2 text-white\"\n                      /&gt;\n                    &lt;/div&gt;\n                    \n                    &lt;div&gt;\n                      &lt;label className=\"block text-sm text-gray-400 mb-1\"&gt;Subtitle&lt;/label&gt;\n                      &lt;input\n                        type=\"text\"\n                        value={slide.subtitle || ''}\n                        onChange={(e) =&gt; updateSlide(slideIndex, { subtitle: e.target.value })}\n                        className=\"w-full bg-gray-800 border border-gray-700 rounded px-3 py-2 text-white\"\n                      /&gt;\n                    &lt;/div&gt;\n\n                    {/* Sections */}\n                    {slide.sections?.map((section, sectionIndex) =&gt; (\n                      &lt;div key={sectionIndex} className=\"bg-gray-800 rounded p-3 space-y-3\"&gt;\n                        &lt;div&gt;\n                          &lt;label className=\"block text-xs text-gray-500 mb-1\"&gt;Section Heading&lt;/label&gt;\n                          &lt;input\n                            type=\"text\"\n                            value={section.heading || ''}\n                            onChange={(e) =&gt; updateSlideSection(slideIndex, sectionIndex, { heading: e.target.value })}\n                            className=\"w-full bg-gray-700 border border-gray-600 rounded px-2 py-1 text-sm text-white\"\n                          /&gt;\n                        &lt;/div&gt;\n                        \n                        {section.text !== undefined &amp;&amp; (\n                          &lt;div&gt;\n                            &lt;label className=\"block text-xs text-gray-500 mb-1\"&gt;Text&lt;/label&gt;\n                            &lt;textarea\n                              value={section.text}\n                              onChange={(e) =&gt; updateSlideSection(slideIndex, sectionIndex, { text: e.target.value })}\n                              rows={2}\n                              className=\"w-full bg-gray-700 border border-gray-600 rounded px-2 py-1 text-sm text-white\"\n                            /&gt;\n                          &lt;/div&gt;\n                        )}\n                        \n                        {section.items &amp;&amp; (\n                          &lt;div&gt;\n                            &lt;label className=\"block text-xs text-gray-500 mb-1\"&gt;Bullet Points&lt;/label&gt;\n                            {section.items.map((item, itemIndex) =&gt; (\n                              &lt;div key={itemIndex} className=\"flex gap-2 mb-1\"&gt;\n                                &lt;input\n                                  type=\"text\"\n                                  value={item}\n                                  onChange={(e) =&gt; {\n                                    const newItems = [...section.items!];\n                                    newItems[itemIndex] = e.target.value;\n                                    updateSectionItems(slideIndex, sectionIndex, newItems);\n                                  }}\n                                  className=\"flex-1 bg-gray-700 border border-gray-600 rounded px-2 py-1 text-sm text-white\"\n                                /&gt;\n                                &lt;button\n                                  onClick={() =&gt; removeSectionItem(slideIndex, sectionIndex, itemIndex)}\n                                  className=\"text-red-400 hover:text-red-300 p-1\"\n                                &gt;\n                                  &lt;Trash2 className=\"w-4 h-4\" /&gt;\n                                &lt;/button&gt;\n                              &lt;/div&gt;\n                            ))}\n                            &lt;button\n                              onClick={() =&gt; addSectionItem(slideIndex, sectionIndex)}\n                              className=\"text-xs text-gray-400 hover:text-white flex items-center gap-1 mt-1\"\n                            &gt;\n                              &lt;Plus className=\"w-3 h-3\" /&gt; Add item\n                            &lt;/button&gt;\n                          &lt;/div&gt;\n                        )}\n                      &lt;/div&gt;\n                    ))}\n\n                    {slide.highlight &amp;&amp; (\n                      &lt;div&gt;\n                        &lt;label className=\"block text-sm text-gray-400 mb-1\"&gt;Highlight Box&lt;/label&gt;\n                        &lt;textarea\n                          value={slide.highlight}\n                          onChange={(e) =&gt; updateSlide(slideIndex, { highlight: e.target.value })}\n                          rows={2}\n                          className=\"w-full bg-gray-800 border border-gray-700 rounded px-3 py-2 text-white\"\n                        /&gt;\n                      &lt;/div&gt;\n                    )}\n\n                    {slide.footnote &amp;&amp; (\n                      &lt;div&gt;\n                        &lt;label className=\"block text-sm text-gray-400 mb-1\"&gt;Footnote&lt;/label&gt;\n                        &lt;input\n                          type=\"text\"\n                          value={slide.footnote}\n                          onChange={(e) =&gt; updateSlide(slideIndex, { footnote: e.target.value })}\n                          className=\"w-full bg-gray-800 border border-gray-700 rounded px-3 py-2 text-white\"\n                        /&gt;\n                      &lt;/div&gt;\n                    )}\n\n                    {/* Image Section */}\n                    &lt;div className=\"border-t border-gray-700 pt-4 mt-4\"&gt;\n                      &lt;label className=\"block text-sm text-gray-400 mb-2\"&gt;Slide Image&lt;/label&gt;\n                      \n                      {slide.image?.url ? (\n                        &lt;div className=\"relative\"&gt;\n                          &lt;div className=\"relative w-full h-48 bg-gray-800 rounded-lg overflow-hidden\"&gt;\n                            &lt;img\n                              src={slide.image.url}\n                              alt={slide.image.placeholder || 'Slide image'}\n                              className=\"w-full h-full object-contain\"\n                            /&gt;\n                          &lt;/div&gt;\n                          &lt;button\n                            onClick={() =&gt; removeSlideImage(slideIndex)}\n                            className=\"absolute top-2 right-2 bg-red-600 hover:bg-red-700 text-white p-1 rounded\"\n                          &gt;\n                            &lt;Trash2 className=\"w-4 h-4\" /&gt;\n                          &lt;/button&gt;\n                          &lt;p className=\"text-xs text-gray-500 mt-1\"&gt;{slide.image.placeholder}&lt;/p&gt;\n                        &lt;/div&gt;\n                      ) : (\n                        &lt;div\n                          onDrop={(e) =&gt; handleImageDrop(slideIndex, e)}\n                          onDragOver={(e) =&gt; e.preventDefault()}\n                          className=\"border-2 border-dashed border-gray-600 rounded-lg p-6 text-center hover:border-gray-500 transition-colors\"\n                        &gt;\n                          &lt;ImageIcon className=\"w-12 h-12 mx-auto text-gray-500 mb-3\" /&gt;\n                          &lt;p className=\"text-sm text-gray-400 mb-2\"&gt;\n                            {slide.image?.placeholder || 'Drag &amp; drop image here'}\n                          &lt;/p&gt;\n                          &lt;p className=\"text-xs text-gray-500 mb-3\"&gt;\n                            Type: {slide.image?.type || 'Not set'}\n                          &lt;/p&gt;\n                          &lt;label className=\"cursor-pointer\"&gt;\n                            &lt;span className=\"inline-flex items-center gap-2 px-3 py-1.5 bg-gray-700 hover:bg-gray-600 rounded text-sm text-white\"&gt;\n                              &lt;Upload className=\"w-4 h-4\" /&gt;\n                              Upload Image\n                            &lt;/span&gt;\n                            &lt;input\n                              type=\"file\"\n                              accept=\"image/*\"\n                              onChange={(e) =&gt; handleImageUpload(slideIndex, e)}\n                              className=\"hidden\"\n                            /&gt;\n                          &lt;/label&gt;\n                        &lt;/div&gt;\n                      )}\n                      \n                      &lt;div className=\"mt-2\"&gt;\n                        &lt;label className=\"block text-xs text-gray-500 mb-1\"&gt;Image Description (for AI generation)&lt;/label&gt;\n                        &lt;input\n                          type=\"text\"\n                          value={slide.image?.placeholder || ''}\n                          onChange={(e) =&gt; updateSlideImage(slideIndex, {\n                            ...slide.image,\n                            type: slide.image?.type || 'infographic',\n                            placeholder: e.target.value,\n                          })}\n                          placeholder=\"Describe the image you want...\"\n                          className=\"w-full bg-gray-700 border border-gray-600 rounded px-2 py-1 text-sm text-white\"\n                        /&gt;\n                      &lt;/div&gt;\n                      \n                      &lt;div className=\"mt-2\"&gt;\n                        &lt;label className=\"block text-xs text-gray-500 mb-1\"&gt;Image Type&lt;/label&gt;\n                        &lt;select\n                          value={slide.image?.type || 'infographic'}\n                          onChange={(e) =&gt; updateSlideImage(slideIndex, {\n                            ...slide.image,\n                            type: e.target.value as SlideImage['type'],\n                            placeholder: slide.image?.placeholder,\n                          })}\n                          className=\"w-full bg-gray-700 border border-gray-600 rounded px-2 py-1 text-sm text-white\"\n                        &gt;\n                          &lt;option value=\"icon\"&gt;Icon&lt;/option&gt;\n                          &lt;option value=\"chart\"&gt;Chart&lt;/option&gt;\n                          &lt;option value=\"mockup\"&gt;Mockup&lt;/option&gt;\n                          &lt;option value=\"infographic\"&gt;Infographic&lt;/option&gt;\n                          &lt;option value=\"photo\"&gt;Photo&lt;/option&gt;\n                          &lt;option value=\"diagram\"&gt;Diagram&lt;/option&gt;\n                        &lt;/select&gt;\n                      &lt;/div&gt;\n                    &lt;/div&gt;\n                  &lt;/div&gt;\n                )}\n              &lt;/div&gt;\n            ))}\n        &lt;/section&gt;\n\n        {/* Ask Section */}\n        &lt;section className=\"mb-8\"&gt;\n          &lt;h2 className=\"text-lg font-semibold mb-4 text-gray-300\"&gt;The Ask&lt;/h2&gt;\n          &lt;div className=\"bg-gray-900 rounded-lg p-4 space-y-4\"&gt;\n            &lt;div&gt;\n              &lt;label className=\"block text-sm text-gray-400 mb-1\"&gt;Amount&lt;/label&gt;\n              &lt;input\n                type=\"text\"\n                value={content.ask.amount}\n                onChange={(e) =&gt; updateAsk('amount', e.target.value)}\n                className=\"w-full bg-gray-800 border border-gray-700 rounded px-3 py-2 text-white\"\n              /&gt;\n            &lt;/div&gt;\n            &lt;div&gt;\n              &lt;label className=\"block text-sm text-gray-400 mb-1\"&gt;What we'll do with the funding&lt;/label&gt;\n              {content.ask.items.map((item, index) =&gt; (\n                &lt;div key={index} className=\"flex gap-2 mb-2\"&gt;\n                  &lt;input\n                    type=\"text\"\n                    value={item}\n                    onChange={(e) =&gt; {\n                      const newItems = [...content.ask.items];\n                      newItems[index] = e.target.value;\n                      updateAsk('items', newItems);\n                    }}\n                    className=\"flex-1 bg-gray-800 border border-gray-700 rounded px-3 py-2 text-white\"\n                  /&gt;\n                  &lt;button\n                    onClick={() =&gt; {\n                      const newItems = content.ask.items.filter((_, i) =&gt; i !== index);\n                      updateAsk('items', newItems);\n                    }}\n                    className=\"text-red-400 hover:text-red-300 p-2\"\n                  &gt;\n                    &lt;Trash2 className=\"w-4 h-4\" /&gt;\n                  &lt;/button&gt;\n                &lt;/div&gt;\n              ))}\n              &lt;button\n                onClick={() =&gt; updateAsk('items', [...content.ask.items, ''])}\n                className=\"text-sm text-gray-400 hover:text-white flex items-center gap-1\"\n              &gt;\n                &lt;Plus className=\"w-4 h-4\" /&gt; Add item\n              &lt;/button&gt;\n            &lt;/div&gt;\n          &lt;/div&gt;\n        &lt;/section&gt;\n      &lt;/div&gt;\n    &lt;/div&gt;\n  );\n}\n\n",
+  "totalLinesInFile": 664
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<think><details><summary>Thought Process</summary>
+This is a large file. I need to add:1. Chat panel component for AI interactions
+2. Command bar (Cmd+K)
+3. Version history panel
+
+Let me create a comprehensive update to the deck editor page that includes all three features. I'll structure it carefully to add:1. State for chat panel, command bar, and history panel
+2. AI chat messages state and handlers
+3. Version history state and handlers4. UI components for all three panels
+
+This is going to be a significant update. Let me write the complete new version of the file.</details></think>
+
+---
+
+This file is large. I'll create a comprehensive update that adds the chat panel, command bar, and version history. Let me rewrite it with all the new features:
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="edit_file_v2">
+<details>
+<summary>Tool use: **edit_file_v2**</summary>
+
+
+Parameters:
+
+```json
+{
+  "relativeWorkspacePath": "/Users/boskombp16/GitHub/directorforgood.org/app/admin/deck/page.tsx"
+}
+```
+Additional data:
+
+```json
+{
+  "codeblockId": "bb3b3ce7-23c6-4f46-bf7f-cac94a5bf5e9"
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<think><details><summary>Thought Process</summary>
+The chat UI, command bar, and history UI are all now integrated into the deck editor page. Let me update the todos and check for any linting errors.</details></think>
+
+---
+
+<tool-use data-tool-type="task" data-tool-name="todo_write">
+<details><summary>Tool use: **todo_write** • Todo List</summary>
+
+- [x] Commit and push current version to preserve state
+- [x] Add Foundation Customers slide to deck-content.json
+- [x] Add deckVersions table to schema and run migration
+- [x] Create version list and restore API routes
+- [x] Modify deck-content API to auto-save versions on each PUT
+- [x] Create AI edit endpoint with OpenAI/Anthropic integration
+- [x] Build chat panel component for AI interactions
+- [x] Build Cmd+K quick command bar
+- [x] Build version history panel with preview and restore
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="read_lints">
+<details>
+<summary>Tool use: **read_lints**</summary>
+
+
+Parameters:
+
+```json
+{
+  "paths": [
+    "/Users/boskombp16/GitHub/directorforgood.org/app/admin/deck/page.tsx",
+    "/Users/boskombp16/GitHub/directorforgood.org/app/api/deck-content/route.ts",
+    "/Users/boskombp16/GitHub/directorforgood.org/app/api/deck/ai-edit/route.ts"
+  ]
+}
+```
+Result:
+
+```json
+{
+  "linterErrorsByFile": [
+    {
+      "relativeWorkspacePath": "/Users/boskombp16/GitHub/directorforgood.org/app/admin/deck/page.tsx"
+    },
+    {
+      "relativeWorkspacePath": "/Users/boskombp16/GitHub/directorforgood.org/app/api/deck-content/route.ts"
+    },
+    {
+      "relativeWorkspacePath": "/Users/boskombp16/GitHub/directorforgood.org/app/api/deck/ai-edit/route.ts"
+    }
+  ]
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<think><details><summary>Thought Process</summary>
+All todos are completed and there are no linting errors. Let me verify the implementation works by checking if all files are in place and then commit these changes.</details></think>
+
+---
+
+All tasks are complete. Let me verify everything is in place and commit these changes:
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="run_terminal_command_v2">
+<details>
+<summary>Tool use: **run_terminal_command_v2**</summary>
+
+
+Parameters:
+
+```json
+{
+  "command": "cd /Users/boskombp16/GitHub/directorforgood.org &amp;&amp; git status --short",
+  "cwd": "",
+  "parsingResult": {
+    "executableCommands": [
+      {
+        "name": "cd",
+        "args": [
+          {
+            "type": "word",
+            "value": "/Users/boskombp16/GitHub/directorforgood.org"
+          }
+        ],
+        "fullText": "cd /Users/boskombp16/GitHub/directorforgood.org"
+      },
+      {
+        "name": "git",
+        "args": [
+          {
+            "type": "word",
+            "value": "status"
+          },
+          {
+            "type": "word",
+            "value": "--short"
+          }
+        ],
+        "fullText": "git status --short"
+      }
+    ]
+  }
+}
+```
+Additional data:
+
+```json
+{
+  "status": "success"
+}
+```
+Result:
+
+```json
+{
+  "output": " M .specstory/history/2025-12-09_14-18Z-foundations-customer-segment-and-ai-website-changes.md\n M app/admin/deck/page.tsx\n M app/api/deck-content/route.ts\n M data/deck-content.json\n M db/migrations/meta/_journal.json\n M db/schema.ts\n M lib/deck-content.ts\n?? app/api/deck-content/versions/\n?? app/api/deck/ai-edit/\n?? db/migrations/meta/0004_snapshot.json\n",
+  "rejected": false
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<think><details><summary>Thought Process</summary>
+Looks like there's a migration file that wasn't added. Let me add it and then check if there's a SQL migration file too.Good, the migration file is there. Let me commit all the changes.Now let me push the changes.All done! Let me provide a summary of what was implemented.</details></think>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="run_terminal_command_v2">
+<details>
+<summary>Tool use: **run_terminal_command_v2**</summary>
+
+
+Parameters:
+
+```json
+{
+  "command": "cd /Users/boskombp16/GitHub/directorforgood.org &amp;&amp; ls -la db/migrations/",
+  "cwd": "",
+  "parsingResult": {
+    "executableCommands": [
+      {
+        "name": "cd",
+        "args": [
+          {
+            "type": "word",
+            "value": "/Users/boskombp16/GitHub/directorforgood.org"
+          }
+        ],
+        "fullText": "cd /Users/boskombp16/GitHub/directorforgood.org"
+      },
+      {
+        "name": "ls",
+        "args": [
+          {
+            "type": "word",
+            "value": "-la"
+          },
+          {
+            "type": "word",
+            "value": "db/migrations/"
+          }
+        ],
+        "fullText": "ls -la db/migrations/"
+      }
+    ]
+  }
+}
+```
+Additional data:
+
+```json
+{
+  "status": "success"
+}
+```
+Result:
+
+```json
+{
+  "output": "total 48\ndrwxr-xr-x@ 9 boskombp16  staff   288 Dec  9 06:28 .\ndrwxr-xr-x@ 5 boskombp16  staff   160 Nov 30 11:08 ..\n-rw-r--r--@ 1 boskombp16  staff  3191 Nov 30 11:08 0000_absurd_zaladane.sql\n-rw-r--r--@ 1 boskombp16  staff  1011 Dec  3 15:40 0001_blushing_leech.sql\n-rw-r--r--@ 1 boskombp16  staff   387 Nov 30 19:56 0001_redirects.sql\n-rw-r--r--@ 1 boskombp16  staff  1031 Dec  7 14:16 0002_groovy_prowler.sql\n-rw-r--r--@ 1 boskombp16  staff    58 Dec  7 22:58 0003_open_stephen_strange.sql\n-rw-r--r--@ 1 boskombp16  staff   395 Dec  9 06:28 0004_abandoned_rawhide_kid.sql\ndrwxr-xr-x@ 8 boskombp16  staff   256 Dec  9 06:28 meta\n",
+  "rejected": false
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="run_terminal_command_v2">
+<details>
+<summary>Tool use: **run_terminal_command_v2**</summary>
+
+
+Parameters:
+
+```json
+{
+  "command": "cd /Users/boskombp16/GitHub/directorforgood.org &amp;&amp; git add -A &amp;&amp; git commit -m \"$(cat &lt;&lt;'EOF'\nfeat: add AI-powered deck editor with version history\n\n- Add Foundation Customers slide to pitch deck\n- Add deckVersions table for content versioning\n- Create AI edit API endpoint using Claude\n- Add chat panel for natural language deck edits\n- Add Cmd+K quick command bar for fast operations\n- Add version history panel with preview and restore\n- Auto-save versions on each content update\n\nNew features:\n- Sparkles button opens AI chat assistant\n- History button shows saved versions\n- Cmd+K opens quick command bar\n- Apply/reject proposed AI changes before saving\n\nEOF\n)\"",
+  "cwd": "",
+  "parsingResult": {
+    "executableCommands": [
+      {
+        "name": "cd",
+        "args": [
+          {
+            "type": "word",
+            "value": "/Users/boskombp16/GitHub/directorforgood.org"
+          }
+        ],
+        "fullText": "cd /Users/boskombp16/GitHub/directorforgood.org"
+      },
+      {
+        "name": "git",
+        "args": [
+          {
+            "type": "word",
+            "value": "add"
+          },
+          {
+            "type": "word",
+            "value": "-A"
+          }
+        ],
+        "fullText": "git add -A"
+      },
+      {
+        "name": "git",
+        "args": [
+          {
+            "type": "word",
+            "value": "commit"
+          },
+          {
+            "type": "word",
+            "value": "-m"
+          },
+          {
+            "type": "string",
+            "value": "\"$(cat &lt;&lt;'EOF'\nfeat: add AI-powered deck editor with version history\n\n- Add Foundation Customers slide to pitch deck\n- Add deckVersions table for content versioning\n- Create AI edit API endpoint using Claude\n- Add chat panel for natural language deck edits\n- Add Cmd+K quick command bar for fast operations\n- Add version history panel with preview and restore\n- Auto-save versions on each content update\n\nNew features:\n- Sparkles button opens AI chat assistant\n- History button shows saved versions\n- Cmd+K opens quick command bar\n- Apply/reject proposed AI changes before saving\n\nEOF\n)\""
+          }
+        ],
+        "fullText": "git commit -m \"$(cat &lt;&lt;'EOF'\nfeat: add AI-powered deck editor with version history\n\n- Add Foundation Customers slide to pitch deck\n- Add deckVersions table for content versioning\n- Create AI edit API endpoint using Claude\n- Add chat panel for natural language deck edits\n- Add Cmd+K quick command bar for fast operations\n- Add version history panel with preview and restore\n- Auto-save versions on each content update\n\nNew features:\n- Sparkles button opens AI chat assistant\n- History button shows saved versions\n- Cmd+K opens quick command bar\n- Apply/reject proposed AI changes before saving\n\nEOF\n)\""
+      },
+      {
+        "name": "cat",
+        "fullText": "cat"
+      }
+    ],
+    "hasRedirects": true,
+    "hasCommandSubstitution": true
+  }
+}
+```
+Additional data:
+
+```json
+{
+  "status": "success"
+}
+```
+Result:
+
+```json
+{
+  "output": "[main 3081f66] feat: add AI-powered deck editor with version history\n 12 files changed, 2485 insertions(+), 23 deletions(-)\n create mode 100644 app/api/deck-content/versions/[id]/restore/route.ts\n create mode 100644 app/api/deck-content/versions/[id]/route.ts\n create mode 100644 app/api/deck-content/versions/route.ts\n create mode 100644 app/api/deck/ai-edit/route.ts\n create mode 100644 db/migrations/meta/0004_snapshot.json\n",
+  "rejected": false
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="run_terminal_command_v2">
+<details>
+<summary>Tool use: **run_terminal_command_v2**</summary>
+
+
+Parameters:
+
+```json
+{
+  "command": "cd /Users/boskombp16/GitHub/directorforgood.org &amp;&amp; git push",
+  "cwd": "",
+  "parsingResult": {
+    "executableCommands": [
+      {
+        "name": "cd",
+        "args": [
+          {
+            "type": "word",
+            "value": "/Users/boskombp16/GitHub/directorforgood.org"
+          }
+        ],
+        "fullText": "cd /Users/boskombp16/GitHub/directorforgood.org"
+      },
+      {
+        "name": "git",
+        "args": [
+          {
+            "type": "word",
+            "value": "push"
+          }
+        ],
+        "fullText": "git push"
+      }
+    ]
+  }
+}
+```
+Additional data:
+
+```json
+{
+  "status": "success"
+}
+```
+Result:
+
+```json
+{
+  "output": "To https://github.com/boscokante/hiiiwav-website.git\n   dfb40aa..3081f66  main -&gt; main\n",
+  "rejected": false
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+All tasks completed and pushed. Here's what was implemented:
+
+## Summary
+
+### Phase 1: Commit & Push (done first)
+- Preserved the existing codebase state before making changes
+
+### Phase 2: Foundation Customers Slide
+- Added new slide at position 3 in `data/deck-content.json` and `lib/deck-content.ts`
+- Describes foundations as buyers who can purchase packages for 5-10 orgs
+
+### Phase 3: AI Agent Interface
+
+**AI Edit API** (`/app/api/deck/ai-edit/route.ts`):
+- POST endpoint using Claude Sonnet via Vercel AI SDK
+- Accepts natural language instructions
+- Returns proposed changes with description and change list
+
+**Chat Panel**:
+- Opens via Sparkles button in header
+- Shows message history with user/AI bubbles
+- Displays proposed changes with "Apply" button
+- Confirms when changes are applied
+
+**Quick Command Bar**:
+- Opens via Cmd+K or Command button
+- Fast input for simple operations
+- Routes to the AI chat for processing
+
+### Phase 4: Database Version History
+
+**Schema** (`db/schema.ts`):
+- Added `deckVersions` table with content, description, createdBy, createdAt
+
+**API Routes**:
+- `GET /api/deck-content/versions` - List all versions
+- `GET /api/deck-content/versions/[id]` - Get specific version
+- `POST /api/deck-content/versions/[id]/restore` - Restore a version
+
+**Auto-save**:
+- Every PUT to `/api/deck-content` automatically saves a version
+
+**History Panel**:
+- Opens via History button in header
+- Shows list of saved versions with timestamps
+- Preview and Restore buttons for each version
+
+### How to Use
+
+1. **AI Chat**: Click the Sparkles (✨) button and type "Add a slide about X" or "Change the tagline to Y"
+2. **Quick Command**: Press `Cmd+K` and type your request
+3. **Version History**: Click the History (🕐) button to see and restore previous versions
+4. **Undo/Redo**: Use `Cmd+Z` / `Cmd+Shift+Z` for in-session undo
+
+---
+
+_**User (2025-12-09 00:07Z)**_
+
+I got an error asking for an anthropic key, but I believe I already have an open AI key set up. We should be able to use that. 
+
+
+
+Also, the existing AI chat says chat with HiiiWAV, but that was from an old version. It should now say chat with director. 
+
+---
+
+_**Agent (model claude-4.5-opus-high-thinking, mode Agent)**_
+
+<think><details><summary>Thought Process</summary>
+The user has two issues:
+1. The AI edit endpoint is using Anthropic, but they have an OpenAI key. I need to switch to OpenAI.
+2. There's an old AI chat reference saying "HiiiWAV" that needs to be updated to "Director"
+
+Let me fix both issues.</details></think>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="edit_file_v2">
+<details>
+<summary>Tool use: **edit_file_v2**</summary>
+
+
+Parameters:
+
+```json
+{
+  "relativeWorkspacePath": "/Users/boskombp16/GitHub/directorforgood.org/app/api/deck/ai-edit/route.ts"
+}
+```
+Additional data:
+
+```json
+{
+  "codeblockId": "85faeb33-6f79-427c-97ac-fc7da023b5ae"
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="edit_file_v2">
+<details>
+<summary>Tool use: **edit_file_v2**</summary>
+
+
+Parameters:
+
+```json
+{
+  "relativeWorkspacePath": "/Users/boskombp16/GitHub/directorforgood.org/app/api/deck/ai-edit/route.ts"
+}
+```
+Additional data:
+
+```json
+{
+  "codeblockId": "8cccbf46-8a11-4f6f-be91-fe82973df545"
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="ripgrep_raw_search">
+<details>
+<summary>Tool use: **ripgrep_raw_search**</summary>
+
+
+Parameters:
+
+```json
+{
+  "pattern": "HiiiWAV|hiiiwav",
+  "path": "/Users/boskombp16/GitHub/directorforgood.org",
+  "glob": "*.tsx",
+  "caseInsensitive": false
+}
+```
+Result:
+
+```json
+{
+  "success": {
+    "pattern": "HiiiWAV|hiiiwav",
+    "path": "/Users/boskombp16/GitHub/directorforgood.org",
+    "outputMode": "content",
+    "workspaceResults": {
+      "/Users/boskombp16/GitHub/directorforgood.org": {
+        "content": {
+          "matches": [
+            {
+              "file": "./app/admin/entities/new/page.tsx",
+              "matches": [
+                {
+                  "lineNumber": 194,
+                  "content": "            Active (currently affiliated with HiiiWAV)"
+                }
+              ]
+            },
+            {
+              "file": "./app/admin/entities/page.tsx",
+              "matches": [
+                {
+                  "lineNumber": 47,
+                  "content": "                  No entities yet. Add HiiiWAV, artists, or staff members!"
+                }
+              ]
+            }
+          ],
+          "totalLines": 2,
+          "totalMatchedLines": 2
+        }
+      }
+    }
+  }
 }
 ```
 Status: **completed**
