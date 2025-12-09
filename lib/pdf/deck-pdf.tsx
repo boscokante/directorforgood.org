@@ -385,64 +385,74 @@ export function DirectorPitchDeck() {
         <TwoColumnSlide slide={getSlide('problem-downshifted')!} pageNumber={3} variant="light" />
       )}
       
-      {/* 4. Broken Options */}
+      {/* 4. Foundations as Buyers */}
+      {getSlide('customer-foundations') && (
+        <TwoColumnSlide slide={getSlide('customer-foundations')!} pageNumber={4} variant="dark" />
+      )}
+      
+      {/* 5. Broken Options */}
       {getSlide('broken-options') && (
-        <ContentSlide slide={getSlide('broken-options')!} pageNumber={4} />
+        <ContentSlide slide={getSlide('broken-options')!} pageNumber={5} />
       )}
       
-      {/* 5. What We Are */}
+      {/* 6. What We Are */}
       {getSlide('what-we-are') && (
-        <DirectorWhatWeAreSlide slide={getSlide('what-we-are')!} pageNumber={5} />
+        <DirectorWhatWeAreSlide slide={getSlide('what-we-are')!} pageNumber={6} />
       )}
       
-      {/* 6. Fundraising Philosophy */}
+      {/* 7. Fundraising Philosophy */}
       {getSlide('fundraising-philosophy') && (
-        <TwoColumnSlide slide={getSlide('fundraising-philosophy')!} pageNumber={6} />
+        <TwoColumnSlide slide={getSlide('fundraising-philosophy')!} pageNumber={7} />
       )}
       
-      {/* 7. Director Pod */}
+      {/* 8. Director Pod */}
       {getSlide('director-pod') && (
-        <DirectorPodSlide slide={getSlide('director-pod')!} pageNumber={7} />
+        <DirectorPodSlide slide={getSlide('director-pod')!} pageNumber={8} />
       )}
       
-      {/* 8. Director OS */}
+      {/* 9. Director OS */}
       {getSlide('director-os') && (
-        <DirectorOSSlide slide={getSlide('director-os')!} pageNumber={8} />
+        <DirectorOSSlide slide={getSlide('director-os')!} pageNumber={9} />
       )}
       
-      {/* 9. AI Agents */}
+      {/* 10. AI Agents */}
       {getSlide('ai-agents') && (
-        <AIAgentsSlide slide={getSlide('ai-agents')!} pageNumber={9} />
+        <AIAgentsSlide slide={getSlide('ai-agents')!} pageNumber={10} />
       )}
       
-      {/* 10. Economics */}
+      {/* 11. Economics */}
       {getSlide('economics') && (
-        <EconomicsSlide slide={getSlide('economics')!} pageNumber={10} />
+        <EconomicsSlide slide={getSlide('economics')!} pageNumber={11} />
       )}
       
-      {/* 11. Why Now */}
+      {/* 12. Why Now */}
       {getSlide('why-now') && (
-        <TwoColumnSlide slide={getSlide('why-now')!} pageNumber={11} variant="light" />
+        <TwoColumnSlide slide={getSlide('why-now')!} pageNumber={12} variant="light" />
       )}
       
-      {/* 12. Go-to-Market */}
+      {/* 13. Go-to-Market */}
       {getSlide('go-to-market') && (
-        <ContentSlide slide={getSlide('go-to-market')!} pageNumber={12} />
+        <ContentSlide slide={getSlide('go-to-market')!} pageNumber={13} />
       )}
       
-      {/* 13. Business Model */}
+      {/* 14. Business Model */}
       {getSlide('business-model') && (
-        <ContentSlide slide={getSlide('business-model')!} pageNumber={13} variant="light" />
+        <ContentSlide slide={getSlide('business-model')!} pageNumber={14} variant="light" />
       )}
       
-      {/* 14. Team */}
+      {/* 15. Team */}
       {getSlide('team') && (
-        <TeamSlide slide={getSlide('team')!} pageNumber={14} />
+        <TeamSlide slide={getSlide('team')!} pageNumber={15} />
       )}
       
-      {/* 15. Roadmap & Ask */}
+      {/* 16. Current Customers & Traction */}
+      {getSlide('current-customers') && (
+        <ContentSlide slide={getSlide('current-customers')!} pageNumber={16} variant="light" />
+      )}
+      
+      {/* 17. Roadmap & Ask */}
       {getSlide('roadmap') && (
-        <RoadmapSlide slide={getSlide('roadmap')!} ask={content.ask} pageNumber={15} />
+        <RoadmapSlide slide={getSlide('roadmap')!} ask={content.ask} pageNumber={17} />
       )}
     </Document>
   );

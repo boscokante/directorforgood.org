@@ -466,6 +466,32 @@
         "type": "infographic",
         "placeholder": "Timeline roadmap: Year 1 (4 orgs) → Year 2 (8 orgs) → Year 3+ (16 orgs per pod)"
       }
+    },
+    {
+      "id": "current-customers",
+      "title": "Current Customers & Traction",
+      "subtitle": "Examples of our successful partnerships.",
+      "sections": [
+        {
+          "heading": "Our customers include:",
+          "items": [
+            "HiiiWAV",
+            "Alphabet Rockers",
+            "Soul Development",
+            "Prospect Band",
+            "Ryan Nicole"
+          ]
+        },
+        {
+          "heading": "Traction highlights:",
+          "text": "These partnerships exemplify our growing impact and successful collaboration with influential organizations."
+        }
+      ],
+      "highlight": "Real-world impact through strategic partnerships.",
+      "image": {
+        "type": "photo",
+        "placeholder": "Collage of logos or photos of the customer organizations"
+      }
     }
   ],
   "ask": {
