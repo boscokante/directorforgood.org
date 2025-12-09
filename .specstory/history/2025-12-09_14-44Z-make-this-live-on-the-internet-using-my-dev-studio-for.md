@@ -2245,3 +2245,290 @@ NextAuth v5 looks for `AUTH_SECRET`. The old name won't work.
 
 ---
 
+_**User (2025-12-09 00:07Z)**_
+
+deploy failed 07:09:11.133 Running build in Washington, D.C., USA (East) – iad1
+
+07:09:11.142 Build machine configuration: 2 cores, 8 GB
+
+07:09:11.455 Cloning github.com/boscokante/directorforgood.org (Branch: main, Commit: 45e822e)
+
+07:09:11.457 Previous build caches not available.
+
+07:09:21.008 Cloning completed: 9.552s
+
+07:09:21.520 Running "vercel build"
+
+07:09:21.945 Vercel CLI 49.1.2
+
+07:09:22.412 Installing dependencies...
+
+07:09:28.866 npm warn deprecated @esbuild-kit/esm-loader@2.6.5: Merged into tsx: https://tsx.is
+
+07:09:28.918 npm warn deprecated @esbuild-kit/core-utils@3.3.2: Merged into tsx: https://tsx.is
+
+07:09:42.073 
+
+07:09:42.074 added 699 packages in 19s
+
+07:09:42.074 
+
+07:09:42.075 284 packages are looking for funding
+
+07:09:42.075   run `npm fund` for details
+
+07:09:42.234 Detected Next.js version: 16.0.3
+
+07:09:42.242 Running "npm run build"
+
+07:09:43.348 
+
+07:09:43.350 > director@0.1.0 build
+
+07:09:43.351 > next build
+
+07:09:43.351 
+
+07:09:44.392 [baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+
+07:09:44.946 Attention: Next.js now collects completely anonymous telemetry regarding usage.
+
+07:09:44.947 This information is used to shape Next.js' roadmap and prioritize features.
+
+07:09:44.947 You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+
+07:09:44.947 https://nextjs.org/telemetry
+
+07:09:44.948 
+
+07:09:44.960    ▲ Next.js 16.0.3 (Turbopack)
+
+07:09:44.961 
+
+07:09:44.969  ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+
+07:09:45.002    Creating an optimized production build ...
+
+07:09:45.168 [baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+
+07:10:04.645  ✓ Compiled successfully in 19.1s
+
+07:10:04.647    Running TypeScript ...
+
+07:10:12.825 Failed to compile.
+
+07:10:12.825 
+
+07:10:12.827 ./app/api/deck/ai-edit/route.ts:64:7
+
+07:10:12.827 Type error: Object literal may only specify known properties, and 'maxTokens' does not exist in type 'CallSettings & { system?: string | undefined; } & { prompt: string | ModelMessage[]; messages?: undefined; } & { model: LanguageModel; tools?: ToolSet | undefined; ... 13 more ...; _internal?: { ...; } | undefined; }'.
+
+07:10:12.828 
+
+07:10:12.828 [0m [90m 62 |[39m [32m[39m
+
+07:10:12.828  [90m 63 |[39m [32mPlease provide the updated deck content as JSON.`[39m[33m,[39m
+
+07:10:12.828 [31m[1m>[22m[39m[90m 64 |[39m       maxTokens[33m:[39m [35m8000[39m[33m,[39m
+
+07:10:12.828  [90m    |[39m       [31m[1m^[22m[39m
+
+07:10:12.828  [90m 65 |[39m     })[33m;[39m
+
+07:10:12.828  [90m 66 |[39m
+
+07:10:12.828  [90m 67 |[39m     [90m// Parse the AI response[39m[0m
+
+07:10:12.870 Next.js build worker exited with code: 1 and signal: null
+
+07:10:12.907 Error: Command "npm run build" exited with 1
+
+---
+
+_**Agent (model claude-4.5-opus-high-thinking, mode Agent)**_
+
+<think><details><summary>Thought Process</summary>
+There's a TypeScript error in the build. The `maxTokens` property doesn't exist in the type for the AI SDK function being used. Let me check the file and fix it.</details></think>
+
+---
+
+Build error in the AI SDK call. Let me fix it:
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="read_file_v2">
+<details>
+<summary>Tool use: **read_file_v2**</summary>
+
+
+Parameters:
+
+```json
+{
+  "targetFile": "/Users/boskombp16/GitHub/directorforgood.org/app/api/deck/ai-edit/route.ts",
+  "charsLimit": 1000000,
+  "effectiveUri": "/Users/boskombp16/GitHub/directorforgood.org/app/api/deck/ai-edit/route.ts"
+}
+```
+Result:
+
+```json
+{
+  "contents": "import { openai } from '@ai-sdk/openai';\nimport { generateText } from 'ai';\nimport { NextResponse } from 'next/server';\nimport { getDeckContent, DeckContent } from '@/lib/deck-content';\n\nconst SYSTEM_PROMPT = &#96;You are an AI assistant that helps edit pitch deck content. You receive the current deck content as JSON and a user instruction describing what changes to make.\n\nYour job is to:\n1. Understand the user's request\n2. Return the modified deck content as valid JSON\n3. Provide a brief description of what you changed\n\nThe deck structure has:\n- cover: { title, tagline, subtagline, url }\n- slides: array of slides, each with { id, title, subtitle?, sections?, highlight?, footnote?, image? }\n- ask: { amount, items[] }\n\nEach slide section has: { heading?, items[]?, text? }\nEach slide image has: { type, placeholder, url? }\n\nIMPORTANT RULES:\n- Return ONLY valid JSON in your response\n- Preserve the existing structure and IDs unless explicitly asked to change them\n- When adding a new slide, generate a unique kebab-case id\n- Keep the same formatting style as the existing content\n- Be concise in titles and bullet points\n\nRespond with a JSON object in this exact format:\n{\n  \"success\": true,\n  \"content\": { ...the full updated deck content... },\n  \"description\": \"Brief description of changes made\",\n  \"changes\": [\"List of specific changes made\"]\n}\n\nIf the request is unclear or cannot be fulfilled, respond with:\n{\n  \"success\": false,\n  \"error\": \"Explanation of why the request cannot be fulfilled\"\n}&#96;;\n\nexport async function POST(request: Request) {\n  try {\n    const { instruction, currentContent } = await request.json();\n\n    if (!instruction) {\n      return NextResponse.json({ error: 'Instruction is required' }, { status: 400 });\n    }\n\n    // Get current content if not provided\n    const deckContent = currentContent || getDeckContent();\n\n    const { text } = await generateText({\n      model: openai('gpt-4o'),\n      system: SYSTEM_PROMPT,\n      prompt: &#96;Current deck content:\n\\&#96;\\&#96;\\&#96;json\n${JSON.stringify(deckContent, null, 2)}\n\\&#96;\\&#96;\\&#96;\n\nUser instruction: ${instruction}\n\nPlease provide the updated deck content as JSON.&#96;,\n      maxTokens: 8000,\n    });\n\n    // Parse the AI response\n    let result;\n    try {\n      // Try to extract JSON from the response\n      const jsonMatch = text.match(/\\{[\\s\\S]*\\}/);\n      if (jsonMatch) {\n        result = JSON.parse(jsonMatch[0]);\n      } else {\n        throw new Error('No JSON found in response');\n      }\n    } catch (parseError) {\n      console.error('Failed to parse AI response:', text);\n      return NextResponse.json({\n        success: false,\n        error: 'Failed to parse AI response. Please try rephrasing your request.',\n        rawResponse: text,\n      }, { status: 500 });\n    }\n\n    if (!result.success) {\n      return NextResponse.json(result, { status: 400 });\n    }\n\n    // Validate the content structure\n    if (!result.content || !result.content.cover || !result.content.slides || !result.content.ask) {\n      return NextResponse.json({\n        success: false,\n        error: 'AI returned invalid deck structure',\n      }, { status: 500 });\n    }\n\n    return NextResponse.json({\n      success: true,\n      content: result.content,\n      description: result.description || 'Changes applied',\n      changes: result.changes || [],\n    });\n  } catch (error) {\n    console.error('Error in AI edit:', error);\n    return NextResponse.json({\n      success: false,\n      error: error instanceof Error ? error.message : 'Failed to process AI edit',\n    }, { status: 500 });\n  }\n}\n",
+  "totalLinesInFile": 112
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<think><details><summary>Thought Process</summary>
+The issue is that the AI SDK v5 uses `maxOutputTokens` instead of `maxTokens`. Let me fix this.</details></think>
+
+---
+
+The AI SDK updated the property name. Change `maxTokens` to `maxOutputTokens`:
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="edit_file_v2">
+<details>
+<summary>Tool use: **edit_file_v2**</summary>
+
+
+Parameters:
+
+```json
+{
+  "relativeWorkspacePath": "/Users/boskombp16/GitHub/directorforgood.org/app/api/deck/ai-edit/route.ts"
+}
+```
+Additional data:
+
+```json
+{
+  "codeblockId": "fb8c6e40-da25-42f6-9463-289497ae15c0"
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<think><details><summary>Thought Process</summary>
+Now let me commit and push this fix.</details></think>
+
+---
+
+Now commit and push the fix:
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="run_terminal_command_v2">
+<details>
+<summary>Tool use: **run_terminal_command_v2**</summary>
+
+
+Parameters:
+
+```json
+{
+  "command": "cd /Users/boskombp16/GitHub/directorforgood.org &amp;&amp; git add -A &amp;&amp; git commit -m \"fix: use maxOutputTokens for AI SDK v5\" &amp;&amp; git push",
+  "cwd": "",
+  "parsingResult": {
+    "executableCommands": [
+      {
+        "name": "cd",
+        "args": [
+          {
+            "type": "word",
+            "value": "/Users/boskombp16/GitHub/directorforgood.org"
+          }
+        ],
+        "fullText": "cd /Users/boskombp16/GitHub/directorforgood.org"
+      },
+      {
+        "name": "git",
+        "args": [
+          {
+            "type": "word",
+            "value": "add"
+          },
+          {
+            "type": "word",
+            "value": "-A"
+          }
+        ],
+        "fullText": "git add -A"
+      },
+      {
+        "name": "git",
+        "args": [
+          {
+            "type": "word",
+            "value": "commit"
+          },
+          {
+            "type": "word",
+            "value": "-m"
+          },
+          {
+            "type": "string",
+            "value": "\"fix: use maxOutputTokens for AI SDK v5\""
+          }
+        ],
+        "fullText": "git commit -m \"fix: use maxOutputTokens for AI SDK v5\""
+      },
+      {
+        "name": "git",
+        "args": [
+          {
+            "type": "word",
+            "value": "push"
+          }
+        ],
+        "fullText": "git push"
+      }
+    ]
+  }
+}
+```
+Additional data:
+
+```json
+{
+  "status": "success"
+}
+```
+Result:
+
+```json
+{
+  "output": "[main f32d5bc] fix: use maxOutputTokens for AI SDK v5\n 2 files changed, 2248 insertions(+), 1 deletion(-)\n create mode 100644 .specstory/history/2025-12-09_14-44Z-make-this-live-on-the-internet-using-my-dev-studio-for.md\nTo https://github.com/boscokante/directorforgood.org.git\n   45e822e..f32d5bc  main -&gt; main\n",
+  "rejected": false
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<think><details><summary>Thought Process</summary>
+Pushed. Vercel should auto-redeploy. Let the user know.</details></think>
+
+---
+
+Pushed. Vercel will auto-redeploy. Check your Vercel dashboard — should build successfully now.
+
+---
+

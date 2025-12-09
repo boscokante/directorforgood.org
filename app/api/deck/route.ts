@@ -10,7 +10,7 @@ export async function GET() {
     const pdfBuffer = await renderToBuffer(DirectorPitchDeck());
     
     // Return as downloadable PDF
-    return new NextResponse(pdfBuffer, {
+    return new NextResponse(new Uint8Array(pdfBuffer), {
       status: 200,
       headers: {
         'Content-Type': 'application/pdf',
