@@ -61,7 +61,7 @@ ${JSON.stringify(deckContent, null, 2)}
 User instruction: ${instruction}
 
 Please provide the updated deck content as JSON.`,
-      maxTokens: 8000,
+      maxOutputTokens: 8000,
     });
 
     // Parse the AI response
