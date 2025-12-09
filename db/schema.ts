@@ -213,6 +213,18 @@ export const newsletters = pgTable('newsletters', {
 export type Newsletter = typeof newsletters.$inferSelect
 export type NewNewsletter = typeof newsletters.$inferInsert
 
+// Deck content version history
+export const deckVersions = pgTable('deck_versions', {
+  id: serial('id').primaryKey(),
+  content: jsonb('content').notNull(), // Full deck content snapshot
+  description: text('description'), // "Added foundation slide" or auto-generated
+  createdBy: integer('created_by').references(() => users.id),
+  createdAt: timestamp('created_at').defaultNow().notNull(),
+})
+
+export type DeckVersion = typeof deckVersions.$inferSelect
+export type NewDeckVersion = typeof deckVersions.$inferInsert
+
 
 
 

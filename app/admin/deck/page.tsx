@@ -3,11 +3,31 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft, Save, RotateCcw, Eye, Loader2, Plus, Trash2, ChevronDown, ChevronRight, ImageIcon, Upload, Undo2, Redo2 } from 'lucide-react';
+import { 
+  ArrowLeft, Save, RotateCcw, Eye, Loader2, Plus, Trash2, 
+  ChevronDown, ChevronRight, ImageIcon, Upload, Undo2, Redo2,
+  Sparkles, X, Send, History, Clock, RotateCw, Command
+} from 'lucide-react';
 import { DeckContent, SlideContent, SlideImage } from '@/lib/deck-content';
-import Image from 'next/image';
 
 const MAX_HISTORY = 50;
+
+interface ChatMessage {
+  id: string;
+  role: 'user' | 'assistant';
+  content: string;
+  timestamp: Date;
+  proposedContent?: DeckContent;
+  changes?: string[];
+  applied?: boolean;
+}
+
+interface DeckVersionSummary {
+  id: number;
+  description: string | null;
+  createdBy: number | null;
+  createdAt: string;
+}
 
 export default function DeckEditorPage() {
   const [content, setContent] = useState<DeckContent | null>(null);
@@ -21,9 +41,28 @@ export default function DeckEditorPage() {
   const [historyIndex, setHistoryIndex] = useState(-1);
   const isUndoRedo = useRef(false);
 
-  // Keyboard shortcuts for undo/redo
+  // Chat panel state
+  const [showChat, setShowChat] = useState(false);
+  const [chatMessages, setChatMessages] = useState<ChatMessage[]>([]);
+  const [chatInput, setChatInput] = useState('');
+  const [isAiLoading, setIsAiLoading] = useState(false);
+  const chatEndRef = useRef<HTMLDivElement>(null);
+
+  // Command bar state
+  const [showCommandBar, setShowCommandBar] = useState(false);
+  const [commandInput, setCommandInput] = useState('');
+  const commandInputRef = useRef<HTMLInputElement>(null);
+
+  // Version history state
+  const [showHistory, setShowHistory] = useState(false);
+  const [versions, setVersions] = useState<DeckVersionSummary[]>([]);
+  const [isLoadingVersions, setIsLoadingVersions] = useState(false);
+  const [previewVersion, setPreviewVersion] = useState<DeckContent | null>(null);
+
+  // Keyboard shortcuts
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
+      // Undo/Redo
       if ((e.metaKey || e.ctrlKey) && e.key === 'z') {
         e.preventDefault();
         if (e.shiftKey) {
@@ -32,11 +71,29 @@ export default function DeckEditorPage() {
           undo();
         }
       }
+      // Command bar (Cmd+K)
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault();
+        setShowCommandBar(true);
+        setTimeout(() => commandInputRef.current?.focus(), 100);
+      }
+      // Close panels on Escape
+      if (e.key === 'Escape') {
+        setShowCommandBar(false);
+        setShowChat(false);
+        setShowHistory(false);
+        setPreviewVersion(null);
+      }
     };
     
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [historyIndex, history]);
+
+  // Scroll chat to bottom when new messages arrive
+  useEffect(() => {
+    chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  }, [chatMessages]);
 
   useEffect(() => {
     fetchContent();
@@ -48,7 +105,6 @@ export default function DeckEditorPage() {
       const response = await fetch('/api/deck-content');
       const data = await response.json();
       setContent(data);
-      // Initialize history with loaded content
       setHistory([data]);
       setHistoryIndex(0);
     } catch (error) {
@@ -58,7 +114,61 @@ export default function DeckEditorPage() {
     }
   };
 
-  // Push new state to history
+  const fetchVersions = async () => {
+    setIsLoadingVersions(true);
+    try {
+      const response = await fetch('/api/deck-content/versions');
+      const data = await response.json();
+      setVersions(data);
+    } catch (error) {
+      console.error('Failed to fetch versions:', error);
+    } finally {
+      setIsLoadingVersions(false);
+    }
+  };
+
+  const previewVersionContent = async (versionId: number) => {
+    try {
+      const response = await fetch(`/api/deck-content/versions/${versionId}`);
+      const data = await response.json();
+      setPreviewVersion(data.content);
+    } catch (error) {
+      console.error('Failed to fetch version:', error);
+    }
+  };
+
+  const restoreVersion = async (versionId: number) => {
+    if (!confirm('Restore this version? Your current changes will be saved as a new version first.')) return;
+    
+    try {
+      // Save current state first
+      if (content && hasChanges) {
+        await fetch('/api/deck-content', {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ content, description: 'Auto-save before restore' }),
+        });
+      }
+      
+      const response = await fetch(`/api/deck-content/versions/${versionId}/restore`, {
+        method: 'POST',
+      });
+      const data = await response.json();
+      
+      if (data.success) {
+        setContent(data.content);
+        setHistory([data.content]);
+        setHistoryIndex(0);
+        setHasChanges(false);
+        setPreviewVersion(null);
+        setShowHistory(false);
+        fetchVersions();
+      }
+    } catch (error) {
+      console.error('Failed to restore version:', error);
+    }
+  };
+
   const pushToHistory = useCallback((newContent: DeckContent) => {
     if (isUndoRedo.current) {
       isUndoRedo.current = false;
@@ -66,11 +176,8 @@ export default function DeckEditorPage() {
     }
     
     setHistory(prev => {
-      // Remove any future states if we're not at the end
       const newHistory = prev.slice(0, historyIndex + 1);
-      // Add new state
       newHistory.push(newContent);
-      // Limit history size
       if (newHistory.length > MAX_HISTORY) {
         newHistory.shift();
         return newHistory;
@@ -80,7 +187,6 @@ export default function DeckEditorPage() {
     setHistoryIndex(prev => Math.min(prev + 1, MAX_HISTORY - 1));
   }, [historyIndex]);
 
-  // Undo function
   const undo = useCallback(() => {
     if (historyIndex > 0) {
       isUndoRedo.current = true;
@@ -91,7 +197,6 @@ export default function DeckEditorPage() {
     }
   }, [historyIndex, history]);
 
-  // Redo function
   const redo = useCallback(() => {
     if (historyIndex < history.length - 1) {
       isUndoRedo.current = true;
@@ -105,18 +210,17 @@ export default function DeckEditorPage() {
   const canUndo = historyIndex > 0;
   const canRedo = historyIndex < history.length - 1;
 
-  const saveContent = async () => {
+  const saveContent = async (description?: string) => {
     if (!content) return;
     setIsSaving(true);
     try {
       const response = await fetch('/api/deck-content', {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(content),
+        body: JSON.stringify({ content, description }),
       });
       if (response.ok) {
         setHasChanges(false);
-        alert('Content saved successfully!');
       }
     } catch (error) {
       console.error('Failed to save content:', error);
@@ -140,6 +244,84 @@ export default function DeckEditorPage() {
     }
   };
 
+  // AI Chat functions
+  const sendChatMessage = async (message: string) => {
+    if (!message.trim() || !content) return;
+    
+    const userMessage: ChatMessage = {
+      id: Date.now().toString(),
+      role: 'user',
+      content: message,
+      timestamp: new Date(),
+    };
+    
+    setChatMessages(prev => [...prev, userMessage]);
+    setChatInput('');
+    setIsAiLoading(true);
+    
+    try {
+      const response = await fetch('/api/deck/ai-edit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          instruction: message,
+          currentContent: content,
+        }),
+      });
+      
+      const data = await response.json();
+      
+      const assistantMessage: ChatMessage = {
+        id: (Date.now() + 1).toString(),
+        role: 'assistant',
+        content: data.success 
+          ? `${data.description}\n\nChanges:\n${data.changes?.map((c: string) => `• ${c}`).join('\n') || 'Content updated'}`
+          : `Sorry, I couldn't complete that request: ${data.error}`,
+        timestamp: new Date(),
+        proposedContent: data.success ? data.content : undefined,
+        changes: data.changes,
+        applied: false,
+      };
+      
+      setChatMessages(prev => [...prev, assistantMessage]);
+    } catch (error) {
+      const errorMessage: ChatMessage = {
+        id: (Date.now() + 1).toString(),
+        role: 'assistant',
+        content: 'Sorry, there was an error processing your request. Please try again.',
+        timestamp: new Date(),
+      };
+      setChatMessages(prev => [...prev, errorMessage]);
+    } finally {
+      setIsAiLoading(false);
+    }
+  };
+
+  const applyProposedChanges = (messageId: string) => {
+    const message = chatMessages.find(m => m.id === messageId);
+    if (!message?.proposedContent) return;
+    
+    setContent(message.proposedContent);
+    pushToHistory(message.proposedContent);
+    setHasChanges(true);
+    
+    setChatMessages(prev => prev.map(m => 
+      m.id === messageId ? { ...m, applied: true } : m
+    ));
+  };
+
+  const handleCommandSubmit = async () => {
+    if (!commandInput.trim()) return;
+    
+    const command = commandInput.trim();
+    setShowCommandBar(false);
+    setCommandInput('');
+    
+    // Open chat and send the command
+    setShowChat(true);
+    await sendChatMessage(command);
+  };
+
   const updateCover = (field: keyof DeckContent['cover'], value: string) => {
     if (!content) return;
     const newContent = { ...content, cover: { ...content.cover, [field]: value } };
@@ -158,7 +340,7 @@ export default function DeckEditorPage() {
     setHasChanges(true);
   };
 
-  const updateSlideSection = (slideIndex: number, sectionIndex: number, updates: Partial<SlideContent['sections'][0]>) => {
+  const updateSlideSection = (slideIndex: number, sectionIndex: number, updates: Partial<NonNullable<SlideContent['sections']>[0]>) => {
     if (!content) return;
     const newSlides = [...content.slides];
     const newSections = [...(newSlides[slideIndex].sections || [])];
@@ -219,7 +401,6 @@ export default function DeckEditorPage() {
     const file = e.dataTransfer.files[0];
     if (!file || !file.type.startsWith('image/')) return;
     
-    // Convert to base64 for now (in production, upload to storage)
     const reader = new FileReader();
     reader.onload = () => {
       const currentImage = content?.slides[slideIndex]?.image;
@@ -276,6 +457,209 @@ export default function DeckEditorPage() {
 
   return (
     <div className="min-h-screen bg-gray-950 text-white">
+      {/* Command Bar Modal */}
+      {showCommandBar && (
+        <div className="fixed inset-0 z-50 flex items-start justify-center pt-32 bg-black/50" onClick={() => setShowCommandBar(false)}>
+          <div 
+            className="w-full max-w-xl bg-gray-900 rounded-lg shadow-2xl border border-gray-700"
+            onClick={e => e.stopPropagation()}
+          >
+            <div className="flex items-center gap-3 px-4 py-3 border-b border-gray-700">
+              <Command className="w-5 h-5 text-gray-400" />
+              <input
+                ref={commandInputRef}
+                type="text"
+                value={commandInput}
+                onChange={e => setCommandInput(e.target.value)}
+                onKeyDown={e => {
+                  if (e.key === 'Enter') handleCommandSubmit();
+                  if (e.key === 'Escape') setShowCommandBar(false);
+                }}
+                placeholder="Describe what you want to change... (e.g., 'add a slide about partnerships')"
+                className="flex-1 bg-transparent text-white placeholder-gray-500 outline-none"
+                autoFocus
+              />
+            </div>
+            <div className="px-4 py-2 text-xs text-gray-500">
+              Press Enter to submit • Escape to close
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Version History Panel */}
+      {showHistory && (
+        <div className="fixed right-0 top-0 bottom-0 w-96 bg-gray-900 border-l border-gray-700 z-40 flex flex-col">
+          <div className="flex items-center justify-between px-4 py-3 border-b border-gray-700">
+            <h3 className="font-semibold flex items-center gap-2">
+              <History className="w-4 h-4" />
+              Version History
+            </h3>
+            <button onClick={() => { setShowHistory(false); setPreviewVersion(null); }} className="text-gray-400 hover:text-white">
+              <X className="w-5 h-5" />
+            </button>
+          </div>
+          
+          {previewVersion ? (
+            <div className="flex-1 overflow-auto p-4">
+              <div className="mb-4 flex gap-2">
+                <Button size="sm" variant="outline" onClick={() => setPreviewVersion(null)} className="border-gray-600">
+                  Back to List
+                </Button>
+              </div>
+              <div className="bg-gray-800 rounded-lg p-4 text-sm">
+                <h4 className="font-medium mb-2">Preview</h4>
+                <p className="text-gray-400 mb-2">Title: {previewVersion.cover.title}</p>
+                <p className="text-gray-400 mb-2">Slides: {previewVersion.slides.length}</p>
+                <p className="text-gray-400">Ask: {previewVersion.ask.amount}</p>
+              </div>
+            </div>
+          ) : (
+            <div className="flex-1 overflow-auto">
+              {isLoadingVersions ? (
+                <div className="flex items-center justify-center py-8">
+                  <Loader2 className="w-6 h-6 animate-spin" />
+                </div>
+              ) : versions.length === 0 ? (
+                <div className="text-center py-8 text-gray-500">
+                  No saved versions yet
+                </div>
+              ) : (
+                <div className="divide-y divide-gray-800">
+                  {versions.map(version => (
+                    <div key={version.id} className="p-4 hover:bg-gray-800/50">
+                      <div className="flex items-start justify-between mb-2">
+                        <div className="flex items-center gap-2 text-sm text-gray-400">
+                          <Clock className="w-3 h-3" />
+                          {new Date(version.createdAt).toLocaleString()}
+                        </div>
+                        <span className="text-xs text-gray-500">#{version.id}</span>
+                      </div>
+                      <p className="text-sm mb-3">{version.description || 'No description'}</p>
+                      <div className="flex gap-2">
+                        <Button 
+                          size="sm" 
+                          variant="outline" 
+                          className="text-xs border-gray-600"
+                          onClick={() => previewVersionContent(version.id)}
+                        >
+                          <Eye className="w-3 h-3 mr-1" />
+                          Preview
+                        </Button>
+                        <Button 
+                          size="sm" 
+                          variant="outline"
+                          className="text-xs border-gray-600"
+                          onClick={() => restoreVersion(version.id)}
+                        >
+                          <RotateCw className="w-3 h-3 mr-1" />
+                          Restore
+                        </Button>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* AI Chat Panel */}
+      {showChat && (
+        <div className="fixed right-0 top-0 bottom-0 w-96 bg-gray-900 border-l border-gray-700 z-40 flex flex-col">
+          <div className="flex items-center justify-between px-4 py-3 border-b border-gray-700">
+            <h3 className="font-semibold flex items-center gap-2">
+              <Sparkles className="w-4 h-4 text-purple-400" />
+              AI Assistant
+            </h3>
+            <button onClick={() => setShowChat(false)} className="text-gray-400 hover:text-white">
+              <X className="w-5 h-5" />
+            </button>
+          </div>
+          
+          <div className="flex-1 overflow-auto p-4 space-y-4">
+            {chatMessages.length === 0 && (
+              <div className="text-center py-8 text-gray-500">
+                <Sparkles className="w-8 h-8 mx-auto mb-3 text-purple-400/50" />
+                <p className="mb-2">Ask me to edit your deck</p>
+                <p className="text-sm">Try: &quot;Add a slide about our team&quot; or &quot;Make the tagline more compelling&quot;</p>
+              </div>
+            )}
+            
+            {chatMessages.map(message => (
+              <div key={message.id} className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}>
+                <div className={`max-w-[85%] rounded-lg px-3 py-2 ${
+                  message.role === 'user' 
+                    ? 'bg-purple-600 text-white' 
+                    : 'bg-gray-800 text-gray-100'
+                }`}>
+                  <p className="text-sm whitespace-pre-wrap">{message.content}</p>
+                  
+                  {message.proposedContent && !message.applied && (
+                    <div className="mt-3 pt-2 border-t border-gray-700">
+                      <Button
+                        size="sm"
+                        onClick={() => applyProposedChanges(message.id)}
+                        className="bg-green-600 hover:bg-green-700 text-white text-xs"
+                      >
+                        Apply Changes
+                      </Button>
+                    </div>
+                  )}
+                  
+                  {message.applied && (
+                    <div className="mt-2 text-xs text-green-400 flex items-center gap-1">
+                      <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      Applied
+                    </div>
+                  )}
+                </div>
+              </div>
+            ))}
+            
+            {isAiLoading && (
+              <div className="flex justify-start">
+                <div className="bg-gray-800 rounded-lg px-3 py-2">
+                  <Loader2 className="w-4 h-4 animate-spin text-purple-400" />
+                </div>
+              </div>
+            )}
+            
+            <div ref={chatEndRef} />
+          </div>
+          
+          <div className="p-4 border-t border-gray-700">
+            <div className="flex gap-2">
+              <input
+                type="text"
+                value={chatInput}
+                onChange={e => setChatInput(e.target.value)}
+                onKeyDown={e => {
+                  if (e.key === 'Enter' && !e.shiftKey) {
+                    e.preventDefault();
+                    sendChatMessage(chatInput);
+                  }
+                }}
+                placeholder="Describe your changes..."
+                className="flex-1 bg-gray-800 border border-gray-700 rounded px-3 py-2 text-sm text-white placeholder-gray-500"
+                disabled={isAiLoading}
+              />
+              <Button
+                size="sm"
+                onClick={() => sendChatMessage(chatInput)}
+                disabled={!chatInput.trim() || isAiLoading}
+                className="bg-purple-600 hover:bg-purple-700"
+              >
+                <Send className="w-4 h-4" />
+              </Button>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Header */}
       <div className="sticky top-0 z-10 bg-gray-900 border-b border-gray-800">
         <div className="container px-4 py-4 flex items-center justify-between">
@@ -312,6 +696,34 @@ export default function DeckEditorPage() {
             </Button>
             <div className="w-px h-6 bg-gray-700 mx-1" />
             <Button
+              onClick={() => { setShowHistory(true); fetchVersions(); }}
+              variant="outline"
+              size="sm"
+              className="border-gray-700 text-gray-300"
+              title="Version History"
+            >
+              <History className="w-4 h-4" />
+            </Button>
+            <Button
+              onClick={() => setShowChat(true)}
+              variant="outline"
+              size="sm"
+              className="border-gray-700 text-gray-300"
+              title="AI Assistant"
+            >
+              <Sparkles className="w-4 h-4" />
+            </Button>
+            <Button
+              onClick={() => setShowCommandBar(true)}
+              variant="outline"
+              size="sm"
+              className="border-gray-700 text-gray-300"
+              title="Quick Command (Cmd+K)"
+            >
+              <Command className="w-4 h-4" />
+            </Button>
+            <div className="w-px h-6 bg-gray-700 mx-1" />
+            <Button
               onClick={resetContent}
               variant="outline"
               size="sm"
@@ -327,7 +739,7 @@ export default function DeckEditorPage() {
               </Button>
             </Link>
             <Button
-              onClick={saveContent}
+              onClick={() => saveContent()}
               disabled={isSaving || !hasChanges}
               size="sm"
               className="bg-white text-black hover:bg-gray-200"
@@ -339,7 +751,7 @@ export default function DeckEditorPage() {
         </div>
       </div>
 
-      <div className="container px-4 py-8 max-w-4xl">
+      <div className={`container px-4 py-8 max-w-4xl transition-all ${showChat || showHistory ? 'mr-96' : ''}`}>
         {/* Cover Section */}
         <section className="mb-8">
           <h2 className="text-lg font-semibold mb-4 text-gray-300">Slides</h2>
@@ -399,7 +811,7 @@ export default function DeckEditorPage() {
           </div>
 
           {content.slides.map((slide, slideIndex) => (
-              <div key={slide.id} className="bg-gray-900 rounded-lg overflow-hidden">
+              <div key={slide.id} className="bg-gray-900 rounded-lg overflow-hidden mb-2">
                 <button
                   onClick={() => toggleSlide(slide.id)}
                   className="w-full px-4 py-3 flex items-center justify-between hover:bg-gray-800 transition-colors"
@@ -623,7 +1035,7 @@ export default function DeckEditorPage() {
               />
             </div>
             <div>
-              <label className="block text-sm text-gray-400 mb-1">What we'll do with the funding</label>
+              <label className="block text-sm text-gray-400 mb-1">What we&apos;ll do with the funding</label>
               {content.ask.items.map((item, index) => (
                 <div key={index} className="flex gap-2 mb-2">
                   <input
@@ -660,4 +1072,3 @@ export default function DeckEditorPage() {
     </div>
   );
 }
-

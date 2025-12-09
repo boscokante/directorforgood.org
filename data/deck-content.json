@@ -58,6 +58,34 @@
       }
     },
     {
+      "id": "customer-foundations",
+      "title": "Ideal Customer – Foundations as Buyers",
+      "subtitle": "Foundations can sponsor multiple orgs at once.",
+      "sections": [
+        {
+          "heading": "The opportunity:",
+          "items": [
+            "Foundations already fund capacity-building for grantees",
+            "They can purchase Director packages for 5–10 orgs",
+            "One contract, multiple organizations transformed"
+          ]
+        },
+        {
+          "heading": "Why this works:",
+          "items": [
+            "Foundations get measurable capacity ROI across portfolio",
+            "Orgs get backbone support they couldn't afford alone",
+            "Director gets predictable, larger contracts"
+          ]
+        }
+      ],
+      "highlight": "A single foundation can unlock Director for an entire cohort of grantees.",
+      "image": {
+        "type": "diagram",
+        "placeholder": "Foundation at center connected to 5-10 nonprofit orgs, each with Director backbone"
+      }
+    },
+    {
       "id": "broken-options",
       "title": "Broken Options",
       "subtitle": "Existing solutions don't fit this stage.",
