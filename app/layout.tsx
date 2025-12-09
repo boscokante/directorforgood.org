@@ -14,20 +14,20 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "HiiiWAV - Creative Tech Incubator",
-  description: "HiiiWAV is Oakland's creative tech incubator empowering artists to become successful entrepreneurs through technology, mentorship, and community support.",
-  keywords: ["HiiiWAV", "creative tech", "incubator", "Oakland", "artists", "entrepreneurs", "AI", "Code Vibes"],
+  title: "Director - AI-Native Backbone for Nonprofits",
+  description: "Director is the AI-native operating system and forward-deployed backbone for nonprofits. Turning under-resourced founders into fundable, operationally tight organizations.",
+  keywords: ["Director", "nonprofit", "AI", "operations", "fundraising", "nonprofit technology", "directorforgood"],
   openGraph: {
-    title: "HiiiWAV - Creative Tech Incubator",
-    description: "Empowering artists to become entrepreneurs through technology",
-    url: "https://hiiiwav.org",
-    siteName: "HiiiWAV",
+    title: "Director - AI-Native Backbone for Nonprofits",
+    description: "The AI-native operating system and forward-deployed backbone for nonprofits",
+    url: "https://directorforgood.org",
+    siteName: "Director",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "HiiiWAV - Creative Tech Incubator",
-    description: "Empowering artists to become entrepreneurs through technology",
+    title: "Director - AI-Native Backbone for Nonprofits",
+    description: "The AI-native operating system and forward-deployed backbone for nonprofits",
   },
 };
 

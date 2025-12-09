@@ -60,7 +60,7 @@ export default async function Page({ params }: PageProps) {
           {page.title}
         </h1>
         
-        <div className="prose prose-invert prose-lg max-w-none prose-headings:text-[#99FF69] prose-a:text-[#99FF69] prose-strong:text-white">
+        <div className="prose prose-invert prose-lg max-w-none prose-headings:text-white prose-a:text-white prose-strong:text-white">
           <ReactMarkdown remarkPlugins={[remarkGfm]}>
             {page.content || ''}
           </ReactMarkdown>
@@ -89,7 +89,7 @@ export async function generateMetadata({ params }: PageProps) {
   }
 
   return {
-    title: `${page.title} - HiiiWAV`,
-    description: page.seoDescription || `${page.title} - HiiiWAV Creative Tech Incubator`,
+    title: `${page.title} - Director`,
+    description: page.seoDescription || `${page.title} - Director`,
   }
 }

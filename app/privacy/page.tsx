@@ -1,9 +1,8 @@
 import Link from 'next/link'
-import Image from 'next/image'
 
 export const metadata = {
-  title: 'Privacy Policy - HiiiWAV',
-  description: 'HiiiWAV Privacy Policy - Learn how we collect, use, and protect your personal information.',
+  title: 'Privacy Policy - Director',
+  description: 'Director Privacy Policy - Learn how we collect, use, and protect your personal information.',
 }
 
 export default function PrivacyPage() {
@@ -11,13 +10,7 @@ export default function PrivacyPage() {
     <div className="bg-black text-white min-h-screen">
       <div className="container px-4 py-16 max-w-4xl mx-auto">
         <Link href="/" className="inline-block mb-8">
-          <Image
-            src="/logo-white.png"
-            alt="HiiiWAV"
-            width={200}
-            height={50}
-            className="h-12 w-auto"
-          />
+          <span className="text-2xl font-bold text-white">Director</span>
         </Link>
 
         <h1 className="text-4xl md:text-5xl font-bold mb-8">Privacy Policy</h1>
@@ -28,17 +21,17 @@ export default function PrivacyPage() {
 
         <div className="prose prose-invert prose-lg max-w-none space-y-8">
           <section>
-            <h2 className="text-2xl font-bold text-[#99FF69] mb-4">1. Introduction</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">1. Introduction</h2>
             <p className="text-gray-300 leading-relaxed">
-              HiiiWAV (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is committed to protecting your privacy. 
+              Director (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is committed to protecting your privacy. 
               This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you 
-              visit our website hiiiwav.org (the &quot;Site&quot;). Please read this privacy policy carefully. 
+              visit our website directorforgood.org (the &quot;Site&quot;). Please read this privacy policy carefully. 
               If you do not agree with the terms of this privacy policy, please do not access the Site.
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-[#99FF69] mb-4">2. Information We Collect</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">2. Information We Collect</h2>
             <h3 className="text-xl font-semibold mb-3">2.1 Information You Provide</h3>
             <p className="text-gray-300 leading-relaxed mb-4">
               We may collect information that you voluntarily provide to us when you:
@@ -48,7 +41,7 @@ export default function PrivacyPage() {
               <li>Subscribe to our newsletter</li>
               <li>Make a donation</li>
               <li>Contact us through forms or email</li>
-              <li>Apply for AFRO AI or other programs</li>
+              <li>Contact us about our services</li>
             </ul>
             <p className="text-gray-300 leading-relaxed mt-4">
               This information may include your name, email address, phone number, mailing address, 
@@ -66,7 +59,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-[#99FF69] mb-4">3. How We Use Your Information</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">3. How We Use Your Information</h2>
             <p className="text-gray-300 leading-relaxed mb-4">
               We use the information we collect to:
             </p>
@@ -82,7 +75,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-[#99FF69] mb-4">4. Cookies and Tracking Technologies</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">4. Cookies and Tracking Technologies</h2>
             <p className="text-gray-300 leading-relaxed">
               We use cookies and similar tracking technologies to track activity on our Site and store 
               certain information. Cookies are files with a small amount of data which may include an 
@@ -93,7 +86,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-[#99FF69] mb-4">5. Third-Party Services</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">5. Third-Party Services</h2>
             <p className="text-gray-300 leading-relaxed">
               We may use third-party services to help us operate our Site and administer our programs. 
               These third parties have access to your information only to perform specific tasks on our 
@@ -109,7 +102,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-[#99FF69] mb-4">6. Data Security</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">6. Data Security</h2>
             <p className="text-gray-300 leading-relaxed">
               We implement appropriate technical and organizational security measures to protect your 
               personal information. However, no method of transmission over the Internet or electronic 
@@ -119,7 +112,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-[#99FF69] mb-4">7. Your Rights</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">7. Your Rights</h2>
             <p className="text-gray-300 leading-relaxed mb-4">
               Depending on your location, you may have certain rights regarding your personal information, including:
             </p>
@@ -131,12 +124,12 @@ export default function PrivacyPage() {
               <li>The right to data portability</li>
             </ul>
             <p className="text-gray-300 leading-relaxed mt-4">
-              To exercise these rights, please contact us at <a href="mailto:info@hiiiwav.org" className="text-[#99FF69] hover:underline">info@hiiiwav.org</a>.
+              To exercise these rights, please contact us at <a href="mailto:hello@directorforgood.org" className="text-white hover:underline">hello@directorforgood.org</a>.
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-[#99FF69] mb-4">8. Children&apos;s Privacy</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">8. Children&apos;s Privacy</h2>
             <p className="text-gray-300 leading-relaxed">
               Our Site is not intended for children under the age of 13. We do not knowingly collect 
               personal information from children under 13. If you are a parent or guardian and believe 
@@ -145,7 +138,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-[#99FF69] mb-4">9. Changes to This Privacy Policy</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">9. Changes to This Privacy Policy</h2>
             <p className="text-gray-300 leading-relaxed">
               We may update this Privacy Policy from time to time. We will notify you of any changes 
               by posting the new Privacy Policy on this page and updating the &quot;Last Updated&quot; date. 
@@ -154,23 +147,24 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-[#99FF69] mb-4">10. Contact Us</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">10. Contact Us</h2>
             <p className="text-gray-300 leading-relaxed">
               If you have any questions about this Privacy Policy, please contact us:
             </p>
             <div className="mt-4 text-gray-300">
-              <p><strong>HiiiWAV</strong></p>
-              <p>2781 Telegraph Ave</p>
-              <p>Oakland, CA</p>
+              <p><strong>Director</strong></p>
               <p className="mt-2">
-                Email: <a href="mailto:info@hiiiwav.org" className="text-[#99FF69] hover:underline">info@hiiiwav.org</a>
+                Email: <a href="mailto:hello@directorforgood.org" className="text-white hover:underline">hello@directorforgood.org</a>
+              </p>
+              <p className="mt-2">
+                Website: <a href="https://directorforgood.org" className="text-white hover:underline">directorforgood.org</a>
               </p>
             </div>
           </section>
         </div>
 
         <div className="mt-12 pt-8 border-t border-gray-800">
-          <Link href="/" className="text-[#99FF69] hover:underline">
+          <Link href="/" className="text-white hover:underline">
             ← Back to Home
           </Link>
         </div>

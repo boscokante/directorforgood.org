@@ -39,6 +39,11 @@ export default function AdminLayout({
               </Button>
             </Link>
             <div className="my-4 border-t" />
+            <Link href="/admin/deck">
+              <Button variant="ghost" className="w-full justify-start">
+                Pitch Deck
+              </Button>
+            </Link>
             <Link href="/admin/redirects">
               <Button variant="ghost" className="w-full justify-start">
                 Redirects

@@ -82,12 +82,12 @@ body {
 
 /* Newsletter content styles */
 .newsletter-content a {
-  color: #99FF69;
+  color: hsl(var(--primary));
   text-decoration: underline;
 }
 
 .newsletter-content a:hover {
-  color: #A34DFF;
+  color: hsl(var(--primary-foreground));
 }
 
 .newsletter-content img {
@@ -97,20 +97,20 @@ body {
 }
 
 .newsletter-content blockquote {
-  border-left: 4px solid #A34DFF;
+  border-left: 4px solid hsl(var(--border));
   padding-left: 1rem;
   font-style: italic;
-  color: #ccc;
+  color: hsl(var(--muted-foreground));
 }
 
 .newsletter-content h2,
 .newsletter-content h3 {
-  color: #A34DFF;
+  color: hsl(var(--foreground));
 }
 
 .newsletter-content ul,
 .newsletter-content ol {
-  color: #ccc;
+  color: hsl(var(--muted-foreground));
 }
 
 .newsletter-content li {

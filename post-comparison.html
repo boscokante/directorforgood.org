@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Post Comparison - HiiiWAV</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { 
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      padding: 20px; 
+      max-width: 1600px; 
+      margin: 0 auto;
+      background: #f5f5f5;
+    }
+    h1 { margin-bottom: 10px; }
+    .stats { color: #666; margin-bottom: 20px; }
+    table { 
+      width: 100%; 
+      border-collapse: collapse; 
+      background: white;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    th, td { 
+      padding: 12px 15px; 
+      text-align: left; 
+      border-bottom: 1px solid #eee;
+    }
+    th { 
+      background: #333; 
+      color: white;
+      position: sticky;
+      top: 0;
+    }
+    tr:hover { background: #f9f9f9; }
+    a { color: #0066cc; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .date { white-space: nowrap; color: #666; font-size: 14px; }
+    .status { 
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+    }
+    .published { background: #d4edda; color: #155724; }
+    .draft { background: #fff3cd; color: #856404; }
+    .title { max-width: 300px; }
+    .links { font-size: 14px; }
+    .links a { display: block; margin: 2px 0; }
+    input[type="search"] {
+      padding: 10px 15px;
+      width: 100%;
+      max-width: 400px;
+      margin-bottom: 20px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Blog Post Comparison</h1>
+  <div class="stats">
+    Total: 19 posts | 
+    Published: 19 | 
+    Drafts: 0 |
+    Generated: 12/7/2025, 4:39:55 PM
+  </div>
+  
+  <input type="search" id="search" placeholder="Filter posts..." onkeyup="filterTable()">
+  
+  <table id="posts-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Date</th>
+        <th>Status</th>
+        <th>Title</th>
+        <th>Local (Dev)</th>
+        <th>New Site (Vercel)</th>
+        <th>Original Site</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr>
+        <td>1</td>
+        <td class="date">Feb 6, 2024</td>
+        <td><span class="status published">Published</span></td>
+        <td class="title">Demo Day</td>
+        <td class="links"><a href="http://localhost:3001/blog/demo-day" target="_blank">http://localhost:3001/blog/demo-day</a></td>
+        <td class="links"><a href="https://hiiiwav-website.vercel.app/blog/demo-day" target="_blank">https://hiiiwav-website.vercel.app/blog/demo-day</a></td>
+        <td class="links"><a href="https://hiiiwav.org/demo-day/" target="_blank">https://hiiiwav.org/demo-day/</a></td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td class="date">Feb 6, 2024</td>
+        <td><span class="status published">Published</span></td>
+        <td class="title">AFRO AI Residency</td>
+        <td class="links"><a href="http://localhost:3001/blog/afro-ai-residency" target="_blank">http://localhost:3001/blog/afro-ai-residency</a></td>
+        <td class="links"><a href="https://hiiiwav-website.vercel.app/blog/afro-ai-residency" target="_blank">https://hiiiwav-website.vercel.app/blog/afro-ai-residency</a></td>
+        <td class="links"><a href="https://hiiiwav.org/afro-ai-residency/" target="_blank">https://hiiiwav.org/afro-ai-residency/</a></td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td class="date">Feb 6, 2024</td>
+        <td><span class="status published">Published</span></td>
+        <td class="title">HiiiWAV FEST</td>
+        <td class="links"><a href="http://localhost:3001/blog/hiiiwav-fest" target="_blank">http://localhost:3001/blog/hiiiwav-fest</a></td>
+        <td class="links"><a href="https://hiiiwav-website.vercel.app/blog/hiiiwav-fest" target="_blank">https://hiiiwav-website.vercel.app/blog/hiiiwav-fest</a></td>
+        <td class="links"><a href="https://hiiiwav.org/hiiiwav-fest/" target="_blank">https://hiiiwav.org/hiiiwav-fest/</a></td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td class="date">Feb 6, 2024</td>
+        <td><span class="status published">Published</span></td>
+        <td class="title">HiiiFrequency</td>
+        <td class="links"><a href="http://localhost:3001/blog/hiiifrequency" target="_blank">http://localhost:3001/blog/hiiifrequency</a></td>
+        <td class="links"><a href="https://hiiiwav-website.vercel.app/blog/hiiifrequency" target="_blank">https://hiiiwav-website.vercel.app/blog/hiiifrequency</a></td>
+        <td class="links"><a href="https://hiiiwav.org/hiiifrequency/" target="_blank">https://hiiiwav.org/hiiifrequency/</a></td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td class="date">Feb 6, 2024</td>
+        <td><span class="status published">Published</span></td>
+        <td class="title">Re:Vibes</td>
+        <td class="links"><a href="http://localhost:3001/blog/revibes" target="_blank">http://localhost:3001/blog/revibes</a></td>
+        <td class="links"><a href="https://hiiiwav-website.vercel.app/blog/revibes" target="_blank">https://hiiiwav-website.vercel.app/blog/revibes</a></td>
+        <td class="links"><a href="https://hiiiwav.org/revibes/" target="_blank">https://hiiiwav.org/revibes/</a></td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td class="date">Dec 13, 2023</td>
+        <td><span class="status published">Published</span></td>
+        <td class="title">HiiiFriends</td>
+        <td class="links"><a href="http://localhost:3001/blog/hiiifriends" target="_blank">http://localhost:3001/blog/hiiifriends</a></td>
+        <td class="links"><a href="https://hiiiwav-website.vercel.app/blog/hiiifriends" target="_blank">https://hiiiwav-website.vercel.app/blog/hiiifriends</a></td>
+        <td class="links"><a href="https://hiiiwav.org/hiiifriends/" target="_blank">https://hiiiwav.org/hiiifriends/</a></td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td class="date">Nov 10, 2023</td>
+        <td><span class="status published">Published</span></td>
+        <td class="title">AFRO AI: Demo Day 2023</td>
+        <td class="links"><a href="http://localhost:3001/blog/afro-ai-demo-day-2023" target="_blank">http://localhost:3001/blog/afro-ai-demo-day-2023</a></td>
+        <td class="links"><a href="https://hiiiwav-website.vercel.app/blog/afro-ai-demo-day-2023" target="_blank">https://hiiiwav-website.vercel.app/blog/afro-ai-demo-day-2023</a></td>
+        <td class="links"><a href="https://hiiiwav.org/afro-ai-demo-day-2023/" target="_blank">https://hiiiwav.org/afro-ai-demo-day-2023/</a></td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td class="date">Nov 7, 2023</td>
+        <td><span class="status published">Published</span></td>
+        <td class="title">Afro AI is transforming local artists into tech founders</td>
+        <td class="links"><a href="http://localhost:3001/blog/afro-ai-is-transforming-local-artists-to-tech-founders" target="_blank">http://localhost:3001/blog/afro-ai-is-transforming-local-artists-to-tech-founders</a></td>
+        <td class="links"><a href="https://hiiiwav-website.vercel.app/blog/afro-ai-is-transforming-local-artists-to-tech-founders" target="_blank">https://hiiiwav-website.vercel.app/blog/afro-ai-is-transforming-local-artists-to-tech-founders</a></td>
+        <td class="links"><a href="https://hiiiwav.org/afro-ai-is-transforming-local-artists-to-tech-founders/" target="_blank">https://hiiiwav.org/afro-ai-is-transforming-local-artists-to-tech-founders/</a></td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td class="date">Sep 21, 2023</td>
+        <td><span class="status published">Published</span></td>
+        <td class="title">AFRO AI: KICKOFF</td>
+        <td class="links"><a href="http://localhost:3001/blog/afro-ai-kickoff" target="_blank">http://localhost:3001/blog/afro-ai-kickoff</a></td>
+        <td class="links"><a href="https://hiiiwav-website.vercel.app/blog/afro-ai-kickoff" target="_blank">https://hiiiwav-website.vercel.app/blog/afro-ai-kickoff</a></td>
+        <td class="links"><a href="https://hiiiwav.org/afro-ai-kickoff/" target="_blank">https://hiiiwav.org/afro-ai-kickoff/</a></td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td class="date">Aug 27, 2023</td>
+        <td><span class="status published">Published</span></td>
+        <td class="title">Sci-Fi Sunday</td>
+        <td class="links"><a href="http://localhost:3001/blog/scifi-sunday" target="_blank">http://localhost:3001/blog/scifi-sunday</a></td>
+        <td class="links"><a href="https://hiiiwav-website.vercel.app/blog/scifi-sunday" target="_blank">https://hiiiwav-website.vercel.app/blog/scifi-sunday</a></td>
+        <td class="links"><a href="https://hiiiwav.org/scifi-sunday/" target="_blank">https://hiiiwav.org/scifi-sunday/</a></td>
+      </tr>
+      <tr>
+        <td>11</td>
+        <td class="date">Jul 15, 2023</td>
+        <td><span class="status published">Published</span></td>
+        <td class="title">Art Official: Intelligent Design &amp; Bosko's Birthday</td>
+        <td class="links"><a href="http://localhost:3001/blog/art-official" target="_blank">http://localhost:3001/blog/art-official</a></td>
+        <td class="links"><a href="https://hiiiwav-website.vercel.app/blog/art-official" target="_blank">https://hiiiwav-website.vercel.app/blog/art-official</a></td>
+        <td class="links"><a href="https://hiiiwav.org/art-official/" target="_blank">https://hiiiwav.org/art-official/</a></td>
+      </tr>
+      <tr>
+        <td>12</td>
+        <td class="date">May 24, 2023</td>
+        <td><span class="status published">Published</span></td>
+        <td class="title">Funding Fair</td>
+        <td class="links"><a href="http://localhost:3001/blog/funding-fair" target="_blank">http://localhost:3001/blog/funding-fair</a></td>
+        <td class="links"><a href="https://hiiiwav-website.vercel.app/blog/funding-fair" target="_blank">https://hiiiwav-website.vercel.app/blog/funding-fair</a></td>
+        <td class="links"><a href="https://hiiiwav.org/funding-fair/" target="_blank">https://hiiiwav.org/funding-fair/</a></td>
+      </tr>
+      <tr>
+        <td>13</td>
+        <td class="date">Apr 28, 2023</td>
+        <td><span class="status published">Published</span></td>
+        <td class="title">Founders Dinner</td>
+        <td class="links"><a href="http://localhost:3001/blog/founders-dinner" target="_blank">http://localhost:3001/blog/founders-dinner</a></td>
+        <td class="links"><a href="https://hiiiwav-website.vercel.app/blog/founders-dinner" target="_blank">https://hiiiwav-website.vercel.app/blog/founders-dinner</a></td>
+        <td class="links"><a href="https://hiiiwav.org/founders-dinner/" target="_blank">https://hiiiwav.org/founders-dinner/</a></td>
+      </tr>
+      <tr>
+        <td>14</td>
+        <td class="date">Feb 24, 2023</td>
+        <td><span class="status published">Published</span></td>
+        <td class="title">HiiiTOP Fundraiser</td>
+        <td class="links"><a href="http://localhost:3001/blog/hiiitop-fundraiser" target="_blank">http://localhost:3001/blog/hiiitop-fundraiser</a></td>
+        <td class="links"><a href="https://hiiiwav-website.vercel.app/blog/hiiitop-fundraiser" target="_blank">https://hiiiwav-website.vercel.app/blog/hiiitop-fundraiser</a></td>
+        <td class="links"><a href="https://hiiiwav.org/hiiitop-fundraiser/" target="_blank">https://hiiiwav.org/hiiitop-fundraiser/</a></td>
+      </tr>
+      <tr>
+        <td>15</td>
+        <td class="date">Nov 3, 2022</td>
+        <td><span class="status published">Published</span></td>
+        <td class="title">AfroFilterism Demo Day</td>
+        <td class="links"><a href="http://localhost:3001/blog/afrofilterism-demo-day" target="_blank">http://localhost:3001/blog/afrofilterism-demo-day</a></td>
+        <td class="links"><a href="https://hiiiwav-website.vercel.app/blog/afrofilterism-demo-day" target="_blank">https://hiiiwav-website.vercel.app/blog/afrofilterism-demo-day</a></td>
+        <td class="links"><a href="https://hiiiwav.org/afrofilterism-demo-day/" target="_blank">https://hiiiwav.org/afrofilterism-demo-day/</a></td>
+      </tr>
+      <tr>
+        <td>16</td>
+        <td class="date">Oct 27, 2022</td>
+        <td><span class="status published">Published</span></td>
+        <td class="title">AFROFILTERISM 2022</td>
+        <td class="links"><a href="http://localhost:3001/blog/afrofilterism2022" target="_blank">http://localhost:3001/blog/afrofilterism2022</a></td>
+        <td class="links"><a href="https://hiiiwav-website.vercel.app/blog/afrofilterism2022" target="_blank">https://hiiiwav-website.vercel.app/blog/afrofilterism2022</a></td>
+        <td class="links"><a href="https://hiiiwav.org/afrofilterism2022/" target="_blank">https://hiiiwav.org/afrofilterism2022/</a></td>
+      </tr>
+      <tr>
+        <td>17</td>
+        <td class="date">Jul 27, 2022</td>
+        <td><span class="status published">Published</span></td>
+        <td class="title">Bosko's Bday Versus Battle and Charity Fundraiser</td>
+        <td class="links"><a href="http://localhost:3001/blog/bosko-bday-versus-battle" target="_blank">http://localhost:3001/blog/bosko-bday-versus-battle</a></td>
+        <td class="links"><a href="https://hiiiwav-website.vercel.app/blog/bosko-bday-versus-battle" target="_blank">https://hiiiwav-website.vercel.app/blog/bosko-bday-versus-battle</a></td>
+        <td class="links"><a href="https://hiiiwav.org/bosko-bday-versus-battle/" target="_blank">https://hiiiwav.org/bosko-bday-versus-battle/</a></td>
+      </tr>
+      <tr>
+        <td>18</td>
+        <td class="date">May 15, 2022</td>
+        <td><span class="status published">Published</span></td>
+        <td class="title">VC on 7th Street</td>
+        <td class="links"><a href="http://localhost:3001/blog/vc-on-7th-street" target="_blank">http://localhost:3001/blog/vc-on-7th-street</a></td>
+        <td class="links"><a href="https://hiiiwav-website.vercel.app/blog/vc-on-7th-street" target="_blank">https://hiiiwav-website.vercel.app/blog/vc-on-7th-street</a></td>
+        <td class="links"><a href="https://hiiiwav.org/vc-on-7th-street/" target="_blank">https://hiiiwav.org/vc-on-7th-street/</a></td>
+      </tr>
+      <tr>
+        <td>19</td>
+        <td class="date">Jan 30, 2022</td>
+        <td><span class="status published">Published</span></td>
+        <td class="title">The Crowning</td>
+        <td class="links"><a href="http://localhost:3001/blog/the-crowning" target="_blank">http://localhost:3001/blog/the-crowning</a></td>
+        <td class="links"><a href="https://hiiiwav-website.vercel.app/blog/the-crowning" target="_blank">https://hiiiwav-website.vercel.app/blog/the-crowning</a></td>
+        <td class="links"><a href="https://hiiiwav.org/the-crowning/" target="_blank">https://hiiiwav.org/the-crowning/</a></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <script>
+    function filterTable() {
+      const filter = document.getElementById('search').value.toLowerCase();
+      const rows = document.querySelectorAll('#posts-table tbody tr');
+      rows.forEach(row => {
+        const text = row.textContent.toLowerCase();
+        row.style.display = text.includes(filter) ? '' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>
