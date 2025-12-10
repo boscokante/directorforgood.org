@@ -1,8 +1,9 @@
 {
   "cover": {
     "title": "Director",
-    "tagline": "The AI support team that helps nonprofits stay focused on impact",
+    "tagline": "The AI agent team that lets a single founder run a $5M nonprofit with no back-office staff",
     "subtagline": "Turning under-resourced founders into fundable, operationally tight organizations",
+    "oneliner": "Short term, we're a forward-deployed AI support team. Long term, we're building the autopilot that runs the entire nonprofit back office so a single founder can run a $5M org with almost no internal ops staff.",
     "url": "directorforgood.org"
   },
   "slides": [
@@ -23,7 +24,7 @@
         }
       ],
       "highlight": "Promising orgs plateau at $300–600k or quietly shut down — not for lack of impact, but for lack of backbone.",
-      "footnote": "When funding tightens and staff are cut, all of this collapses back onto one person.",
+      "footnote": "When funding tightens and staff are cut, all of this collapses back onto one person. Right now, most of their time and money are trapped in back-office work that should be automated.",
       "image": {
         "type": "infographic",
         "placeholder": "Infographic showing one person juggling 5 different roles/hats"
@@ -134,11 +135,13 @@
           "items": [
             "Forward-Deployed Director (FDD)",
             "Finance/ops leadership",
-            "Dedicated dev & ops roles as we scale"
+            "Dedicated dev & ops roles as we scale",
+            "Long term, Director becomes the autopilot for the nonprofit back office, not just a helper"
           ]
         }
       ],
       "highlight": "We plug into an existing org and donor base and give them the leadership bench they can't afford to rebuild alone.",
+      "callout": "Short term, we're a forward-deployed AI support team. Long term, we're building the autopilot that runs the entire nonprofit back office so a single founder can run a $5M org with almost no internal ops staff.",
       "image": {
         "type": "diagram",
         "placeholder": "Two-part diagram: Director OS (software icon) + Director Pod (team icon) = Complete Backbone"
@@ -200,11 +203,19 @@
         {
           "heading": "Phase 3 – 16 orgs",
           "text": "2+ FDDs. Standardized playbooks. Agents do recurring work."
+        },
+        {
+          "heading": "Phase 4 – 100+ orgs",
+          "items": [
+            "AI-native director team handles 90–95% of recurring work",
+            "Pod becomes supervisory layer, not execution layer",
+            "Single founder safely runs $3–5M org with no internal back-office hires"
+          ]
         }
       ],
       "image": {
         "type": "infographic",
-        "placeholder": "Scaling diagram: 4 orgs → 8 orgs → 16 orgs with team growth visualization"
+        "placeholder": "Scaling diagram: 4 orgs → 8 orgs → 16 orgs → 100+ orgs with AI automation levels"
       }
     },
     {
@@ -229,7 +240,7 @@
           "text": "Board decks, funder reports, impact one-pagers"
         }
       ],
-      "footnote": "Data flows in from email, calendar, finance systems, docs, and existing CRMs.",
+      "footnote": "Data flows in from email, calendar, finance systems, docs, and existing CRMs. Over time, Director OS becomes the autopilot layer that runs the nonprofit back office end-to-end.",
       "image": {
         "type": "mockup",
         "placeholder": "Dashboard mockup showing 4 quadrants: Revenue, Runway, Ops, Narratives"
@@ -237,8 +248,8 @@
     },
     {
       "id": "ai-agents",
-      "title": "AI Agents – How We 2–4x Human Capacity",
-      "subtitle": "Specialized agents do the repetitive work; humans do the judgment.",
+      "title": "AI Agents – From 2–4x Today to 90–95% Automation",
+      "subtitle": "On the path to automating 90–95% of nonprofit back-office work.",
       "sections": [
         {
           "heading": "Major Gifts Agent",
@@ -273,10 +284,39 @@
           ]
         }
       ],
-      "highlight": "Agents explore, compile, and draft. FDDs and Directors review, edit, and decide.",
+      "highlight": "Today: Agents draft, humans decide. Future: Agents execute end-to-end; humans supervise and handle exceptions.",
       "image": {
         "type": "diagram",
         "placeholder": "4 AI agent icons with workflow arrows showing data flow between them"
+      }
+    },
+    {
+      "id": "long-term-vision",
+      "title": "Long-Term Vision – 10x the Backbone, 10x the Impact",
+      "subtitle": "From forward-deployed support team to fully autonomous nonprofit autopilot.",
+      "sections": [
+        {
+          "heading": "Today (v1 Director)",
+          "items": [
+            "Forward-deployed Director + Finance lead",
+            "AI agents assist with finance, ops, comms, and donor prep",
+            "One Pod supports 4–16 orgs"
+          ]
+        },
+        {
+          "heading": "Future (Where We're Going)",
+          "items": [
+            "Fully AI-native director team for finance, ops, comms, development",
+            "Agents handle 90–95% of recurring back-office work",
+            "One Pod supervises 100+ orgs",
+            "Founders and boards focus almost entirely on programs and relationships"
+          ]
+        }
+      ],
+      "highlight": "Audacious goal: No nonprofit ever dies because of operations, fundraising, or compliance again — only because the mission is done.",
+      "image": {
+        "type": "diagram",
+        "placeholder": "Two-column comparison: Today (human-led pod) vs Future (AI-native autopilot supervising 100+ orgs)"
       }
     },
     {
@@ -285,7 +325,7 @@
       "subtitle": "Director makes a serious backbone affordable and scalable.",
       "sections": [
         {
-          "heading": "Traditional backbone costs ($500-700k org):",
+          "heading": "Traditional backbone costs (small org):",
           "items": [
             "ED: $100–150k",
             "Ops/Finance: ~$100k",
@@ -299,7 +339,8 @@
           "items": [
             "ED/founder: $100–150k",
             "Director Pod: ~$80–120k/year",
-            "Total backbone: $180–270k/year"
+            "Total backbone: $180–270k/year",
+            "Long term, as a Pod supervises 100+ orgs, backbone costs can drop by ~80%, shifting dollars from administration back into programs"
           ]
         }
       ],
@@ -327,6 +368,12 @@
           "items": [
             "Orgs with $1M+ budgets are losing staff",
             "Funders want grantees with credible backbones and visibility"
+          ]
+        },
+        {
+          "heading": "The opportunity:",
+          "items": [
+            "For the first time, it's realistic to imagine automating 90–95% of nonprofit back-office work and letting a single founder safely run a $3–5M org with almost no internal ops staff"
           ]
         }
       ],
@@ -379,7 +426,8 @@
           "items": [
             "Annual retainers per org",
             "Tied to budget band and complexity",
-            "Goal: multiple Pods, each supporting up to 16 orgs"
+            "Goal: multiple Pods, each supporting up to 16 orgs",
+            "At scale, Director can redirect billions of dollars of nonprofit overhead back into direct programs and community work"
           ]
         },
         {
@@ -408,11 +456,15 @@
       "id": "team",
       "title": "Team – Lean Year-1 Plan",
       "subtitle": "Small, high-leverage founding team with 12 months of runway.",
-      "sections": [
+      "teamMembers": [
         {
-          "heading": "Founder & CEO",
-          "text": "Vision, sales, fundraising, relationships"
-        },
+          "name": "Bosko Kante",
+          "role": "CEO & Founder",
+          "bio": "Software developer and technical founder. Vision, sales, fundraising, relationships. Founder of HiiiWAV, with deep experience building and supporting nonprofits in the arts and social impact space.",
+          "image": "/newsletters/bosko-kante.jpg"
+        }
+      ],
+      "sections": [
         {
           "heading": "Forward-Deployed Director (hire #1)",
           "text": "Nonprofit ops + fundraising, embedded across first ~4 orgs"
@@ -455,16 +507,24 @@
           ]
         },
         {
-          "heading": "24+ months:",
+          "heading": "24–36 months:",
           "items": [
             "16-org pods on mature OS",
             "Multiple pods focused on key verticals"
+          ]
+        },
+        {
+          "heading": "36+ months:",
+          "items": [
+            "100+ org pods with 90–95% agent-driven operations",
+            "A single founder can safely run a $3–5M organization with no internal back-office hires",
+            "Director redirects billions in nonprofit overhead back into direct programs"
           ]
         }
       ],
       "image": {
         "type": "infographic",
-        "placeholder": "Timeline roadmap: Year 1 (4 orgs) → Year 2 (8 orgs) → Year 3+ (16 orgs per pod)"
+        "placeholder": "Timeline roadmap: Year 1 (4 orgs) → Year 2 (8 orgs) → Year 3 (16 orgs) → Year 4+ (100+ orgs, 90-95% automated)"
       }
     },
     {
@@ -499,7 +559,8 @@
     "items": [
       "Fund 12+ months of lean team and product development",
       "Prove the 4 → 8 → 16 org capacity story with real customers",
-      "Build Director into the AI-native backbone for the orgs that can least afford to lose theirs"
+      "Build Director into the AI-native backbone for the orgs that can least afford to lose theirs",
+      "At scale, redirect billions of dollars of nonprofit overhead back into direct programs and community work"
     ]
   }
 }

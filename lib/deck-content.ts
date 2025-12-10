@@ -10,6 +10,13 @@ export interface SlideImage {
   type: 'icon' | 'chart' | 'mockup' | 'infographic' | 'photo' | 'diagram';
 }
 
+export interface TeamMemberInfo {
+  name: string;
+  role: string;
+  bio: string;
+  image: string;
+}
+
 export interface SlideContent {
   id: string;
   title: string;
@@ -19,6 +26,7 @@ export interface SlideContent {
     items?: string[];
     text?: string;
   }[];
+  teamMembers?: TeamMemberInfo[];
   highlight?: string;
   footnote?: string;
   image?: SlideImage;

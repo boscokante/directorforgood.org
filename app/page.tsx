@@ -127,6 +127,42 @@ export default async function HomePage() {
         );
       })()}
 
+      {/* Ideal Customer: Foundations as Buyers */}
+      {(() => {
+        const slide = getSlide('customer-foundations');
+        if (!slide) return null;
+        return (
+          <section className="py-20 bg-black">
+            <div className="container px-4">
+              <div className="max-w-4xl mx-auto">
+                <h2 className="text-4xl md:text-5xl font-bold mb-4">{slide.title}</h2>
+                <p className="text-xl text-gray-300 mb-8">{slide.subtitle}</p>
+                <div className="grid md:grid-cols-2 gap-8 mb-8">
+                  {slide.sections?.map((section, i) => (
+                    <div key={i}>
+                      <h3 className="text-xl font-semibold mb-4 text-white">{section.heading}</h3>
+                      {section.items && (
+                        <ul className="space-y-3 text-gray-300">
+                          {section.items.map((item, j) => (
+                            <li key={j} className="flex items-start gap-2">
+                              <CheckCircle2 className="w-5 h-5 text-white mt-1 flex-shrink-0" />
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
+                  ))}
+                </div>
+                {slide.highlight && (
+                  <p className="text-2xl text-white font-semibold mt-6">{slide.highlight}</p>
+                )}
+              </div>
+            </div>
+          </section>
+        );
+      })()}
+
       {/* Broken Options */}
       {(() => {
         const slide = getSlide('broken-options');
@@ -499,6 +535,28 @@ export default async function HomePage() {
                 <h2 className="text-4xl md:text-5xl font-bold mb-12">{slide.title}</h2>
                 <p className="text-xl text-gray-300 mb-8">{slide.subtitle}</p>
                 
+                {/* Team Members with Photos */}
+                {slide.teamMembers && (
+                  <div className="grid md:grid-cols-2 gap-8 mb-12">
+                    {slide.teamMembers.map((member: { name: string; role: string; bio: string; image: string }, i: number) => (
+                      <div key={i} className="flex gap-6 items-start">
+                        <img 
+                          src={member.image} 
+                          alt={member.name}
+                          className="w-32 h-32 rounded-full object-cover border-2 border-gray-700"
+                        />
+                        <div>
+                          <h3 className="text-2xl font-semibold mb-1">{member.name}</h3>
+                          <p className="text-lg text-gray-400 mb-2">{member.role}</p>
+                          <p className="text-gray-300 text-sm">{member.bio}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+                
+                {/* Open Roles */}
+                <h3 className="text-2xl font-semibold mb-6 text-gray-400">Open Roles</h3>
                 <div className="space-y-6 mb-8">
                   {slide.sections?.map((section, i) => (
                     <div key={i} className="border-l-4 border-gray-700 pl-6">

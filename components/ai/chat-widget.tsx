@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { MessageCircle, X } from 'lucide-react'
@@ -11,10 +11,15 @@ type Message = {
 }
 
 export function ChatWidget() {
+  const [mounted, setMounted] = useState(false)
   const [open, setOpen] = useState(false)
   const [input, setInput] = useState('')
   const [messages, setMessages] = useState<Message[]>([])
   const [isLoading, setIsLoading] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -54,6 +59,8 @@ export function ChatWidget() {
       setIsLoading(false)
     }
   }
+
+  if (!mounted) return null
 
   return (
     <div className="fixed bottom-4 right-4 z-50">
