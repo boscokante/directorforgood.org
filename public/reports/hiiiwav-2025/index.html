@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2025 HiiiWAV Impact Report</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green: #99FF69;
+      --purple: #A855F7;
+      --orange: #FF5722;
+      --black: #000000;
+      --white: #FFFFFF;
+      --gray-dark: #1a1a1a;
+      --gray-light: #f5f5f5;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.6;
+      color: var(--black);
+    }
+
+    .page {
+      width: 100%;
+      max-width: 1024px;
+      margin: 0 auto;
+      min-height: 100vh;
+      position: relative;
+      padding: 40px;
+    }
+
+    /* Header */
+    .page-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+
+    .logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    .page-number {
+      font-size: 14px;
+      color: inherit;
+      opacity: 0.7;
+    }
+
+    /* Typography */
+    h1, h2, h3, h4 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-weight: 400;
+      letter-spacing: 1px;
+    }
+
+    .section-title {
+      font-size: clamp(48px, 10vw, 80px);
+      line-height: 0.95;
+      margin-bottom: 20px;
+    }
+
+    .section-title-small {
+      font-size: clamp(32px, 6vw, 48px);
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+
+    .arrow {
+      font-size: 48px;
+      display: inline-block;
+      margin-left: 10px;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 24px;
+    }
+
+    /* Cover Page */
+    .cover {
+      background-color: var(--green);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-bottom: 60px;
+    }
+
+    .cover .year {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(32px, 5vw, 48px);
+      margin-bottom: 10px;
+    }
+
+    .cover .main-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(64px, 15vw, 120px);
+      line-height: 0.9;
+      margin-bottom: 30px;
+    }
+
+    .cover .main-title .lowercase-i {
+      text-transform: lowercase;
+    }
+
+    .cover-image {
+      width: 100%;
+      max-width: 600px;
+      margin: 20px 0;
+      filter: grayscale(100%);
+    }
+
+    .cover-image img {
+      width: 100%;
+      height: auto;
+    }
+
+    .wordmark {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(48px, 12vw, 100px);
+      letter-spacing: 2px;
+    }
+
+    .cover-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 20px;
+      font-size: 12px;
+      margin-top: auto;
+      padding-top: 40px;
+    }
+
+    .cover-footer-col {
+      min-width: 150px;
+    }
+
+    /* Table of Contents */
+    .toc {
+      background-color: var(--white);
+    }
+
+    .toc-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .toc-image {
+      width: 100%;
+      filter: grayscale(100%);
+    }
+
+    .toc-image img {
+      width: 100%;
+      height: auto;
+    }
+
+    .toc-image-caption {
+      font-size: 12px;
+      font-style: italic;
+      margin-top: 8px;
+      opacity: 0.7;
+    }
+
+    .toc-list {
+      list-style: none;
+    }
+
+    .toc-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 0;
+      border-bottom: 1px solid #eee;
+      font-size: 16px;
+    }
+
+    .toc-item-title {
+      font-weight: 500;
+    }
+
+    .toc-item-page {
+      color: var(--purple);
+      font-weight: 700;
+    }
+
+    .toc-thanks {
+      margin-top: 40px;
+      padding: 20px;
+      background: linear-gradient(90deg, var(--purple), var(--green));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-style: italic;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    /* Founder's Note */
+    .founders-note {
+      background-color: var(--white);
+    }
+
+    .founders-note-layout {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 40px;
+    }
+
+    .founders-note .section-title span {
+      color: var(--purple);
+      font-style: italic;
+    }
+
+    .founders-note-content p {
+      margin-bottom: 16px;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .founders-note-content strong {
+      font-weight: 700;
+    }
+
+    .highlight-purple {
+      background-color: var(--purple);
+      color: var(--white);
+      padding: 2px 6px;
+      font-weight: 700;
+    }
+
+    .callout-box {
+      background-color: var(--purple);
+      color: var(--white);
+      padding: 20px;
+      margin: 24px 0;
+      font-weight: 600;
+      font-style: italic;
+    }
+
+    .signature-block {
+      margin-top: 40px;
+    }
+
+    .signature-label {
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    .signature {
+      font-family: 'Dancing Script', cursive;
+      font-size: 36px;
+    }
+
+    .signature-title {
+      font-size: 12px;
+      opacity: 0.7;
+    }
+
+    .founder-photo {
+      width: 100%;
+      max-width: 300px;
+    }
+
+    .founder-photo img {
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+    }
+
+    /* Dark Pages */
+    .dark-page {
+      background-color: var(--black);
+      color: var(--white);
+    }
+
+    .dark-page .logo,
+    .dark-page .page-number {
+      color: var(--white);
+    }
+
+    .green-accent {
+      color: var(--green);
+    }
+
+    /* Intro Page */
+    .intro-content {
+      max-width: 500px;
+      margin-left: auto;
+    }
+
+    .intro-content p {
+      font-size: 14px;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .intro-callout {
+      color: var(--green);
+      font-weight: 700;
+      font-style: italic;
+      font-size: 16px;
+      margin: 24px 0;
+    }
+
+    .full-width-image {
+      width: calc(100% + 80px);
+      margin-left: -40px;
+      margin-right: -40px;
+      margin-top: 40px;
+    }
+
+    .full-width-image img {
+      width: 100%;
+      height: auto;
+    }
+
+    .image-caption {
+      font-size: 12px;
+      padding: 10px 40px;
+      opacity: 0.8;
+    }
+
+    .image-caption::before {
+      content: "✳ ";
+    }
+
+    /* HiiiLIGHTS Page */
+    .highlights {
+      background-color: var(--purple);
+      color: var(--white);
+    }
+
+    .highlights .section-title {
+      color: var(--green);
+    }
+
+    .highlights-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    .highlights p {
+      font-size: 14px;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .quote-block {
+      position: relative;
+      padding: 30px 20px;
+      margin: 30px 0;
+    }
+
+    .quote-mark {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 80px;
+      color: var(--green);
+      line-height: 1;
+      opacity: 0.5;
+    }
+
+    .quote-text {
+      font-size: 16px;
+      font-style: italic;
+      font-weight: 600;
+      margin: 10px 0;
+    }
+
+    .quote-attribution {
+      font-size: 12px;
+      opacity: 0.8;
+    }
+
+    .highlights ul {
+      list-style: none;
+      margin: 20px 0;
+    }
+
+    .highlights li {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 12px;
+      font-size: 14px;
+    }
+
+    .highlights li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--green);
+      font-weight: bold;
+    }
+
+    .highlights li strong {
+      color: var(--green);
+    }
+
+    /* Programs Page */
+    .programs-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    .program-section {
+      margin-bottom: 30px;
+    }
+
+    .program-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 24px;
+      color: var(--green);
+      margin-bottom: 12px;
+    }
+
+    .tag {
+      display: inline-block;
+      background-color: var(--green);
+      color: var(--black);
+      padding: 4px 12px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    /* Orange Page (Events) */
+    .orange-page {
+      background-color: var(--orange);
+      color: var(--white);
+    }
+
+    .orange-page .section-title {
+      font-size: clamp(40px, 8vw, 72px);
+    }
+
+    .event-subtitle {
+      font-style: italic;
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    /* Utilities */
+    .mt-4 { margin-top: 40px; }
+    .mb-4 { margin-bottom: 40px; }
+    .text-center { text-align: center; }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .page {
+        padding: 24px;
+      }
+
+      .toc-layout,
+      .founders-note-layout,
+      .highlights-layout,
+      .programs-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .full-width-image {
+        width: calc(100% + 48px);
+        margin-left: -24px;
+        margin-right: -24px;
+      }
+
+      .cover-footer {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    /* Print styles for PDF-like appearance */
+    @media print {
+      .page {
+        page-break-after: always;
+        min-height: 100vh;
+        padding: 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PAGE 1: Cover -->
+  <section class="page cover">
+    <header class="page-header">
+      <div class="logo">HiiiWAV</div>
+      <div>www.hiiiwav.org</div>
+    </header>
+
+    <div>
+      <div class="year">2025</div>
+      <h1 class="main-title">
+        <span class="lowercase-i">i</span>MPACT<br>REPORT
+      </h1>
+    </div>
+
+    <div class="cover-image">
+      <!-- Placeholder for hero image -->
+      <div style="background: #000; height: 300px; display: flex; align-items: center; justify-content: center; color: #fff;">
+        [2025 Event Photo - B&W]
+      </div>
+    </div>
+
+    <div class="wordmark">HiiiWAV</div>
+
+    <footer class="cover-footer">
+      <div class="cover-footer-col">
+        <div class="logo" style="font-size: 16px;">HiiiWAV</div>
+        <div>2181 Telegraph Ave.</div>
+        <div>Oakland, CA 94612</div>
+      </div>
+      <div class="cover-footer-col">
+        <div>bosko@hiiiwav.org</div>
+        <div>323-481-7372</div>
+      </div>
+      <div class="cover-footer-col">
+        <div>*HiiiWAV is A 501(c)3</div>
+        <div>Nonprofit Corporation</div>
+      </div>
+    </footer>
+  </section>
+
+  <!-- PAGE 2: Table of Contents -->
+  <section class="page toc">
+    <header class="page-header">
+      <div class="logo">HiiiWAV</div>
+      <div class="page-number">page 01</div>
+    </header>
+
+    <h2 class="section-title">TABLE OF<br>CONTENTS</h2>
+    <span class="arrow">↘</span>
+
+    <div class="toc-layout mt-4">
+      <div class="toc-image">
+        <div style="background: #333; height: 350px; display: flex; align-items: center; justify-content: center; color: #fff;">
+          [Featured Artist Photo - B&W]
+        </div>
+        <div class="toc-image-caption">Artist @ HiiiWAV Event 2025</div>
+      </div>
+
+      <div>
+        <ul class="toc-list">
+          <li class="toc-item">
+            <span class="toc-item-title">Founder's Note</span>
+            <span class="toc-item-page">2</span>
+          </li>
+          <li class="toc-item">
+            <span class="toc-item-title">Introduction</span>
+            <span class="toc-item-page">3</span>
+          </li>
+          <li class="toc-item">
+            <span class="toc-item-title">HiiiLIGHTS</span>
+            <span class="toc-item-page">4</span>
+          </li>
+          <li class="toc-item">
+            <span class="toc-item-title">Major Wins</span>
+            <span class="toc-item-page">5</span>
+          </li>
+          <li class="toc-item">
+            <span class="toc-item-title">Oakland Tech Week</span>
+            <span class="toc-item-page">6</span>
+          </li>
+          <li class="toc-item">
+            <span class="toc-item-title">Oakland Ecosystem</span>
+            <span class="toc-item-page">8</span>
+          </li>
+          <li class="toc-item">
+            <span class="toc-item-title">Community Events</span>
+            <span class="toc-item-page">10</span>
+          </li>
+          <li class="toc-item">
+            <span class="toc-item-title">AFRO AI Updates</span>
+            <span class="toc-item-page">12</span>
+          </li>
+          <li class="toc-item">
+            <span class="toc-item-title">Partnerships</span>
+            <span class="toc-item-page">14</span>
+          </li>
+          <li class="toc-item">
+            <span class="toc-item-title">Impact Metrics</span>
+            <span class="toc-item-page">16</span>
+          </li>
+          <li class="toc-item">
+            <span class="toc-item-title">The Future</span>
+            <span class="toc-item-page">18</span>
+          </li>
+          <li class="toc-item">
+            <span class="toc-item-title">Financials</span>
+            <span class="toc-item-page">20</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="toc-thanks">
+      Thank you to our incredible supporters: Kapor Foundation, Meta, Good Trouble VC, Akonadi Foundation, Alameda County, 
+      Full Spectrum Capital, and our growing community of champions!
+    </div>
+  </section>
+
+  <!-- PAGE 3: Founder's Note -->
+  <section class="page founders-note">
+    <header class="page-header">
+      <div class="logo">HiiiWAV</div>
+      <div class="page-number">page 02</div>
+    </header>
+
+    <h2 class="section-title"><span>Founder's</span><br>Note</h2>
+    <span class="arrow">↘</span>
+
+    <div class="founders-note-layout mt-4">
+      <div class="founders-note-content">
+        <p>
+          2024 was supposed to be a year of consolidation. Instead, it became a year of <strong>audacious expansion</strong>.
+        </p>
+        <p>
+          We secured <span class="highlight-purple">$450,000 in multi-year funding</span>—anonymous backing that signals 
+          deep trust in our mission. We launched <strong>Oakland Tech Week</strong>, bringing together the ecosystem we've 
+          been building for years. We partnered with <strong>Kapor Foundation</strong> on a multi-year commitment that 
+          positions HiiiWAV as a cornerstone of Oakland's creative tech infrastructure.
+        </p>
+        <p>
+          At Hiero Day and Hella Juneteenth, our community showed up in force. At Meta AI conferences from the Bay to Chicago, 
+          we proved that <strong>Oakland's voice belongs at every table where AI's future is being decided</strong>.
+        </p>
+        <p>
+          We invested in our people—Kev Choice's continued innovation, E-40's historic Tiny Desk, the next generation of 
+          creators at our summer internship program with EOYDC and Represented.
+        </p>
+
+        <div class="callout-box">
+          But at HiiiWAV, we don't wait for permission. We build. We own. We lead.
+        </div>
+
+        <p>
+          This year, we're launching <strong>Director</strong>—our fractional nonprofit leadership service at 
+          directorforgood.org. It's what we've been doing informally for years, now available to organizations 
+          that need backbone support to scale their impact.
+        </p>
+        <p>
+          The HiiiWAV 50 Fund. New studio upgrades. New residents. New partnerships with Good Trouble VC. 
+          <strong>This isn't just growth—it's proof of concept.</strong>
+        </p>
+        <p>
+          When they said Oakland couldn't, we did. When they said artists couldn't own their future, we built the tools. 
+          When they said it was impossible, we made it inevitable.
+        </p>
+        <p style="font-weight: 700; color: var(--purple);">
+          The danger is real. But so is our power.
+        </p>
+
+        <div class="signature-block">
+          <div class="signature-label">In Solidarity,</div>
+          <div class="signature">Bosko Kante</div>
+          <div class="signature-title">Cofounder & President, HiiiWAV</div>
+        </div>
+      </div>
+
+      <div>
+        <div class="founder-photo">
+          <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); height: 400px; display: flex; align-items: center; justify-content: center; color: #fff; border-radius: 4px;">
+            [Bosko Kante Photo]
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE 4: Introduction -->
+  <section class="page dark-page">
+    <header class="page-header">
+      <div class="logo">HiiiWAV</div>
+      <div class="page-number">page 03</div>
+    </header>
+
+    <div style="display: grid; grid-template-columns: auto 1fr; gap: 60px;">
+      <div>
+        <h2 class="section-title green-accent">Intro</h2>
+        <span class="arrow green-accent">↘</span>
+      </div>
+
+      <div class="intro-content">
+        <p>
+          As we reflect on the past year at <strong class="green-accent">HiiiWAV</strong>, we recognize the accelerating 
+          pace of change in technology, culture, and community. The landscape for artists, creators, and technologists 
+          has never been more dynamic—or more urgent.
+        </p>
+        <p>
+          2024-2025 marked a turning point. While others debated the future of AI, we built infrastructure. While others 
+          worried about displacement, we created pathways to ownership. While others talked about community, we invested 
+          in it—with capital, space, and unwavering commitment.
+        </p>
+        <p>
+          HiiiWAV has always stood at the intersection of culture, technology, and economic opportunity. This year proved 
+          that intersection is exactly where transformation happens. From Oakland Tech Week to multi-year foundation 
+          partnerships, from Hiero Day to Meta AI workshops, our impact has been a testament to what's possible when 
+          creativity meets intention.
+        </p>
+
+        <div class="intro-callout">
+          This is our moment to double down, to innovate where the system falls short, and to continue building an 
+          ecosystem where creativity is not just valued but sustained.
+        </div>
+      </div>
+    </div>
+
+    <div class="full-width-image">
+      <div style="background: #222; height: 300px; display: flex; align-items: center; justify-content: center; color: #fff;">
+        [Community Event Photo - Full Width]
+      </div>
+      <div class="image-caption">Oakland Tech Week brought together innovators from across the Bay</div>
+    </div>
+  </section>
+
+  <!-- PAGE 5: HiiiLIGHTS -->
+  <section class="page highlights">
+    <header class="page-header">
+      <div class="logo" style="color: var(--white);">HiiiWAV</div>
+      <div class="page-number">page 04</div>
+    </header>
+
+    <h2 class="section-title">HiiiLIGHTS</h2>
+
+    <div class="highlights-layout">
+      <div>
+        <p>
+          <strong class="green-accent">HiiiWAV</strong> is a visionary Black-led organization innovating at the 
+          intersection of art and technology to confront the systemic exclusion and exploitation that have long 
+          shaped the entertainment and media industries.
+        </p>
+        <p>
+          In cultural hubs like Oakland—where rising costs, lack of access to capital, and now AI-driven disruption 
+          threaten the survival of independent creators—we exist to dismantle these barriers and build new pathways 
+          to ownership and sustainability.
+        </p>
+
+        <div class="quote-block">
+          <div class="quote-mark">"</div>
+          <div class="quote-text">
+            "We do this because too many artists are forced to choose between their craft and financial stability—
+            HiiiWAV exists to change that narrative."
+          </div>
+          <div class="quote-attribution">– Executive Director, Bosko Kante</div>
+          <div class="quote-mark" style="text-align: right;">"</div>
+        </div>
+      </div>
+
+      <div>
+        <p><strong>Key milestones for 2024-2025 include:</strong></p>
+        <ul>
+          <li><strong>Multi-Year Funding Secured:</strong> $450,000 anonymous commitment signaling deep investor confidence</li>
+          <li><strong>Kapor Foundation Partnership:</strong> Multi-year collaboration positioning HiiiWAV as Oakland infrastructure</li>
+          <li><strong>Oakland Tech Week Launch:</strong> Inaugural convening of Oakland's creative tech ecosystem</li>
+          <li><strong>Full Spectrum Capital Accelerator:</strong> New pathways to capital for creative entrepreneurs</li>
+          <li><strong>New Fiscal Sponsorships:</strong> Alphabet Rockers, Ryan Nicole join the HiiiWAV family</li>
+          <li><strong>Director Launch:</strong> Fractional nonprofit leadership service at directorforgood.org</li>
+          <li><strong>Studio Upgrades:</strong> New resident Clay Xavier (Game Dev), new tenant Precious Stroud</li>
+          <li><strong>HiiiWAV 50 Fund:</strong> Investing in Oakland's next generation of creators</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE 6: Major Events -->
+  <section class="page dark-page">
+    <header class="page-header">
+      <div class="logo">HiiiWAV</div>
+      <div class="page-number">page 05</div>
+    </header>
+
+    <h2 class="section-title green-accent">MAJOR<br>WINS</h2>
+    <p class="subtitle">A year of strategic partnerships and community milestones</p>
+
+    <div class="programs-layout">
+      <div>
+        <div class="program-section">
+          <span class="tag">Funding Milestone</span>
+          <h3 class="program-title">$450K Multi-Year Commitment</h3>
+          <p style="font-size: 14px; line-height: 1.7;">
+            An anonymous donor made a transformative multi-year commitment of $450,000—the largest single gift in 
+            HiiiWAV history. This investment enables long-term planning, infrastructure development, and sustained 
+            impact across all our programs.
+          </p>
+        </div>
+
+        <div class="program-section">
+          <span class="tag">Partnership</span>
+          <h3 class="program-title">Kapor Foundation Multi-Year</h3>
+          <p style="font-size: 14px; line-height: 1.7;">
+            The Kapor Foundation deepened their commitment to HiiiWAV with a multi-year partnership, recognizing our 
+            role as essential infrastructure for Oakland's creative economy and tech ecosystem.
+          </p>
+        </div>
+
+        <div class="program-section">
+          <span class="tag">New Initiative</span>
+          <h3 class="program-title">Good Trouble VC Partnership</h3>
+          <p style="font-size: 14px; line-height: 1.7;">
+            Partnering with Good Trouble VC opens new pathways for HiiiWAV entrepreneurs to access venture capital 
+            and scale their innovations beyond the nonprofit ecosystem.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <div class="program-section">
+          <span class="tag">Investment</span>
+          <h3 class="program-title">Kev Choice Investment</h3>
+          <p style="font-size: 14px; line-height: 1.7;">
+            Continued investment in Kev Choice's groundbreaking work at the intersection of music, technology, and 
+            AI—culminating in Choice Scores and expanded reach for artist-owned tools.
+          </p>
+        </div>
+
+        <div class="program-section">
+          <span class="tag">Milestone</span>
+          <h3 class="program-title">E-40 Tiny Desk Concert</h3>
+          <p style="font-size: 14px; line-height: 1.7;">
+            Supporting E-40's historic NPR Tiny Desk performance—a moment that showcased Bay Area hip-hop excellence 
+            to a global audience and reinforced Oakland's cultural significance.
+          </p>
+        </div>
+
+        <div class="program-section">
+          <span class="tag">Launch</span>
+          <h3 class="program-title">Director for Good</h3>
+          <p style="font-size: 14px; line-height: 1.7;">
+            Launching directorforgood.org—our fractional nonprofit leadership service that brings HiiiWAV's operational 
+            excellence to organizations that need backbone support to scale their impact.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE 7: Oakland Tech Week -->
+  <section class="page orange-page">
+    <header class="page-header">
+      <div class="logo">HiiiWAV</div>
+      <div class="page-number">page 06</div>
+    </header>
+
+    <h2 class="section-title" style="font-size: clamp(48px, 10vw, 80px);">OAKLAND<br>TECH WEEK</h2>
+    <p class="event-subtitle">Building the Ecosystem Oakland Deserves</p>
+
+    <div style="background: rgba(0,0,0,0.2); height: 250px; display: flex; align-items: center; justify-content: center; margin: 30px 0;">
+      [Oakland Tech Week Event Photo]
+    </div>
+
+    <div class="programs-layout">
+      <div>
+        <p style="font-size: 14px; line-height: 1.7;">
+          <strong>Oakland Tech Week</strong> launched as HiiiWAV's flagship ecosystem convening—bringing together 
+          founders, investors, artists, and technologists for a week of collaboration, learning, and community building.
+        </p>
+        <p style="font-size: 14px; line-height: 1.7; margin-top: 16px;">
+          The event showcased Oakland's unique position at the intersection of culture and technology, featuring 
+          panels, workshops, pitch sessions, and networking events that connected diverse communities often siloed 
+          in traditional tech ecosystems.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="program-title" style="color: var(--white);">Key Outcomes:</h4>
+        <ul style="list-style: none; font-size: 14px; line-height: 2;">
+          <li>• Multiple ecosystem convenings throughout the year</li>
+          <li>• Connections between Oakland founders and Bay Area investors</li>
+          <li>• Showcased local innovation to regional and national audiences</li>
+          <li>• Platform for AFRO AI graduates to present their work</li>
+          <li>• Foundation for annual Oakland Tech Week tradition</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE 8: Community Events -->
+  <section class="page dark-page">
+    <header class="page-header">
+      <div class="logo">HiiiWAV</div>
+      <div class="page-number">page 07</div>
+    </header>
+
+    <h2 class="section-title green-accent">COMMUNITY<br>EVENTS</h2>
+    <p class="subtitle">Where Oakland Comes Together</p>
+
+    <div class="programs-layout">
+      <div>
+        <div class="program-section">
+          <h3 class="program-title">Hiero Day 2024</h3>
+          <p style="font-size: 14px; line-height: 1.7;">
+            Hieroglyphics' annual celebration of Oakland hip-hop culture brought thousands to the streets, with 
+            HiiiWAV providing tech demonstrations, AI workshops, and artist showcases that bridged generations 
+            of Oakland creativity.
+          </p>
+        </div>
+
+        <div class="program-section">
+          <h3 class="program-title">Hella Juneteenth</h3>
+          <p style="font-size: 14px; line-height: 1.7;">
+            Celebrating Black freedom and creativity, Hella Juneteenth featured performances, community activations, 
+            and HiiiWAV programming that connected cultural celebration with economic empowerment.
+          </p>
+        </div>
+
+        <div class="program-section">
+          <h3 class="program-title">Live From Mama Doc's</h3>
+          <p style="font-size: 14px; line-height: 1.7;">
+            December 20th brought the community together for an intimate showcase at Mama Doc's—highlighting 
+            emerging artists and strengthening the bonds that make Oakland's creative scene unique.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <div class="program-section">
+          <h3 class="program-title">Men's Wellness Event</h3>
+          <p style="font-size: 14px; line-height: 1.7;">
+            Bosko Kante spoke at a community wellness event focused on mental health and resilience for men in 
+            creative industries—addressing the often-overlooked challenges of entrepreneurship and leadership.
+          </p>
+        </div>
+
+        <div class="program-section">
+          <h3 class="program-title">Meta AI Conferences</h3>
+          <p style="font-size: 14px; line-height: 1.7;">
+            Multiple appearances at Meta AI events, from Bay Area convenings to the Chicago AI Workshop, positioned 
+            HiiiWAV as a leading voice on ethical AI development and community-centered technology.
+          </p>
+        </div>
+
+        <div class="program-section">
+          <h3 class="program-title">Summer Youth Programs</h3>
+          <p style="font-size: 14px; line-height: 1.7;">
+            In partnership with EOYDC, Represented, and Kapor, our summer internship program gave Oakland youth 
+            hands-on experience in creative technology, music production, and entrepreneurship.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE 9: Partnerships -->
+  <section class="page highlights">
+    <header class="page-header">
+      <div class="logo" style="color: var(--white);">HiiiWAV</div>
+      <div class="page-number">page 08</div>
+    </header>
+
+    <h2 class="section-title">NEW<br>PARTNERSHIPS</h2>
+    <p class="subtitle" style="color: var(--green);">Expanding the HiiiWAV Family</p>
+
+    <div class="highlights-layout mt-4">
+      <div>
+        <h4 class="program-title" style="color: var(--green);">Fiscal Sponsorships</h4>
+        <p>
+          HiiiWAV expanded its fiscal sponsorship program, welcoming new organizations into our family:
+        </p>
+        <ul>
+          <li><strong>Alphabet Rockers:</strong> Grammy-nominated family music duo bringing social justice themes to young audiences</li>
+          <li><strong>Ryan Nicole:</strong> Innovative artist and entrepreneur building new models for creative sustainability</li>
+          <li><strong>Sol Development:</strong> Community development initiatives in Oakland</li>
+          <li><strong>Prospect / Kalmy Tomali:</strong> Youth-focused programs including summer jam sessions</li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="program-title" style="color: var(--green);">Strategic Partners</h4>
+        <ul>
+          <li><strong>Runway Board:</strong> Advisory role in regional arts funding</li>
+          <li><strong>Full Spectrum Capital Accelerator:</strong> New capital access for creative entrepreneurs</li>
+          <li><strong>Good Trouble VC:</strong> Venture capital pathways for HiiiWAV-connected startups</li>
+          <li><strong>Akonadi Foundation:</strong> "So Love Can Win" initiative support</li>
+          <li><strong>Alameda County:</strong> County-level grant for community programs</li>
+        </ul>
+
+        <h4 class="program-title" style="color: var(--green); margin-top: 30px;">Studio Updates</h4>
+        <ul>
+          <li><strong>Clay Xavier:</strong> New resident, Game Developer</li>
+          <li><strong>Precious Stroud:</strong> New tenant expanding studio ecosystem</li>
+          <li><strong>Studio Upgrades:</strong> Infrastructure improvements for production capabilities</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE 10: Looking Forward / Director -->
+  <section class="page" style="background-color: var(--green);">
+    <header class="page-header">
+      <div class="logo">HiiiWAV</div>
+      <div class="page-number">page 09</div>
+    </header>
+
+    <h2 class="section-title">THE<br>FUTURE</h2>
+    <span class="arrow">↘</span>
+
+    <div style="max-width: 700px; margin-top: 40px;">
+      <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 36px; margin-bottom: 20px;">
+        Launching Director for Good
+      </h3>
+      <p style="font-size: 16px; line-height: 1.8; margin-bottom: 20px;">
+        After years of informally supporting fellow nonprofits with operational guidance, HiiiWAV is formalizing 
+        this work through <strong>Director</strong>—a fractional nonprofit leadership service available at 
+        <strong>directorforgood.org</strong>.
+      </p>
+      <p style="font-size: 16px; line-height: 1.8; margin-bottom: 20px;">
+        Director brings the operational backbone that helped HiiiWAV scale—financial management, fundraising 
+        strategy, board development, and technology infrastructure—to organizations that need senior leadership 
+        support without the overhead of full-time executive hires.
+      </p>
+      <p style="font-size: 16px; line-height: 1.8; font-weight: 700;">
+        Because when one organization succeeds, the whole ecosystem rises.
+      </p>
+    </div>
+
+    <div style="margin-top: 60px; padding: 30px; background: var(--black); color: var(--white);">
+      <h4 style="font-family: 'Bebas Neue', sans-serif; font-size: 28px; margin-bottom: 20px;">What's Next for HiiiWAV</h4>
+      <ul style="list-style: none; font-size: 16px; line-height: 2.2;">
+        <li>→ HiiiWAV 50 Fund: Investing in 50 Oakland creators</li>
+        <li>→ Oakland Tech Week 2025: Bigger, bolder ecosystem convening</li>
+        <li>→ AFRO AI Expansion: New cohorts, new partnerships</li>
+        <li>→ Studio Development: More space for more creators</li>
+        <li>→ Community Wins: Kev Choice, GNXL, Prospect, Sol Development—watch this space</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Final Page: Thank You -->
+  <section class="page dark-page text-center" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+    <h2 class="section-title green-accent" style="font-size: clamp(48px, 12vw, 100px);">THANK<br>YOU</h2>
+    
+    <p style="font-size: 18px; max-width: 600px; margin: 40px auto; line-height: 1.8;">
+      To our donors, partners, artists, and community—you make this work possible. 
+      Together, we're building an Oakland where creativity thrives and ownership is the norm.
+    </p>
+
+    <div style="margin-top: 40px;">
+      <div class="wordmark green-accent">HiiiWAV</div>
+      <p style="margin-top: 20px; opacity: 0.7;">www.hiiiwav.org</p>
+    </div>
+  </section>
+
+</body>
+</html>
