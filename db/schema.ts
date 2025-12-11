@@ -1,33 +1,5 @@
 import { pgTable, text, timestamp, boolean, serial, jsonb, integer, date } from 'drizzle-orm/pg-core'
 
-export const posts = pgTable('posts', {
-  id: serial('id').primaryKey(),
-  slug: text('slug').notNull().unique(),
-  title: text('title').notNull(),
-  excerpt: text('excerpt'),
-  content: text('content').notNull(),
-  coverImage: text('cover_image'),
-  tags: jsonb('tags').$type<string[]>().default([]),
-  published: boolean('published').default(false),
-  seoTitle: text('seo_title'),
-  seoDescription: text('seo_description'),
-  canonical: text('canonical'),
-  createdAt: timestamp('created_at').defaultNow().notNull(),
-  updatedAt: timestamp('updated_at').defaultNow().notNull(),
-})
-
-export const pages = pgTable('pages', {
-  id: serial('id').primaryKey(),
-  slug: text('slug').notNull().unique(),
-  title: text('title').notNull(),
-  content: text('content').notNull(),
-  seoTitle: text('seo_title'),
-  seoDescription: text('seo_description'),
-  canonical: text('canonical'),
-  createdAt: timestamp('created_at').defaultNow().notNull(),
-  updatedAt: timestamp('updated_at').defaultNow().notNull(),
-})
-
 export const users = pgTable('users', {
   id: serial('id').primaryKey(),
   email: text('email').notNull().unique(),
@@ -107,10 +79,6 @@ export const awardRecipients = pgTable('award_recipients', {
   recipientRole: text('recipient_role'), // 'primary', 'collaborator', 'featured'
 })
 
-export type Post = typeof posts.$inferSelect
-export type NewPost = typeof posts.$inferInsert
-export type Page = typeof pages.$inferSelect
-export type NewPage = typeof pages.$inferInsert
 export type User = typeof users.$inferSelect
 export type Media = typeof media.$inferSelect
 export type Entity = typeof entities.$inferSelect
