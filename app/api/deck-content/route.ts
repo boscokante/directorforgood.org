@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
-import { getDeckContent, updateDeckContent, resetDeckContent, DeckContent } from '@/lib/deck-content';
+import { DeckContent } from '@/lib/deck-content';
+import { getDeckContent, updateDeckContent, resetDeckContent } from '@/lib/deck-content-server';
 import { db } from '@/db';
 import { deckVersions } from '@/db/schema';
 

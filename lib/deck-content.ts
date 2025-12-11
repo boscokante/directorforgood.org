@@ -1,9 +1,6 @@
 // Shared content for both web and PDF pitch deck
 // Edit via the admin interface at /admin/deck
 
-import fs from 'fs';
-import path from 'path';
-
 export interface SlideImage {
   url?: string;  // Image URL (uploaded or external)
   placeholder?: string;  // Description for AI generation or placeholder text
@@ -40,11 +37,34 @@ export interface DeckContent {
     url: string;
   };
   slides: SlideContent[];
+  slideOrder?: string[]; // Array of slide IDs in display order
   ask: {
     amount: string;
     items: string[];
   };
 }
+
+// Default slide order with market moved after economics for better narrative flow
+export const defaultSlideOrder: string[] = [
+  'problem-founders',
+  'problem-downshifted',
+  'customer-foundations',
+  'broken-options',
+  'what-we-are',
+  'fundraising-philosophy',
+  'director-pod',
+  'director-os',
+  'ai-agents',
+  'economics',
+  'market',           // Moved here from position 4 - show market after explaining the solution
+  'why-now',
+  'go-to-market',
+  'business-model',
+  'strategic-partners',
+  'team',
+  'current-customers',
+  'roadmap',
+];
 
 export const defaultDeckContent: DeckContent = {
   cover: {
@@ -131,6 +151,45 @@ export const defaultDeckContent: DeckContent = {
       image: {
         type: 'diagram',
         placeholder: 'Foundation at center connected to 5-10 nonprofit orgs, each with Director backbone',
+      },
+    },
+    {
+      id: "market",
+      title: "Market Opportunity",
+      subtitle: "A massive, underserved market ready for AI-native solutions.",
+      sections: [
+        {
+          heading: "TAM: $164B – Total US Nonprofit Administrative Spending",
+          items: [
+            "1.8M nonprofits in the US (1.5M are 501(c)(3)s)",
+            "Nonprofit sector contributes $1.4 trillion to GDP",
+            "Administrative overhead averages 11.7% = $164B annually",
+            "This spending is ripe for AI automation",
+          ],
+        },
+        {
+          heading: "SAM: $3.5B – Small/Mid Nonprofits ($250k–$2M budgets)",
+          items: [
+            "~108,000 organizations in our target segment",
+            "92% of nonprofits operate under $1M/year",
+            "Current back-office spend: $32k–$200k per org",
+            "Existing solutions: $5.5B nonprofit software + $6.7B consulting market",
+          ],
+        },
+        {
+          heading: "SOM: $50M – 5-Year Obtainable Market",
+          items: [
+            "500 organizations at ~$100k/year",
+            "30–50 pods at 10–16 orgs each",
+            "Represents <2% of SAM (credible capture rate)",
+          ],
+        },
+      ],
+      highlight: "68% of nonprofits now use AI (up from 58% in 2023). The market is ready for an AI-native backbone.",
+      footnote: "Sources: Independent Sector, Statista, NCCS, Google for Nonprofits Survey 2025, Intent Market Research",
+      image: {
+        type: 'chart',
+        placeholder: 'TAM/SAM/SOM concentric circles: $164B → $3.5B → $50M',
       },
     },
     {
@@ -462,16 +521,16 @@ export const defaultDeckContent: DeckContent = {
           text: "Vision, sales, fundraising, relationships",
         },
         {
-          heading: "Forward-Deployed Director (hire #1)",
+          heading: "Founding Engineer (hire #1)",
+          text: "Director OS + first wave of agents",
+        },
+        {
+          heading: "Forward-Deployed Director (hire #2)",
           text: "Nonprofit ops + fundraising, embedded across first ~4 orgs",
         },
         {
-          heading: "Finance Director (hire #2)",
+          heading: "Finance Director (hire #3)",
           text: "Finance + ops across pod, designs playbooks",
-        },
-        {
-          heading: "Founding Engineer (hire #3)",
-          text: "Director OS + first wave of agents",
         },
       ],
       footnote: "Target raise: ~$800k–$1M for 12 months runway. Early org retainers reduce net burn.",
@@ -516,6 +575,7 @@ export const defaultDeckContent: DeckContent = {
       },
     },
   ],
+  slideOrder: defaultSlideOrder,
   ask: {
     amount: "$800k–$1.0M",
     items: [
@@ -526,53 +586,19 @@ export const defaultDeckContent: DeckContent = {
   },
 };
 
-// Path to the JSON file that stores deck content
-const CONTENT_FILE_PATH = path.join(process.cwd(), 'data', 'deck-content.json');
-
-// Ensure the data directory exists
-function ensureDataDir() {
-  const dataDir = path.dirname(CONTENT_FILE_PATH);
-  if (!fs.existsSync(dataDir)) {
-    fs.mkdirSync(dataDir, { recursive: true });
-  }
-}
-
-// Load content from file, or return defaults if file doesn't exist
-export function getDeckContent(): DeckContent {
-  try {
-    ensureDataDir();
-    if (fs.existsSync(CONTENT_FILE_PATH)) {
-      const fileContent = fs.readFileSync(CONTENT_FILE_PATH, 'utf-8');
-      return JSON.parse(fileContent) as DeckContent;
-    }
-  } catch (error) {
-    console.error('Error reading deck content file:', error);
-  }
-  return { ...defaultDeckContent };
-}
-
-// Save content to file
-export function updateDeckContent(content: Partial<DeckContent>): DeckContent {
-  try {
-    ensureDataDir();
-    const currentContent = getDeckContent();
-    const updatedContent = { ...currentContent, ...content };
-    fs.writeFileSync(CONTENT_FILE_PATH, JSON.stringify(updatedContent, null, 2), 'utf-8');
-    return updatedContent;
-  } catch (error) {
-    console.error('Error writing deck content file:', error);
-    throw error;
-  }
-}
-
-// Reset content to defaults
-export function resetDeckContent(): DeckContent {
-  try {
-    ensureDataDir();
-    fs.writeFileSync(CONTENT_FILE_PATH, JSON.stringify(defaultDeckContent, null, 2), 'utf-8');
-    return { ...defaultDeckContent };
-  } catch (error) {
-    console.error('Error resetting deck content file:', error);
-    throw error;
-  }
+// Helper to get slides in the specified order
+export function getOrderedSlides(content: DeckContent): SlideContent[] {
+  const order = content.slideOrder || defaultSlideOrder;
+  const slideMap = new Map(content.slides.map(s => [s.id, s]));
+  
+  // Get slides in order, filtering out any IDs that don't have matching slides
+  const orderedSlides = order
+    .map(id => slideMap.get(id))
+    .filter((s): s is SlideContent => s !== undefined);
+  
+  // Append any slides not in the order array (so nothing gets lost)
+  const orderedIds = new Set(order);
+  const remainingSlides = content.slides.filter(s => !orderedIds.has(s.id));
+  
+  return [...orderedSlides, ...remainingSlides];
 }

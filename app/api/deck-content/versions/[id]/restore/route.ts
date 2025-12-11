@@ -2,7 +2,8 @@ import { NextResponse } from 'next/server';
 import { db } from '@/db';
 import { deckVersions } from '@/db/schema';
 import { eq } from 'drizzle-orm';
-import { updateDeckContent, DeckContent } from '@/lib/deck-content';
+import { DeckContent } from '@/lib/deck-content';
+import { updateDeckContent } from '@/lib/deck-content-server';
 
 // POST /api/deck-content/versions/[id]/restore - Restore a specific version
 export async function POST(

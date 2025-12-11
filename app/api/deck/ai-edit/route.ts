@@ -1,7 +1,8 @@
 import { openai } from '@ai-sdk/openai';
 import { generateText } from 'ai';
 import { NextResponse } from 'next/server';
-import { getDeckContent, DeckContent } from '@/lib/deck-content';
+import { DeckContent } from '@/lib/deck-content';
+import { getDeckContent } from '@/lib/deck-content-server';
 
 const SYSTEM_PROMPT = `You are an AI assistant that helps edit pitch deck content. You receive the current deck content as JSON and a user instruction describing what changes to make.
 

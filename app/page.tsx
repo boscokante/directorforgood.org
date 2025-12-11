@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Users, TrendingUp, Shield, FileText, Bot, DollarSign, Clock, Target, CheckCircle2 } from "lucide-react";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
-import { getDeckContent } from "@/lib/deck-content";
+import { getDeckContent } from "@/lib/deck-content-server";
 
 export const dynamic = "force-dynamic";
 
@@ -156,6 +156,47 @@ export default async function HomePage() {
                 </div>
                 {slide.highlight && (
                   <p className="text-2xl text-white font-semibold mt-6">{slide.highlight}</p>
+                )}
+              </div>
+            </div>
+          </section>
+        );
+      })()}
+
+      {/* Market Opportunity */}
+      {(() => {
+        const slide = getSlide('market');
+        if (!slide) return null;
+        return (
+          <section className="py-20 bg-gray-900">
+            <div className="container px-4">
+              <div className="max-w-4xl mx-auto">
+                <h2 className="text-4xl md:text-5xl font-bold mb-4">{slide.title}</h2>
+                <p className="text-xl text-gray-300 mb-12">{slide.subtitle}</p>
+                
+                <div className="space-y-8 mb-12">
+                  {slide.sections?.map((section, i) => (
+                    <div key={i} className="bg-black/50 rounded-lg p-6">
+                      <h3 className="text-2xl font-semibold mb-4 text-white">{section.heading}</h3>
+                      {section.items && (
+                        <ul className="space-y-3 text-gray-300">
+                          {section.items.map((item, j) => (
+                            <li key={j} className="flex items-start gap-2">
+                              <CheckCircle2 className="w-5 h-5 text-green-400 mt-1 flex-shrink-0" />
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
+                  ))}
+                </div>
+
+                {slide.highlight && (
+                  <p className="text-2xl text-white font-semibold text-center mb-4">{slide.highlight}</p>
+                )}
+                {slide.footnote && (
+                  <p className="text-sm text-gray-500 text-center">{slide.footnote}</p>
                 )}
               </div>
             </div>
@@ -518,6 +559,61 @@ export default async function HomePage() {
                     </div>
                   ))}
                 </div>
+              </div>
+            </div>
+          </section>
+        );
+      })()}
+
+      {/* Strategic Partners & Structure */}
+      {(() => {
+        const slide = getSlide('strategic-partners');
+        if (!slide) return null;
+        return (
+          <section className="py-20 bg-black">
+            <div className="container px-4">
+              <div className="max-w-4xl mx-auto">
+                <h2 className="text-4xl md:text-5xl font-bold mb-4">{slide.title}</h2>
+                <p className="text-xl text-gray-300 mb-12">{slide.subtitle}</p>
+                
+                <div className="grid md:grid-cols-2 gap-8 mb-8">
+                  {slide.sections?.slice(0, 2).map((section, i) => (
+                    <div key={i} className="border border-gray-700 rounded-lg p-6">
+                      <h3 className="text-xl font-semibold mb-4 text-white">{section.heading}</h3>
+                      {section.items && (
+                        <ul className="space-y-3 text-gray-300">
+                          {section.items.map((item, j) => (
+                            <li key={j} className="flex items-start gap-2">
+                              <CheckCircle2 className="w-5 h-5 text-green-400 mt-1 flex-shrink-0" />
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
+                  ))}
+                </div>
+
+                {/* Governance section */}
+                {slide.sections?.[2] && (
+                  <div className="border border-gray-600 rounded-lg p-6 bg-gray-900 mb-8">
+                    <h3 className="text-xl font-semibold mb-4 text-white">{slide.sections[2].heading}</h3>
+                    {slide.sections[2].items && (
+                      <ul className="space-y-3 text-gray-300">
+                        {slide.sections[2].items.map((item, j) => (
+                          <li key={j} className="flex items-start gap-2">
+                            <Shield className="w-5 h-5 text-blue-400 mt-1 flex-shrink-0" />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                )}
+
+                {slide.highlight && (
+                  <p className="text-xl text-white font-semibold text-center">{slide.highlight}</p>
+                )}
               </div>
             </div>
           </section>

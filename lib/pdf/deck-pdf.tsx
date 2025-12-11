@@ -25,7 +25,38 @@ import {
 import {
   DirectorOSOverview,
 } from './pdf-mockups';
-import { getDeckContent, DeckContent, SlideContent } from '@/lib/deck-content';
+import { getOrderedSlides, DeckContent, SlideContent } from '@/lib/deck-content';
+import { getDeckContent } from '@/lib/deck-content-server';
+
+// Slide configuration: maps slide ID to component type and variant
+type SlideType = 'content' | 'two-column' | 'what-we-are' | 'director-pod' | 'director-os' | 'ai-agents' | 'economics' | 'team' | 'roadmap';
+
+interface SlideConfig {
+  type: SlideType;
+  variant?: 'dark' | 'light';
+}
+
+const slideConfigs: Record<string, SlideConfig> = {
+  'problem-founders': { type: 'content', variant: 'dark' },
+  'problem-downshifted': { type: 'two-column', variant: 'light' },
+  'customer-foundations': { type: 'two-column', variant: 'dark' },
+  'market': { type: 'content', variant: 'light' },
+  'broken-options': { type: 'content', variant: 'dark' },
+  'what-we-are': { type: 'what-we-are', variant: 'light' },
+  'fundraising-philosophy': { type: 'two-column', variant: 'dark' },
+  'director-pod': { type: 'director-pod', variant: 'light' },
+  'director-os': { type: 'director-os', variant: 'dark' },
+  'ai-agents': { type: 'ai-agents', variant: 'light' },
+  'economics': { type: 'economics', variant: 'dark' },
+  'why-now': { type: 'two-column', variant: 'light' },
+  'go-to-market': { type: 'content', variant: 'dark' },
+  'business-model': { type: 'content', variant: 'light' },
+  'strategic-partners': { type: 'two-column', variant: 'dark' },
+  'team': { type: 'team', variant: 'dark' },
+  'current-customers': { type: 'content', variant: 'light' },
+  'roadmap': { type: 'roadmap', variant: 'light' },
+  'long-term-vision': { type: 'content', variant: 'dark' },
+};
 
 const localStyles = StyleSheet.create({
   coverCenter: {
@@ -358,12 +389,44 @@ function RoadmapSlide({ slide, ask, pageNumber }: { slide: SlideContent; ask: De
   );
 }
 
+// Render a single slide based on its configuration
+function renderSlide(
+  slide: SlideContent, 
+  pageNumber: number, 
+  config: SlideConfig,
+  ask?: DeckContent['ask']
+): React.ReactNode {
+  const { type, variant = 'dark' } = config;
+  
+  switch (type) {
+    case 'content':
+      return <ContentSlide key={slide.id} slide={slide} pageNumber={pageNumber} variant={variant} />;
+    case 'two-column':
+      return <TwoColumnSlide key={slide.id} slide={slide} pageNumber={pageNumber} variant={variant} />;
+    case 'what-we-are':
+      return <DirectorWhatWeAreSlide key={slide.id} slide={slide} pageNumber={pageNumber} />;
+    case 'director-pod':
+      return <DirectorPodSlide key={slide.id} slide={slide} pageNumber={pageNumber} />;
+    case 'director-os':
+      return <DirectorOSSlide key={slide.id} slide={slide} pageNumber={pageNumber} />;
+    case 'ai-agents':
+      return <AIAgentsSlide key={slide.id} slide={slide} pageNumber={pageNumber} />;
+    case 'economics':
+      return <EconomicsSlide key={slide.id} slide={slide} pageNumber={pageNumber} />;
+    case 'team':
+      return <TeamSlide key={slide.id} slide={slide} pageNumber={pageNumber} />;
+    case 'roadmap':
+      return <RoadmapSlide key={slide.id} slide={slide} ask={ask!} pageNumber={pageNumber} />;
+    default:
+      // Fallback to content slide for unknown types
+      return <ContentSlide key={slide.id} slide={slide} pageNumber={pageNumber} variant={variant} />;
+  }
+}
+
 // Main Document
 export function DirectorPitchDeck() {
   const content = getDeckContent();
-  
-  // Helper to get slide by ID
-  const getSlide = (id: string) => content.slides.find(s => s.id === id);
+  const orderedSlides = getOrderedSlides(content);
   
   return (
     <Document
@@ -372,88 +435,15 @@ export function DirectorPitchDeck() {
       subject="AI-native backbone for nonprofits"
       keywords="director, nonprofit, AI, operations, fundraising"
     >
-      {/* 1. Cover */}
+      {/* Cover slide is always first */}
       <CoverSlide content={content} />
       
-      {/* 2. Problem - Founders */}
-      {getSlide('problem-founders') && (
-        <ContentSlide slide={getSlide('problem-founders')!} pageNumber={2} />
-      )}
-      
-      {/* 3. Problem - Downshifted */}
-      {getSlide('problem-downshifted') && (
-        <TwoColumnSlide slide={getSlide('problem-downshifted')!} pageNumber={3} variant="light" />
-      )}
-      
-      {/* 4. Foundations as Buyers */}
-      {getSlide('customer-foundations') && (
-        <TwoColumnSlide slide={getSlide('customer-foundations')!} pageNumber={4} variant="dark" />
-      )}
-      
-      {/* 5. Broken Options */}
-      {getSlide('broken-options') && (
-        <ContentSlide slide={getSlide('broken-options')!} pageNumber={5} />
-      )}
-      
-      {/* 6. What We Are */}
-      {getSlide('what-we-are') && (
-        <DirectorWhatWeAreSlide slide={getSlide('what-we-are')!} pageNumber={6} />
-      )}
-      
-      {/* 7. Fundraising Philosophy */}
-      {getSlide('fundraising-philosophy') && (
-        <TwoColumnSlide slide={getSlide('fundraising-philosophy')!} pageNumber={7} />
-      )}
-      
-      {/* 8. Director Pod */}
-      {getSlide('director-pod') && (
-        <DirectorPodSlide slide={getSlide('director-pod')!} pageNumber={8} />
-      )}
-      
-      {/* 9. Director OS */}
-      {getSlide('director-os') && (
-        <DirectorOSSlide slide={getSlide('director-os')!} pageNumber={9} />
-      )}
-      
-      {/* 10. AI Agents */}
-      {getSlide('ai-agents') && (
-        <AIAgentsSlide slide={getSlide('ai-agents')!} pageNumber={10} />
-      )}
-      
-      {/* 11. Economics */}
-      {getSlide('economics') && (
-        <EconomicsSlide slide={getSlide('economics')!} pageNumber={11} />
-      )}
-      
-      {/* 12. Why Now */}
-      {getSlide('why-now') && (
-        <TwoColumnSlide slide={getSlide('why-now')!} pageNumber={12} variant="light" />
-      )}
-      
-      {/* 13. Go-to-Market */}
-      {getSlide('go-to-market') && (
-        <ContentSlide slide={getSlide('go-to-market')!} pageNumber={13} />
-      )}
-      
-      {/* 14. Business Model */}
-      {getSlide('business-model') && (
-        <ContentSlide slide={getSlide('business-model')!} pageNumber={14} variant="light" />
-      )}
-      
-      {/* 15. Team */}
-      {getSlide('team') && (
-        <TeamSlide slide={getSlide('team')!} pageNumber={15} />
-      )}
-      
-      {/* 16. Current Customers & Traction */}
-      {getSlide('current-customers') && (
-        <ContentSlide slide={getSlide('current-customers')!} pageNumber={16} variant="light" />
-      )}
-      
-      {/* 17. Roadmap & Ask */}
-      {getSlide('roadmap') && (
-        <RoadmapSlide slide={getSlide('roadmap')!} ask={content.ask} pageNumber={17} />
-      )}
+      {/* Render slides dynamically based on slideOrder */}
+      {orderedSlides.map((slide, index) => {
+        const config = slideConfigs[slide.id] || { type: 'content', variant: 'dark' };
+        const pageNumber = index + 2; // +2 because cover is page 1
+        return renderSlide(slide, pageNumber, config, content.ask);
+      })}
     </Document>
   );
 }
