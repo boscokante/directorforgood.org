@@ -58,6 +58,7 @@ export default function HiiiWAV2025Report() {
           width: clamp(700px, 90vw, 1200px);
           height: auto;
           object-fit: contain;
+          display: block;
         }
 
         .hiiiwav-report .page-number {
