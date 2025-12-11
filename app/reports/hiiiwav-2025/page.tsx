@@ -55,7 +55,7 @@ export default function HiiiWAV2025Report() {
         }
         
         .hiiiwav-report .logo-large {
-          width: clamp(500px, 80vw, 900px);
+          width: clamp(700px, 90vw, 1200px);
           height: auto;
           object-fit: contain;
         }
