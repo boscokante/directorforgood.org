@@ -1,6 +1,10 @@
 import Link from 'next/link'
+import { auth } from '@/lib/auth'
 
-export function SiteHeader() {
+export async function SiteHeader() {
+  const session = await auth()
+  const isAdmin = (session?.user as any)?.role === 'admin'
+
   return (
     <header className="sticky top-0 z-50 w-full bg-black/95 backdrop-blur border-b border-gray-800">
       <div className="container flex h-16 items-center justify-between">
@@ -12,28 +16,40 @@ export function SiteHeader() {
             <a href="#solution" className="text-gray-300 hover:text-white transition-colors">
               About
             </a>
-            <Link href="/deck" className="text-gray-300 hover:text-white transition-colors">
-              Pitch Deck
-            </Link>
             <a href="#contact" className="text-gray-300 hover:text-white transition-colors">
               Contact
             </a>
           </nav>
         </div>
-        <div className="flex items-center gap-4">
+        {isAdmin ? (
+          <div className="flex items-center gap-4">
+            <Link 
+              href="/deck" 
+              className="text-sm text-gray-400 hover:text-white transition-colors"
+            >
+              Pitch Deck
+            </Link>
+            <Link 
+              href="/admin/deck" 
+              className="text-sm text-gray-400 hover:text-white transition-colors"
+            >
+              Edit Deck
+            </Link>
+            <Link 
+              href="/admin" 
+              className="text-sm text-gray-400 hover:text-white transition-colors"
+            >
+              Admin
+            </Link>
+          </div>
+        ) : (
           <Link 
-            href="/admin/deck" 
-            className="text-sm text-gray-400 hover:text-white transition-colors"
+            href="/login" 
+            className="text-sm text-gray-500 hover:text-gray-300 transition-colors"
           >
-            Edit Deck
+            Login
           </Link>
-          <Link 
-            href="/admin" 
-            className="text-sm text-gray-400 hover:text-white transition-colors"
-          >
-            Admin
-          </Link>
-        </div>
+        )}
       </div>
     </header>
   )

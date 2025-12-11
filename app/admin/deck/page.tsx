@@ -5,10 +5,10 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { 
   ArrowLeft, Save, RotateCcw, Eye, Loader2, Plus, Trash2, 
-  ChevronDown, ChevronRight, ImageIcon, Upload, Undo2, Redo2,
-  Sparkles, X, Send, History, Clock, RotateCw, Command
+  ChevronDown, ChevronRight, ChevronUp, ImageIcon, Upload, Undo2, Redo2,
+  Sparkles, X, Send, History, Clock, RotateCw, Command, GripVertical
 } from 'lucide-react';
-import { DeckContent, SlideContent, SlideImage } from '@/lib/deck-content';
+import { DeckContent, SlideContent, SlideImage, defaultSlideOrder } from '@/lib/deck-content';
 
 const MAX_HISTORY = 50;
 
@@ -384,6 +384,45 @@ export default function DeckEditorPage() {
       newExpanded.add(slideId);
     }
     setExpandedSlides(newExpanded);
+  };
+
+  // Get slides in the current order
+  const getOrderedSlides = () => {
+    if (!content) return [];
+    const order = content.slideOrder || defaultSlideOrder;
+    const slideMap = new Map(content.slides.map(s => [s.id, s]));
+    
+    // Get slides in order
+    const ordered = order
+      .map(id => slideMap.get(id))
+      .filter((s): s is SlideContent => s !== undefined);
+    
+    // Append any slides not in the order
+    const orderedIds = new Set(order);
+    const remaining = content.slides.filter(s => !orderedIds.has(s.id));
+    
+    return [...ordered, ...remaining];
+  };
+
+  // Move a slide up or down in the order
+  const moveSlide = (slideId: string, direction: 'up' | 'down') => {
+    if (!content) return;
+    
+    const currentOrder = content.slideOrder || defaultSlideOrder;
+    const index = currentOrder.indexOf(slideId);
+    
+    if (index === -1) return;
+    if (direction === 'up' && index === 0) return;
+    if (direction === 'down' && index === currentOrder.length - 1) return;
+    
+    const newOrder = [...currentOrder];
+    const swapIndex = direction === 'up' ? index - 1 : index + 1;
+    [newOrder[index], newOrder[swapIndex]] = [newOrder[swapIndex], newOrder[index]];
+    
+    const newContent = { ...content, slideOrder: newOrder };
+    setContent(newContent);
+    pushToHistory(newContent);
+    setHasChanges(true);
   };
 
   const updateSlideImage = (slideIndex: number, image: SlideImage | undefined) => {
@@ -810,21 +849,51 @@ export default function DeckEditorPage() {
             )}
           </div>
 
-          {content.slides.map((slide, slideIndex) => (
+          {getOrderedSlides().map((slide, orderIndex) => {
+            // Find original index in content.slides for updates
+            const originalIndex = content.slides.findIndex(s => s.id === slide.id);
+            const currentOrder = content.slideOrder || defaultSlideOrder;
+            const isFirst = currentOrder.indexOf(slide.id) === 0;
+            const isLast = currentOrder.indexOf(slide.id) === currentOrder.length - 1;
+            
+            return (
               <div key={slide.id} className="bg-gray-900 rounded-lg overflow-hidden mb-2">
-                <button
-                  onClick={() => toggleSlide(slide.id)}
-                  className="w-full px-4 py-3 flex items-center justify-between hover:bg-gray-800 transition-colors"
-                >
-                  <span className="font-medium">
-                    {slideIndex + 2}. {slide.title}
-                  </span>
-                  {expandedSlides.has(slide.id) ? (
-                    <ChevronDown className="w-5 h-5 text-gray-400" />
-                  ) : (
-                    <ChevronRight className="w-5 h-5 text-gray-400" />
-                  )}
-                </button>
+                <div className="flex items-center">
+                  {/* Reorder buttons */}
+                  <div className="flex flex-col border-r border-gray-800">
+                    <button
+                      onClick={(e) => { e.stopPropagation(); moveSlide(slide.id, 'up'); }}
+                      disabled={isFirst}
+                      className="px-2 py-1 text-gray-400 hover:text-white hover:bg-gray-800 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                      title="Move up"
+                    >
+                      <ChevronUp className="w-4 h-4" />
+                    </button>
+                    <button
+                      onClick={(e) => { e.stopPropagation(); moveSlide(slide.id, 'down'); }}
+                      disabled={isLast}
+                      className="px-2 py-1 text-gray-400 hover:text-white hover:bg-gray-800 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                      title="Move down"
+                    >
+                      <ChevronDown className="w-4 h-4" />
+                    </button>
+                  </div>
+                  
+                  {/* Slide header */}
+                  <button
+                    onClick={() => toggleSlide(slide.id)}
+                    className="flex-1 px-4 py-3 flex items-center justify-between hover:bg-gray-800 transition-colors"
+                  >
+                    <span className="font-medium">
+                      {orderIndex + 2}. {slide.title}
+                    </span>
+                    {expandedSlides.has(slide.id) ? (
+                      <ChevronDown className="w-5 h-5 text-gray-400" />
+                    ) : (
+                      <ChevronRight className="w-5 h-5 text-gray-400" />
+                    )}
+                  </button>
+                </div>
                 
                 {expandedSlides.has(slide.id) && (
                   <div className="px-4 pb-4 space-y-4 border-t border-gray-800">
@@ -833,7 +902,7 @@ export default function DeckEditorPage() {
                       <input
                         type="text"
                         value={slide.title}
-                        onChange={(e) => updateSlide(slideIndex, { title: e.target.value })}
+                        onChange={(e) => updateSlide(originalIndex, { title: e.target.value })}
                         className="w-full bg-gray-800 border border-gray-700 rounded px-3 py-2 text-white"
                       />
                     </div>
@@ -843,7 +912,7 @@ export default function DeckEditorPage() {
                       <input
                         type="text"
                         value={slide.subtitle || ''}
-                        onChange={(e) => updateSlide(slideIndex, { subtitle: e.target.value })}
+                        onChange={(e) => updateSlide(originalIndex, { subtitle: e.target.value })}
                         className="w-full bg-gray-800 border border-gray-700 rounded px-3 py-2 text-white"
                       />
                     </div>
@@ -856,7 +925,7 @@ export default function DeckEditorPage() {
                           <input
                             type="text"
                             value={section.heading || ''}
-                            onChange={(e) => updateSlideSection(slideIndex, sectionIndex, { heading: e.target.value })}
+                            onChange={(e) => updateSlideSection(originalIndex, sectionIndex, { heading: e.target.value })}
                             className="w-full bg-gray-700 border border-gray-600 rounded px-2 py-1 text-sm text-white"
                           />
                         </div>
@@ -866,7 +935,7 @@ export default function DeckEditorPage() {
                             <label className="block text-xs text-gray-500 mb-1">Text</label>
                             <textarea
                               value={section.text}
-                              onChange={(e) => updateSlideSection(slideIndex, sectionIndex, { text: e.target.value })}
+                              onChange={(e) => updateSlideSection(originalIndex, sectionIndex, { text: e.target.value })}
                               rows={2}
                               className="w-full bg-gray-700 border border-gray-600 rounded px-2 py-1 text-sm text-white"
                             />
@@ -884,12 +953,12 @@ export default function DeckEditorPage() {
                                   onChange={(e) => {
                                     const newItems = [...section.items!];
                                     newItems[itemIndex] = e.target.value;
-                                    updateSectionItems(slideIndex, sectionIndex, newItems);
+                                    updateSectionItems(originalIndex, sectionIndex, newItems);
                                   }}
                                   className="flex-1 bg-gray-700 border border-gray-600 rounded px-2 py-1 text-sm text-white"
                                 />
                                 <button
-                                  onClick={() => removeSectionItem(slideIndex, sectionIndex, itemIndex)}
+                                  onClick={() => removeSectionItem(originalIndex, sectionIndex, itemIndex)}
                                   className="text-red-400 hover:text-red-300 p-1"
                                 >
                                   <Trash2 className="w-4 h-4" />
@@ -897,7 +966,7 @@ export default function DeckEditorPage() {
                               </div>
                             ))}
                             <button
-                              onClick={() => addSectionItem(slideIndex, sectionIndex)}
+                              onClick={() => addSectionItem(originalIndex, sectionIndex)}
                               className="text-xs text-gray-400 hover:text-white flex items-center gap-1 mt-1"
                             >
                               <Plus className="w-3 h-3" /> Add item
@@ -912,7 +981,7 @@ export default function DeckEditorPage() {
                         <label className="block text-sm text-gray-400 mb-1">Highlight Box</label>
                         <textarea
                           value={slide.highlight}
-                          onChange={(e) => updateSlide(slideIndex, { highlight: e.target.value })}
+                          onChange={(e) => updateSlide(originalIndex, { highlight: e.target.value })}
                           rows={2}
                           className="w-full bg-gray-800 border border-gray-700 rounded px-3 py-2 text-white"
                         />
@@ -925,7 +994,7 @@ export default function DeckEditorPage() {
                         <input
                           type="text"
                           value={slide.footnote}
-                          onChange={(e) => updateSlide(slideIndex, { footnote: e.target.value })}
+                          onChange={(e) => updateSlide(originalIndex, { footnote: e.target.value })}
                           className="w-full bg-gray-800 border border-gray-700 rounded px-3 py-2 text-white"
                         />
                       </div>
@@ -945,7 +1014,7 @@ export default function DeckEditorPage() {
                             />
                           </div>
                           <button
-                            onClick={() => removeSlideImage(slideIndex)}
+                            onClick={() => removeSlideImage(originalIndex)}
                             className="absolute top-2 right-2 bg-red-600 hover:bg-red-700 text-white p-1 rounded"
                           >
                             <Trash2 className="w-4 h-4" />
@@ -954,7 +1023,7 @@ export default function DeckEditorPage() {
                         </div>
                       ) : (
                         <div
-                          onDrop={(e) => handleImageDrop(slideIndex, e)}
+                          onDrop={(e) => handleImageDrop(originalIndex, e)}
                           onDragOver={(e) => e.preventDefault()}
                           className="border-2 border-dashed border-gray-600 rounded-lg p-6 text-center hover:border-gray-500 transition-colors"
                         >
@@ -973,7 +1042,7 @@ export default function DeckEditorPage() {
                             <input
                               type="file"
                               accept="image/*"
-                              onChange={(e) => handleImageUpload(slideIndex, e)}
+                              onChange={(e) => handleImageUpload(originalIndex, e)}
                               className="hidden"
                             />
                           </label>
@@ -985,7 +1054,7 @@ export default function DeckEditorPage() {
                         <input
                           type="text"
                           value={slide.image?.placeholder || ''}
-                          onChange={(e) => updateSlideImage(slideIndex, {
+                          onChange={(e) => updateSlideImage(originalIndex, {
                             ...slide.image,
                             type: slide.image?.type || 'infographic',
                             placeholder: e.target.value,
@@ -999,7 +1068,7 @@ export default function DeckEditorPage() {
                         <label className="block text-xs text-gray-500 mb-1">Image Type</label>
                         <select
                           value={slide.image?.type || 'infographic'}
-                          onChange={(e) => updateSlideImage(slideIndex, {
+                          onChange={(e) => updateSlideImage(originalIndex, {
                             ...slide.image,
                             type: e.target.value as SlideImage['type'],
                             placeholder: slide.image?.placeholder,
@@ -1018,7 +1087,8 @@ export default function DeckEditorPage() {
                   </div>
                 )}
               </div>
-            ))}
+            );
+          })}
         </section>
 
         {/* Ask Section */}

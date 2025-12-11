@@ -87,6 +87,45 @@
       }
     },
     {
+      "id": "market",
+      "title": "Market Opportunity",
+      "subtitle": "A massive, underserved market ready for AI-native solutions.",
+      "sections": [
+        {
+          "heading": "TAM: $164B – Total US Nonprofit Administrative Spending",
+          "items": [
+            "1.8M nonprofits in the US (1.5M are 501(c)(3)s)",
+            "Nonprofit sector contributes $1.4 trillion to GDP",
+            "Administrative overhead averages 11.7% = $164B annually",
+            "This spending is ripe for AI automation"
+          ]
+        },
+        {
+          "heading": "SAM: $3.5B – Small/Mid Nonprofits ($250k–$2M budgets)",
+          "items": [
+            "~108,000 organizations in our target segment",
+            "92% of nonprofits operate under $1M/year",
+            "Current back-office spend: $32k–$200k per org",
+            "Existing solutions: $5.5B nonprofit software + $6.7B consulting market"
+          ]
+        },
+        {
+          "heading": "SOM: $50M – 5-Year Obtainable Market",
+          "items": [
+            "500 organizations at ~$100k/year",
+            "30–50 pods at 10–16 orgs each",
+            "Represents <2% of SAM (credible capture rate)"
+          ]
+        }
+      ],
+      "highlight": "68% of nonprofits now use AI (up from 58% in 2023). The market is ready for an AI-native backbone.",
+      "footnote": "Sources: Independent Sector, Statista, NCCS, Google for Nonprofits Survey 2025, Intent Market Research",
+      "image": {
+        "type": "chart",
+        "placeholder": "TAM/SAM/SOM concentric circles: $164B → $3.5B → $50M"
+      }
+    },
+    {
       "id": "broken-options",
       "title": "Broken Options",
       "subtitle": "Existing solutions don't fit this stage.",
@@ -453,6 +492,42 @@
       }
     },
     {
+      "id": "strategic-partners",
+      "title": "Strategic Partners & Structure",
+      "subtitle": "HiiiWAV is our 501(c)(3) partner for philanthropic capacity-building.",
+      "sections": [
+        {
+          "heading": "HiiiWAV (501c3)",
+          "items": [
+            "Founded by Bosko Kante, focused on arts and social impact",
+            "Serves as philanthropic conduit for capacity-building grants to orgs Director serves",
+            "Enables foundations and donors to fund nonprofit backbone capacity tax-deductibly"
+          ]
+        },
+        {
+          "heading": "How it works:",
+          "items": [
+            "Foundations grant to HiiiWAV for capacity-building programs",
+            "HiiiWAV funds nonprofits' access to Director services",
+            "Director provides backbone support; philanthropic dollars stay with nonprofits"
+          ]
+        },
+        {
+          "heading": "Governance & Conflict Management:",
+          "items": [
+            "Independent HiiiWAV board approves all Director-related arrangements",
+            "Bosko recuses from any HiiiWAV decisions involving Director",
+            "Arms-length pricing; written conflict of interest policy on file"
+          ]
+        }
+      ],
+      "highlight": "This structure lets philanthropic dollars flow to under-resourced nonprofits while Director operates as a sustainable, investor-backed business.",
+      "image": {
+        "type": "diagram",
+        "placeholder": "Flow diagram: Foundations → HiiiWAV (501c3) → Nonprofits ← Director (services)"
+      }
+    },
+    {
       "id": "team",
       "title": "Team – Lean Year-1 Plan",
       "subtitle": "Small, high-leverage founding team with 12 months of runway.",
@@ -466,16 +541,16 @@
       ],
       "sections": [
         {
-          "heading": "Forward-Deployed Director (hire #1)",
+          "heading": "Founding Engineer (hire #1)",
+          "text": "Director OS + first wave of agents"
+        },
+        {
+          "heading": "Forward-Deployed Director (hire #2)",
           "text": "Nonprofit ops + fundraising, embedded across first ~4 orgs"
         },
         {
-          "heading": "Finance Director (hire #2)",
+          "heading": "Finance Director (hire #3)",
           "text": "Finance + ops across pod, designs playbooks"
-        },
-        {
-          "heading": "Founding Engineer (hire #3)",
-          "text": "Director OS + first wave of agents"
         }
       ],
       "footnote": "Target raise: ~$1M for 12 months runway. Early org retainers reduce net burn.",
@@ -553,6 +628,26 @@
         "placeholder": "Collage of logos or photos of the customer organizations"
       }
     }
+  ],
+  "slideOrder": [
+    "problem-founders",
+    "problem-downshifted",
+    "customer-foundations",
+    "broken-options",
+    "what-we-are",
+    "fundraising-philosophy",
+    "director-pod",
+    "director-os",
+    "ai-agents",
+    "economics",
+    "market",
+    "why-now",
+    "go-to-market",
+    "business-model",
+    "strategic-partners",
+    "team",
+    "current-customers",
+    "roadmap"
   ],
   "ask": {
     "amount": "$1.0M",

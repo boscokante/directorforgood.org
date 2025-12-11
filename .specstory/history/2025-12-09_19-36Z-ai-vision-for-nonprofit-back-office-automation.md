@@ -2063,7 +2063,7 @@ To-do's from the plan have already been created. Do not create them again. Mark 
 _**Agent (model claude-4.5-opus-high-thinking, mode Agent)**_
 
 <think><details><summary>Thought Process</summary>
-I need to implement the plan to change the cover tagline to the more ambitious version. Let me mark the todo as in progress and make the change.Done. Let me mark it complete.</details></think>
+I need to implement the plan to change the cover tagline to the more ambitious version. Let me mark the todo as in progress and make the change.Done. Let me mark it complete.Done. The tagline is now updated to the ambitious version.</details></think>
 
 ---
 
@@ -2115,6 +2115,381 @@ Status: **completed**
 ---
 
 
+
+---
+
+Done. The cover tagline is now:
+
+> **"The AI agent team that lets a single founder run a $5M nonprofit with no back-office staff"**
+
+The homepage and deck will now display this more ambitious tagline. Refresh your browser to see it live.
+
+---
+
+_**User (2025-12-09 05:53Z)**_
+
+commit and push to remote
+
+---
+
+_**Agent (model claude-4.5-opus-high-thinking, mode Agent)**_
+
+<think><details><summary>Thought Process</summary>
+The user wants me to commit and push all the changes to the remote repository. Let me first check the git status to see all the changes, then commit and push.I see there are several modified and untracked files. The main changes are in deck-content.json with the vision updates. Let me commit and push all changes.Now let me push to remote.Done. Committed and pushed successfully.</details></think>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="run_terminal_command_v2">
+<details>
+<summary>Tool use: **run_terminal_command_v2**</summary>
+
+
+Parameters:
+
+```json
+{
+  "command": "cd /Users/boskombp16/GitHub/directorforgood.org &amp;&amp; git status",
+  "cwd": "",
+  "parsingResult": {
+    "executableCommands": [
+      {
+        "name": "cd",
+        "args": [
+          {
+            "type": "word",
+            "value": "/Users/boskombp16/GitHub/directorforgood.org"
+          }
+        ],
+        "fullText": "cd /Users/boskombp16/GitHub/directorforgood.org"
+      },
+      {
+        "name": "git",
+        "args": [
+          {
+            "type": "word",
+            "value": "status"
+          }
+        ],
+        "fullText": "git status"
+      }
+    ]
+  }
+}
+```
+Additional data:
+
+```json
+{
+  "status": "success"
+}
+```
+Result:
+
+```json
+{
+  "output": "On branch main\nYour branch is up to date with 'origin/main'.\n\nChanges not staged for commit:\n  (use \"git add &lt;file&gt;...\" to update what will be committed)\n  (use \"git restore &lt;file&gt;...\" to discard changes in working directory)\n\tmodified:   .specstory/history/2025-12-09_14-44Z-make-this-live-on-the-internet-using-my-dev-studio-for.md\n\tmodified:   app/admin/layout.tsx\n\tmodified:   app/page.tsx\n\tmodified:   components/ai/chat-widget.tsx\n\tmodified:   data/deck-content.json\n\tmodified:   lib/deck-content.ts\n\nUntracked files:\n  (use \"git add &lt;file&gt;...\" to include in what will be committed)\n\t.specstory/history/2025-12-09_17-23Z-add-bosko-kante-ceo-profile.md\n\t.specstory/history/2025-12-09_17-24Z-addressing-one-issue.md\n\t.specstory/history/2025-12-09_17-44Z-remove-irrelevant-legacy-sidebar-links.md\n\t.specstory/history/2025-12-09_19-36Z-ai-vision-for-nonprofit-back-office-automation.md\n\nno changes added to commit (use \"git add\" and/or \"git commit -a\")\n",
+  "rejected": false
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="run_terminal_command_v2">
+<details>
+<summary>Tool use: **run_terminal_command_v2**</summary>
+
+
+Parameters:
+
+```json
+{
+  "command": "cd /Users/boskombp16/GitHub/directorforgood.org &amp;&amp; git diff --stat",
+  "cwd": "",
+  "parsingResult": {
+    "executableCommands": [
+      {
+        "name": "cd",
+        "args": [
+          {
+            "type": "word",
+            "value": "/Users/boskombp16/GitHub/directorforgood.org"
+          }
+        ],
+        "fullText": "cd /Users/boskombp16/GitHub/directorforgood.org"
+      },
+      {
+        "name": "git",
+        "args": [
+          {
+            "type": "word",
+            "value": "diff"
+          },
+          {
+            "type": "word",
+            "value": "--stat"
+          }
+        ],
+        "fullText": "git diff --stat"
+      }
+    ]
+  }
+}
+```
+Additional data:
+
+```json
+{
+  "status": "success"
+}
+```
+Result:
+
+```json
+{
+  "output": " ...live-on-the-internet-using-my-dev-studio-for.md | 722 +++++++++++++++++++++\n app/admin/layout.tsx                               |  32 -\n app/page.tsx                                       |  58 ++\n components/ai/chat-widget.tsx                      |   9 +-\n data/deck-content.json                             |  97 ++-\n lib/deck-content.ts                                |   8 +\n 6 files changed, 875 insertions(+), 51 deletions(-)\n",
+  "rejected": false
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="run_terminal_command_v2">
+<details>
+<summary>Tool use: **run_terminal_command_v2**</summary>
+
+
+Parameters:
+
+```json
+{
+  "command": "cd /Users/boskombp16/GitHub/directorforgood.org &amp;&amp; git log --oneline -5",
+  "cwd": "",
+  "parsingResult": {
+    "executableCommands": [
+      {
+        "name": "cd",
+        "args": [
+          {
+            "type": "word",
+            "value": "/Users/boskombp16/GitHub/directorforgood.org"
+          }
+        ],
+        "fullText": "cd /Users/boskombp16/GitHub/directorforgood.org"
+      },
+      {
+        "name": "git",
+        "args": [
+          {
+            "type": "word",
+            "value": "log"
+          },
+          {
+            "type": "word",
+            "value": "--oneline"
+          },
+          {
+            "type": "number",
+            "value": "-5"
+          }
+        ],
+        "fullText": "git log --oneline -5"
+      }
+    ]
+  }
+}
+```
+Additional data:
+
+```json
+{
+  "status": "success"
+}
+```
+Result:
+
+```json
+{
+  "output": "54e892d fix: update sitemap URL to directorforgood.org\nb3ddee5 fix: update Next.js to 16.0.8 (security patch)\n9ecfee3 fix: Zod v4 errors-&gt;issues, exclude scripts from build\n864d73e fix: convert Buffer to Uint8Array for NextResponse\nf32d5bc fix: use maxOutputTokens for AI SDK v5\n",
+  "rejected": false
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="run_terminal_command_v2">
+<details>
+<summary>Tool use: **run_terminal_command_v2**</summary>
+
+
+Parameters:
+
+```json
+{
+  "command": "cd /Users/boskombp16/GitHub/directorforgood.org &amp;&amp; git add -A &amp;&amp; git commit -m \"$(cat &lt;&lt;'EOF'\nfeat: add ambitious long-term vision to pitch deck\n\n- Update cover tagline to \"$5M founder\" vision\n- Add Long-Term Vision slide with Today vs Future comparison\n- Add Phase 4 (100+ orgs) to Director Pod capacity ramp\n- Update AI Agents with 90-95% automation goal\n- Extend roadmap to 36+ months with audacious vision\n- Sprinkle vision language across Problem, Economics, Why Now, Business Model slides\n- Add oneliner field for investor pitch\nEOF\n)\"",
+  "cwd": "",
+  "parsingResult": {
+    "executableCommands": [
+      {
+        "name": "cd",
+        "args": [
+          {
+            "type": "word",
+            "value": "/Users/boskombp16/GitHub/directorforgood.org"
+          }
+        ],
+        "fullText": "cd /Users/boskombp16/GitHub/directorforgood.org"
+      },
+      {
+        "name": "git",
+        "args": [
+          {
+            "type": "word",
+            "value": "add"
+          },
+          {
+            "type": "word",
+            "value": "-A"
+          }
+        ],
+        "fullText": "git add -A"
+      },
+      {
+        "name": "git",
+        "args": [
+          {
+            "type": "word",
+            "value": "commit"
+          },
+          {
+            "type": "word",
+            "value": "-m"
+          },
+          {
+            "type": "string",
+            "value": "\"$(cat &lt;&lt;'EOF'\nfeat: add ambitious long-term vision to pitch deck\n\n- Update cover tagline to \"$5M founder\" vision\n- Add Long-Term Vision slide with Today vs Future comparison\n- Add Phase 4 (100+ orgs) to Director Pod capacity ramp\n- Update AI Agents with 90-95% automation goal\n- Extend roadmap to 36+ months with audacious vision\n- Sprinkle vision language across Problem, Economics, Why Now, Business Model slides\n- Add oneliner field for investor pitch\nEOF\n)\""
+          }
+        ],
+        "fullText": "git commit -m \"$(cat &lt;&lt;'EOF'\nfeat: add ambitious long-term vision to pitch deck\n\n- Update cover tagline to \"$5M founder\" vision\n- Add Long-Term Vision slide with Today vs Future comparison\n- Add Phase 4 (100+ orgs) to Director Pod capacity ramp\n- Update AI Agents with 90-95% automation goal\n- Extend roadmap to 36+ months with audacious vision\n- Sprinkle vision language across Problem, Economics, Why Now, Business Model slides\n- Add oneliner field for investor pitch\nEOF\n)\""
+      },
+      {
+        "name": "cat",
+        "fullText": "cat"
+      }
+    ],
+    "hasRedirects": true,
+    "hasCommandSubstitution": true
+  }
+}
+```
+Additional data:
+
+```json
+{
+  "status": "success"
+}
+```
+Result:
+
+```json
+{
+  "output": "[main d4733dc] feat: add ambitious long-term vision to pitch deck\n 10 files changed, 5010 insertions(+), 51 deletions(-)\n create mode 100644 .specstory/history/2025-12-09_17-23Z-add-bosko-kante-ceo-profile.md\n create mode 100644 .specstory/history/2025-12-09_17-24Z-addressing-one-issue.md\n create mode 100644 .specstory/history/2025-12-09_17-44Z-remove-irrelevant-legacy-sidebar-links.md\n create mode 100644 .specstory/history/2025-12-09_19-36Z-ai-vision-for-nonprofit-back-office-automation.md\n",
+  "rejected": false
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="run_terminal_command_v2">
+<details>
+<summary>Tool use: **run_terminal_command_v2**</summary>
+
+
+Parameters:
+
+```json
+{
+  "command": "cd /Users/boskombp16/GitHub/directorforgood.org &amp;&amp; git push",
+  "cwd": "",
+  "parsingResult": {
+    "executableCommands": [
+      {
+        "name": "cd",
+        "args": [
+          {
+            "type": "word",
+            "value": "/Users/boskombp16/GitHub/directorforgood.org"
+          }
+        ],
+        "fullText": "cd /Users/boskombp16/GitHub/directorforgood.org"
+      },
+      {
+        "name": "git",
+        "args": [
+          {
+            "type": "word",
+            "value": "push"
+          }
+        ],
+        "fullText": "git push"
+      }
+    ]
+  }
+}
+```
+Additional data:
+
+```json
+{
+  "status": "success"
+}
+```
+Result:
+
+```json
+{
+  "output": "To https://github.com/boscokante/directorforgood.org.git\n   54e892d..d4733dc  main -&gt; main\n",
+  "rejected": false
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+Done. Committed and pushed to `main`:
+
+```
+d4733dc feat: add ambitious long-term vision to pitch deck
+```
+
+Changes are now live on GitHub and will deploy to Vercel automatically.
 
 ---
 

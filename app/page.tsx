@@ -38,15 +38,7 @@ export default async function HomePage() {
               size="lg"
               className="bg-white text-black hover:bg-gray-200 font-semibold text-lg px-8 py-6"
             >
-              <a href="#contact">Get Started</a>
-            </Button>
-            <Button
-              asChild
-              size="lg"
-              variant="outline"
-              className="border-gray-600 text-white hover:bg-gray-900 hover:border-white text-lg px-8 py-6"
-            >
-              <a href="#solution">Learn More</a>
+              <a href="mailto:bosko@directorforgood.org">Get Started</a>
             </Button>
           </div>
         </div>
@@ -731,15 +723,7 @@ export default async function HomePage() {
               size="lg"
               className="bg-white text-black hover:bg-gray-200 font-semibold text-lg px-8 py-6"
             >
-              <a href="mailto:hello@directorforgood.org">Get in Touch</a>
-            </Button>
-            <Button
-              asChild
-              size="lg"
-              variant="outline"
-              className="border-white text-white hover:bg-white hover:text-black text-lg px-8 py-6"
-            >
-              <a href="#solution">Learn More</a>
+              <a href="mailto:bosko@directorforgood.org">Get in Touch</a>
             </Button>
           </div>
         </div>

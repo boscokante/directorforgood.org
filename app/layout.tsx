@@ -14,11 +14,11 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Director - AI-Native Backbone for Nonprofits",
+  title: "director. AI back office for nonprofits.",
   description: "Director is the AI-native operating system and forward-deployed backbone for nonprofits. Turning under-resourced founders into fundable, operationally tight organizations.",
   keywords: ["Director", "nonprofit", "AI", "operations", "fundraising", "nonprofit technology", "directorforgood"],
   openGraph: {
-    title: "Director - AI-Native Backbone for Nonprofits",
+    title: "director. AI back office for nonprofits.",
     description: "The AI-native operating system and forward-deployed backbone for nonprofits",
     url: "https://directorforgood.org",
     siteName: "Director",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Director - AI-Native Backbone for Nonprofits",
+    title: "director. AI back office for nonprofits.",
     description: "The AI-native operating system and forward-deployed backbone for nonprofits",
   },
 };

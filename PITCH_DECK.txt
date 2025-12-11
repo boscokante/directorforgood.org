@@ -1,0 +1,379 @@
+================================================================================
+DIRECTOR PITCH DECK
+================================================================================
+
+TITLE: Director
+TAGLINE: The AI agent team that lets a single founder run a $5M nonprofit with no back-office staff
+SUBTAGLINE: Turning under-resourced founders into fundable, operationally tight organizations
+ONE-LINER: Short term, we're a forward-deployed AI support team. Long term, we're building the autopilot that runs the entire nonprofit back office so a single founder can run a $5M org with almost no internal ops staff.
+WEBSITE: directorforgood.org
+
+================================================================================
+SLIDE 1: Problem – Founders Are the Whole Leadership Team
+================================================================================
+
+Nonprofit founders are carrying 5 jobs on 1 salary.
+
+They're expected to:
+• Lead programs and vision
+• Raise money (major gifts, grants, events)
+• Run operations and finance
+• Own communications and storytelling
+• Manage staff, boards, and compliance
+
+HIGHLIGHT: Promising orgs plateau at $300–600k or quietly shut down — not for lack of impact, but for lack of backbone.
+
+NOTE: When funding tightens and staff are cut, all of this collapses back onto one person. Right now, most of their time and money are trapped in back-office work that should be automated.
+
+================================================================================
+SLIDE 2: Ideal Customer – Downshifted Orgs (Beachhead)
+================================================================================
+
+Our initial focus: orgs that already proved they can raise $400k–$1M.
+
+These orgs:
+• Have real donor and community relationships
+• Have a history of 7-figure budgets or close
+
+But in the current funding environment:
+• They've laid off staff
+• The founder is back to doing everything
+• Many are considering shutting down despite strong demand
+
+HIGHLIGHT: These leaders don't need another tool. They need a backbone.
+
+NOTE: This hits founders of color especially hard, as equity-era funding retrenches.
+
+================================================================================
+SLIDE 3: Ideal Customer – Foundations as Buyers
+================================================================================
+
+Foundations can sponsor multiple orgs at once.
+
+The opportunity:
+• Foundations already fund capacity-building for grantees
+• They can purchase Director packages for 5–10 orgs
+• One contract, multiple organizations transformed
+
+Why this works:
+• Foundations get measurable capacity ROI across portfolio
+• Orgs get backbone support they couldn't afford alone
+• Director gets predictable, larger contracts
+
+HIGHLIGHT: A single foundation can unlock Director for an entire cohort of grantees.
+
+================================================================================
+SLIDE 4: Broken Options
+================================================================================
+
+Existing solutions don't fit this stage.
+
+DIY SaaS stack:
+CRMs, grant tools, accounting, email… Founders don't have time to integrate and maintain them.
+
+Consultants & agencies:
+Project-based, expensive, seen as "overhead." Advice without ongoing responsibility.
+
+Rebuilding staff:
+• ED: $100–150k
+• Ops/Finance: ~$100k
+• Development: ~$100k
+• Comms/Program ops: $60–100k
+
+HIGHLIGHT: There is no integrated, AI-native backbone designed for $400k–$1M orgs that have real relationships but no team.
+
+NOTE: $360–450k/year for the backbone on a fragile budget.
+
+================================================================================
+SLIDE 5: Director – What We Are
+================================================================================
+
+Director is an AI-native backbone and forward-deployed team for nonprofits.
+
+Director OS – a vertical operating system for:
+• Revenue & relationships
+• Runway & finance
+• Ops & compliance
+• Board & funder narratives
+
+Director Pod – shared leadership capacity:
+• Forward-Deployed Director (FDD)
+• Finance/ops leadership
+• Dedicated dev & ops roles as we scale
+• Long term, Director becomes the autopilot for the nonprofit back office, not just a helper
+
+HIGHLIGHT: We plug into an existing org and donor base and give them the leadership bench they can't afford to rebuild alone.
+
+CALLOUT: Short term, we're a forward-deployed AI support team. Long term, we're building the autopilot that runs the entire nonprofit back office so a single founder can run a $5M org with almost no internal ops staff.
+
+================================================================================
+SLIDE 6: Fundraising Philosophy – Relationships First
+================================================================================
+
+Director is built around major gifts and real relationships, not grant roulette.
+
+Durable funding comes from:
+• Major donors
+• Anchor institutions
+• Long-term partners
+
+Grants are part of the picture, but:
+• They are downstream of relationships
+• "Open call" grant-chasing is mostly a distraction for this segment
+
+Director's focus:
+• Map and grow the major gifts pipeline
+• Prepare founders for high-stakes meetings
+• Use grants strategically once relationships exist
+
+HIGHLIGHT: Director is a relationship and revenue engine, not a shot-in-the-dark grant factory.
+
+================================================================================
+SLIDE 7: The Director Pod – Capacity Ramp
+================================================================================
+
+Pods scale from 4 → 8 → 16 orgs as the OS and agents mature.
+
+Year 1 – Proto-Pod Team:
+• Founder/CEO
+• 1 Forward-Deployed Director
+• 1 Finance Director
+• 1 Founding Engineer
+
+Phase 2 – 8 orgs:
+Mature core agents handle repetitive tasks. Same structure supports more orgs.
+
+Phase 3 – 16 orgs:
+2+ FDDs. Standardized playbooks. Agents do recurring work.
+
+Phase 4 – 100+ orgs:
+• AI-native director team handles 90–95% of recurring work
+• Pod becomes supervisory layer, not execution layer
+• Single founder safely runs $3–5M org with no internal back-office hires
+
+================================================================================
+SLIDE 8: Director OS – Product Overview
+================================================================================
+
+One pane of glass for an org's backbone.
+
+Revenue & Relationships:
+Major gifts map, warm pipeline, next-best actions
+
+Runway & Finance:
+Live cash forecasts, budget vs actuals visibility
+
+Ops & Compliance:
+Recurring task engine, checklists, playbooks
+
+Narratives & Reporting:
+Board decks, funder reports, impact one-pagers
+
+NOTE: Data flows in from email, calendar, finance systems, docs, and existing CRMs. Over time, Director OS becomes the autopilot layer that runs the nonprofit back office end-to-end.
+
+================================================================================
+SLIDE 9: AI Agents – From 2–4x Today to 90–95% Automation
+================================================================================
+
+On the path to automating 90–95% of nonprofit back-office work.
+
+Major Gifts Agent:
+• Scans email, calendar, CRM
+• Maintains relationship maps
+• Drafts donor emails & briefs
+
+Finance & Runway Agent:
+• Pulls accounting data
+• Proposes categorizations
+• Raises runway alerts
+
+Ops & Compliance Agent:
+• Runs recurring checklists
+• Generates reminders
+• Manages task lists
+
+Board & Reporting Agent:
+• Assembles board decks
+• Creates funder reports
+• Keeps board-ready view
+
+HIGHLIGHT: Today: Agents draft, humans decide. Future: Agents execute end-to-end; humans supervise and handle exceptions.
+
+================================================================================
+SLIDE 10: Long-Term Vision – 10x the Backbone, 10x the Impact
+================================================================================
+
+From forward-deployed support team to fully autonomous nonprofit autopilot.
+
+Today (v1 Director):
+• Forward-deployed Director + Finance lead
+• AI agents assist with finance, ops, comms, and donor prep
+• One Pod supports 4–16 orgs
+
+Future (Where We're Going):
+• Fully AI-native director team for finance, ops, comms, development
+• Agents handle 90–95% of recurring back-office work
+• One Pod supervises 100+ orgs
+• Founders and boards focus almost entirely on programs and relationships
+
+HIGHLIGHT: Audacious goal: No nonprofit ever dies because of operations, fundraising, or compliance again — only because the mission is done.
+
+================================================================================
+SLIDE 11: Economics – Why This Makes Sense
+================================================================================
+
+Director makes a serious backbone affordable and scalable.
+
+Traditional backbone costs (small org):
+• ED: $100–150k
+• Ops/Finance: ~$100k
+• Dev: ~$100k
+• Comms/Program ops: $60–100k
+• Total: $360–450k/year
+
+With Director:
+• ED/founder: $100–150k
+• Director Pod: ~$80–120k/year
+• Total backbone: $180–270k/year
+• Long term, as a Pod supervises 100+ orgs, backbone costs can drop by ~80%, shifting dollars from administration back into programs
+
+HIGHLIGHT: Save $100-180k/year in backbone costs
+
+NOTE: As Pods scale, pod-level gross margins expand while keeping human leadership involvement high.
+
+================================================================================
+SLIDE 12: Why Now – AI Agents + Nonprofit Pressure
+================================================================================
+
+Two timing curves are intersecting.
+
+Agentic AI is production-ready:
+• "AI coworkers" already shipping in engineering, finance, and customer ops
+• Small human teams can manage far more complexity with agents
+
+Nonprofits are under structural pressure:
+• Orgs with $1M+ budgets are losing staff
+• Funders want grantees with credible backbones and visibility
+
+The opportunity:
+• For the first time, it's realistic to imagine automating 90–95% of nonprofit back-office work and letting a single founder safely run a $3–5M org with almost no internal ops staff
+
+HIGHLIGHT: Director sits at this intersection: an AI-native backbone delivered by a lean, forward-deployed team to orgs that cannot justify rebuilding full in-house leadership.
+
+================================================================================
+SLIDE 13: Go-to-Market
+================================================================================
+
+We start where we already have pull.
+
+Existing relationships:
+First 2–4 orgs from founders you're already effectively "directing."
+
+Downshifted $1M orgs:
+Target leaders who proved they can raise $400k–$1M but had to cut staff.
+
+Funder collaborations:
+Position Director as capacity-building that makes grantees more investable.
+
+Sales motion:
+• Short diagnostic: map "today vs with Director"
+• Demo Director OS + agents
+• Show what gets taken off the founder's plate
+• Close annual retainers
+• Expand scope over time
+
+================================================================================
+SLIDE 14: Business Model & QSBS-Friendly Structure
+================================================================================
+
+AI-native vertical SaaS with embedded forward-deployed team.
+
+Revenue model:
+• Annual retainers per org
+• Tied to budget band and complexity
+• Goal: multiple Pods, each supporting up to 16 orgs
+• At scale, Director can redirect billions of dollars of nonprofit overhead back into direct programs and community work
+
+Cost structure:
+• Lean Pods (FDD + Finance Director)
+• Supported by agents and product
+• Engineering compounds across all clients
+
+QSBS-aware design:
+• U.S. C-corp
+• Product-centric operating business
+• Software & data model assets
+
+================================================================================
+SLIDE 15: Team – Lean Year-1 Plan
+================================================================================
+
+Small, high-leverage founding team with 12 months of runway.
+
+TEAM:
+Bosko Kante – CEO & Founder
+Software developer and technical founder. Vision, sales, fundraising, relationships. Founder of HiiiWAV, with deep experience building and supporting nonprofits in the arts and social impact space.
+
+Forward-Deployed Director (hire #1):
+Nonprofit ops + fundraising, embedded across first ~4 orgs
+
+Finance Director (hire #2):
+Finance + ops across pod, designs playbooks
+
+Founding Engineer (hire #3):
+Director OS + first wave of agents
+
+NOTE: Target raise: ~$1M for 12 months runway. Early org retainers reduce net burn.
+
+================================================================================
+SLIDE 16: Roadmap & Ask
+================================================================================
+
+0–12 months (this raise):
+• Hire FDD, Finance Director, Founding Engineer
+• Onboard 2–4 orgs
+• Ship v1 Director OS and core agents
+• Prove: 4-org pod delivers revenue and stability lift
+
+12–24 months:
+• Scale pod to 8 orgs
+• Harden agents and playbooks
+• Add additional FDD/finance/ops capacity
+
+24–36 months:
+• 16-org pods on mature OS
+• Multiple pods focused on key verticals
+
+36+ months:
+• 100+ org pods with 90–95% agent-driven operations
+• A single founder can safely run a $3–5M organization with no internal back-office hires
+• Director redirects billions in nonprofit overhead back into direct programs
+
+================================================================================
+SLIDE 17: Current Customers & Traction
+================================================================================
+
+Examples of our successful partnerships.
+
+Our customers include:
+• HiiiWAV
+• Alphabet Rockers
+• Soul Development
+• Prospect Band
+• Ryan Nicole
+
+Traction highlights:
+These partnerships exemplify our growing impact and successful collaboration with influential organizations.
+
+HIGHLIGHT: Real-world impact through strategic partnerships.
+
+================================================================================
+THE ASK: $1.0M
+================================================================================
+
+• Fund 12+ months of lean team and product development
+• Prove the 4 → 8 → 16 org capacity story with real customers
+• Build Director into the AI-native backbone for the orgs that can least afford to lose theirs
+• At scale, redirect billions of dollars of nonprofit overhead back into direct programs and community work
+
+================================================================================

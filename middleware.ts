@@ -4,12 +4,7 @@ import { NextResponse } from 'next/server'
 export default auth(async (req) => {
   const { pathname } = req.nextUrl
 
-  // Allow deck editor without auth
-  if (pathname === '/admin/deck') {
-    return NextResponse.next()
-  }
-
-  // Protect other admin routes
+  // Protect admin routes
   if (pathname.startsWith('/admin')) {
     const session = req.auth
 
